@@ -1,73 +1,46 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import { Menu, Drawer, Button } from "antd";
+import { Drawer } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
+import { Logo } from "@/components/logo";
+import AppMenu from "./app-menu";
+import useDrawer from "@/hooks/useDrawer";
+import Cart from "@/components/cart";
 
 const Header = () => {
-  const [visible, setVisible] = useState(false);
-
-  const showDrawer = () => {
-    setVisible(true);
-  };
-
-  const onClose = () => {
-    setVisible(false);
-  };
+  const { isOpen, openDrawer, closeDrawer } = useDrawer();
 
   return (
-    <header className="bg-blue-600 text-white p-4">
+    <header className="bg-lharmonie-primary text-white p-4">
       <nav className="container mx-auto flex justify-between items-center">
-        <div className="text-lg font-bold">
-          <Link href="/home">Lharmonie</Link>
+        <div className="flex items-center gap-3">
+          <Logo />
+          <div className="hidden md:flex space-x-4">
+            <AppMenu
+              mode="horizontal"
+              className="flex text-sm p-4 bg-lharmonie-primary border-none"
+            />
+          </div>
         </div>
-        <div className="hidden md:flex space-x-4">
-          <Menu  mode="horizontal" theme="dark" className="flex text-sm p-4">
-            <Menu.Item onSelectCapture={()=>console.log('d')
-            } key="home">
-              <Link className="overflow-hidden" href="/home">Home</Link>
-            </Menu.Item>
-            <Menu.Item key="sobre-nosotros">
-              <Link href="/sobre-nosotros">Nosotros</Link>
-            </Menu.Item>
-            <Menu.Item key="contacto-info">
-              <Link href="/contacto-info">Contacto & Info</Link>
-            </Menu.Item>
-            <Menu.Item key="menu">
-              <Link href="/menu">Menú</Link>
-            </Menu.Item>
-            <Menu.Item key="productos">
-              <Link href="/productos">Productos</Link>
-            </Menu.Item>
-          </Menu>
-        </div>
-        <div className="md:hidden">
-          <Button type="primary" icon={<MenuOutlined />} onClick={showDrawer} />
+        <Cart className="hidden md:block" />
+        <div className="md:hidden flex items-center gap-3">
+          <Cart />
+          <button onClick={openDrawer}>
+            <MenuOutlined className="text-xl text-lharmonie-secondary" />
+          </button>
           <Drawer
-            title="Lharmonie"
+            title={<Logo />}
             placement="right"
-            onClose={onClose}
-            open={visible}
+            className="bg-lharmonie-primary"
+            onClose={closeDrawer}
+            open={isOpen}
             destroyOnClose={true}
           >
-            <Menu onClick={onClose} mode="vertical" theme="dark">
-              <Menu.Item key="home">
-                <Link href="/home">Home</Link>
-              </Menu.Item>
-              <Menu.Item key="sobre-nosotros">
-                <Link href="/sobre-nosotros">Sobre Nosotros</Link>
-              </Menu.Item>
-              <Menu.Item key="contacto-info">
-                <Link href="/contacto-info">Contacto & Info</Link>
-              </Menu.Item>
-              <Menu.Item key="menu">
-                <Link href="/menu">Menú</Link>
-              </Menu.Item>
-              <Menu.Item key="productos">
-                <Link href="/productos">Productos</Link>
-              </Menu.Item>
-            </Menu>
+            <AppMenu
+              onClick={closeDrawer}
+              mode="vertical"
+              className="text-sm p-4 border-none"
+            />
           </Drawer>
         </div>
       </nav>
