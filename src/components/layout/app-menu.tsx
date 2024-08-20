@@ -1,19 +1,16 @@
-import { MENU_ITEMS } from "@/config/menu-items";
-import { Menu, Drawer, Button, MenuProps } from "antd";
-import Link from "next/link";
+import { generateMenuItems } from "@/config/menu-items";
+import { Menu, MenuProps } from "antd";
+import { usePathname } from "next/navigation";
+import { useMemo } from "react";
 
 type Props = MenuProps;
 
 const AppMenu = ({ ...menuProps }: Props) => {
-  return (
-    <Menu {...menuProps}>
-      {MENU_ITEMS.map((item) => (
-        <Menu.Item key={item.title}>
-          <Link href={item.link}>{item.title}</Link>
-        </Menu.Item>
-      ))}
-    </Menu>
-  );
+  const pathname = usePathname();
+
+  const menuItems = useMemo(() => generateMenuItems(), []);
+
+  return <Menu activeKey={pathname} items={menuItems} {...menuProps} />;
 };
 
 export default AppMenu;

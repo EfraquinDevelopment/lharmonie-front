@@ -11,7 +11,7 @@ const Header = () => {
   const { isOpen, openDrawer, closeDrawer } = useDrawer();
 
   return (
-    <header className="bg-lharmonie-primary text-white p-4">
+    <header className="bg-lharmonie-primary text-white p-4 w-full">
       <nav className="container mx-auto flex justify-between items-center">
         <div className="flex items-center gap-3">
           <Logo />
