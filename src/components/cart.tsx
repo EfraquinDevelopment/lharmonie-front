@@ -1,6 +1,6 @@
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import useDrawer from "@/hooks/useDrawer";
-import { Drawer } from "antd";
+import { Button, Drawer } from "antd";
 
 type Props = {
   className?: string;
@@ -11,9 +11,14 @@ const Cart = ({ className }: Props) => {
 
   return (
     <>
-      <button onClick={openDrawer} className={className}>
-        <ShoppingCartOutlined className="text-xl text-lharmonie-secondary" />
-      </button>
+      <Button
+        icon={
+          <ShoppingCartOutlined className="text-xl text-lharmonie-secondary" />
+        }
+        onClick={openDrawer}
+        className={className}
+      />
+
       <Drawer
         title={<h2 className="font-medium text-xl">Cart</h2>}
         placement="right"

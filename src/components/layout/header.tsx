@@ -11,18 +11,18 @@ const Header = () => {
   const { isOpen, openDrawer, closeDrawer } = useDrawer();
 
   return (
-    <header className="bg-lharmonie-primary text-white p-4 w-full">
-      <nav className="container mx-auto flex justify-between items-center">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200 ">
+      <nav className="mx-auto flex justify-between items-center bg-white opacity-95 backdrop-blur">
         <div className="flex items-center gap-3">
           <Logo />
-          <div className="hidden md:flex space-x-4">
+          <div className="hidden md:flex space-x-4 bg-white">
             <AppMenu
               mode="horizontal"
-              className="flex text-sm p-4 bg-lharmonie-primary border-none"
+              className="flex text-sm p-4 border-none"
             />
           </div>
         </div>
-        <Cart className="hidden md:block" />
+        <Cart className="hidden md:block mr-4" />
         <div className="md:hidden flex items-center gap-3">
           <Cart />
           <button onClick={openDrawer}>

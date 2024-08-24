@@ -24,10 +24,28 @@ export const MENU_ITEMS = [
   },
 ];
 
-
-export const generateMenuItems = ():ItemType<MenuItemType>[] => {
-  return MENU_ITEMS.map((item) => ({
-    key: item.link,
-    label: <Link href={item.link}>{item.title}</Link>,
-  }));
-}
+export const generateMenuItems = (
+  pathname: string
+): ItemType<MenuItemType>[] => {
+  return MENU_ITEMS.map((item) => {
+    const isActive = pathname === item.link;
+    return {
+      key: item.link,
+      label: (
+        <div className="header-nav-item">
+          <Link
+            style={{
+              ...(isActive && {
+                color: "#232323",
+                fontWeight: "bold",
+              }),
+            }}
+            href={item.link}
+          >
+            {item.title}
+          </Link>
+        </div>
+      ),
+    };
+  });
+};

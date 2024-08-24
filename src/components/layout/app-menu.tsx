@@ -8,7 +8,7 @@ type Props = MenuProps;
 const AppMenu = ({ ...menuProps }: Props) => {
   const pathname = usePathname();
 
-  const menuItems = useMemo(() => generateMenuItems(), []);
+  const menuItems = useMemo(() => generateMenuItems(pathname), [pathname]);
 
   return <Menu activeKey={pathname} items={menuItems} {...menuProps} />;
 };
