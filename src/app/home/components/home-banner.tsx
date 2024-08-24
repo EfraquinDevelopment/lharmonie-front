@@ -9,7 +9,7 @@ const HomeBanner = () => {
 
   return (
     <section className="h-[calc(100vh-4rem)] flex items-center justify-center bg-[#F5F5F0] text-[#232323] relative">
-      <div className="text-center">
+      <div className="text-center md:px-0 px-4">
         <Image
           src="/lharmonie-logo.png"
           alt="Lharmonie Logo"
@@ -17,8 +17,8 @@ const HomeBanner = () => {
           height={100}
           className="mx-auto mb-8"
         />
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">{homeBanner.title}</h1>
-        <p className="text-xl mb-8">{homeBanner.description}</p>
+        <h1 className="text-3xl md:text-6xl font-bold mb-4">{homeBanner.title}</h1>
+        <p className="text-lg md:text-xl mb-8">{homeBanner.description}</p>
         <Button>
           <Link href="/menu">{homeBanner.buttonText}</Link>
         </Button>

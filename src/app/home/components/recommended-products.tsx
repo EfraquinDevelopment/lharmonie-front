@@ -27,13 +27,20 @@ const products = [
     price: "20000",
     imageSrc: "/test-2.png",
   },
+  {
+    id: 4,
+    name: "Producto 4",
+    description: "Descripción breve del producto 4",
+    price: "20000",
+    imageSrc: "/test-2.png",
+  },
 ];
 
 const RecommendedProducts = () => {
   const { recommendedProducts } = content;
 
   const renderRecommendedProducts = () => {
-    return products.map((product) => <ProductCard {...product} />);
+    return products.map((product) => <ProductCard key={product.id} {...product} />);
   };
 
   return (
@@ -42,7 +49,7 @@ const RecommendedProducts = () => {
         <h2 className="text-3xl font-bold text-center mb-12 text-[#232323]">
           {recommendedProducts.title}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {renderRecommendedProducts()}
         </div>
         <div className="text-center mt-8">

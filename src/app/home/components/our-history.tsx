@@ -24,13 +24,13 @@ const OurHistory = () => {
               <Link href="/sobre-nosotros">{ourHistory.buttonText}</Link>
             </Button>
           </div>
-          <div className="md:w-1/2">
+          <div className="flex justify-end">
             <Image
               src={ourHistory.imageSrc}
               alt={ourHistory.imageAlt}
               width={500}
               height={500}
-              className="rounded-lg"
+              className="rounded-lg flex-end"
             />
           </div>
         </div>

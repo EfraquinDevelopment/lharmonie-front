@@ -1,0 +1,16 @@
+{
+  "logoTagline": "Descubre la armonía en cada taza",
+  "quickLinksTitle": "Enlaces Rápidos",
+  "quickLinks": [
+    { "href": "/", "label": "Inicio" },
+    { "href": "/tienda", "label": "Tienda" },
+    { "href": "/menu", "label": "Menú" },
+    { "href": "/locales", "label": "Locales" },
+    { "href": "/sobre-nosotros", "label": "Sobre Nosotros" }
+  ],
+  "contactTitle": "Contacto",
+  "contactDetails": {
+    "email": "info@lharmonie.com",
+    "phone": "+1 234 567 890"
+  }
+}
