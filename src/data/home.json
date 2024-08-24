@@ -1,0 +1,41 @@
+{
+  "homeBanner": {
+    "title": "Descubre la armonía en cada taza",
+    "description": "Bienvenido a Lharmonie, donde el café se convierte en una experiencia única",
+    "buttonText": "Ver Nuestro Menú"
+  },
+  "featuresSection": {
+    "title": "¿Por qué elegir Lharmonie?",
+    "features": [
+      {
+        "icon": "CoffeeOutlined",
+        "title": "Café de Calidad",
+        "description": "Seleccionamos los mejores granos para ofrecerte una experiencia única en cada taza."
+      },
+      {
+        "icon": "BookOutlined",
+        "title": "Ambiente Acogedor",
+        "description": "Un espacio perfecto para relajarte, leer un libro o trabajar mientras disfrutas de tu café."
+      },
+      {
+        "icon": "EnvironmentOutlined",
+        "title": "Múltiples Locaciones",
+        "description": "Encuentra tu Lharmonie favorito en diferentes puntos de la ciudad."
+      }
+    ]
+  },
+  "ourHistory": {
+    "title": "Nuestra Historia",
+    "paragraphs": [
+      "Lharmonie nació de la pasión por el café y el deseo de crear un espacio donde cada taza cuente una historia. Desde nuestros humildes comienzos, hemos crecido para convertirnos en un destino querido por los amantes del café en toda la ciudad.",
+      "Nuestro compromiso con la calidad, la sostenibilidad y la comunidad nos ha permitido expandirnos a múltiples locaciones, cada una con su propio carácter pero todas unidas por nuestra dedicación a ofrecer la mejor experiencia de café posible."
+    ],
+    "buttonText": "Conoce Más Sobre Nosotros",
+    "imageAlt": "Lharmonie Café",
+    "imageSrc": "/test-1.png"
+  },
+  "recommendedProducts": {
+    "title": "Productos Destacados",
+    "buttonText": "Ver Todos los Productos"
+  }
+}

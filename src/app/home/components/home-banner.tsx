@@ -2,8 +2,11 @@ import { Button } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import content from "@/data/home.json";
 
 const HomeBanner = () => {
+  const { homeBanner } = content;
+
   return (
     <section className="h-[calc(100vh-4rem)] flex items-center justify-center bg-[#F5F5F0] text-[#232323] relative">
       <div className="text-center">
@@ -14,15 +17,10 @@ const HomeBanner = () => {
           height={100}
           className="mx-auto mb-8"
         />
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">
-          Descubre la armonía en cada taza
-        </h1>
-        <p className="text-xl mb-8">
-          Bienvenido a Lharmonie, donde el café se convierte en una experiencia
-          única
-        </p>
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">{homeBanner.title}</h1>
+        <p className="text-xl mb-8">{homeBanner.description}</p>
         <Button>
-          <Link href="/menu">Ver Nuestro Menú</Link>
+          <Link href="/menu">{homeBanner.buttonText}</Link>
         </Button>
       </div>
       <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#232323] to-transparent"></div>

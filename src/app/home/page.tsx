@@ -9,8 +9,8 @@ const Home = () => {
       <HomeBanner />
      <div className="my-6 flex justify-center w-full"> NUESTROS LOCALES SECTION</div>
       <FeaturesSection/>
-      <OurHistory/>
       <RecommendedProducts/>
+      <OurHistory/>
     </>
   );
 };
