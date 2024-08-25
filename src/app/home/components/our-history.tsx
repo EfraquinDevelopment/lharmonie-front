@@ -1,28 +1,33 @@
-import { Button } from 'antd';
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import { Button } from "antd";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 import content from "@/data/home.json";
+import Heading from "@/components/layout/heading";
+import LharmonieButton from "@/components/ui/lharmonie-button";
 
 const OurHistory = () => {
   const { ourHistory } = content;
 
   return (
-    <section className="py-16 w-full bg-[#F5F5F0]">
+    <section className="py-16 w-full bg-lharmonie-primary">
       <div className="px-4 container mx-auto md:px-6">
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="md:w-1/2">
-            <h2 className="text-3xl font-bold mb-4 text-[#232323]">
-              {ourHistory.title}
-            </h2>
-            {ourHistory.paragraphs.map((paragraph, index) => (
-              <p key={index} className="text-lg mb-4 text-[#232323]">
-                {paragraph}
-              </p>
-            ))}
-            <Button>
+            <Heading level={2}>{ourHistory.title}</Heading>{" "}
+            <div className="mt-4">
+              {ourHistory.paragraphs.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="text-lg mb-4 text-lharmonie-secondary"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+            <LharmonieButton>
               <Link href="/sobre-nosotros">{ourHistory.buttonText}</Link>
-            </Button>
+            </LharmonieButton>
           </div>
           <div className="flex justify-end">
             <Image

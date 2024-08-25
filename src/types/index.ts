@@ -5,3 +5,11 @@ export interface Product {
   price: string;
   imageSrc: string;
 }
+
+export interface Store {
+  id: number;
+  name: string;
+  callToAction: string;
+  imageAlt: string;
+  imageSrc: string;
+}

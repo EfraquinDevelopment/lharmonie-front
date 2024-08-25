@@ -51,11 +51,10 @@ body {
   background: none;
 }
 
-
 .header-nav-item {
   font-size: 14px;
   font-weight: 500;
-  color: #6B7280;
+  color: #6b7280;
   transition: color 0.3s;
 }
 

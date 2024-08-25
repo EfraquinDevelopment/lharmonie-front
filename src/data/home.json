@@ -4,6 +4,40 @@
     "description": "Bienvenido a Lharmonie, donde el café se convierte en una experiencia única",
     "buttonText": "Ver Nuestro Menú"
   },
+  "storesSection": {
+    "title": "Descubre Nuestros Locales",
+    "ctoDescription": "Descubir",
+    "stores": [
+      {
+        "id": 1,
+        "name": "Lharmonie Centro",
+        "callToAction": "/locales",
+        "imageAlt": "Lharmonie Central",
+        "imageSrc": "/local.png"
+      },
+      {
+        "id": 2,
+        "name": "Lharmonie Palermo",
+        "callToAction": "/locales",
+        "imageAlt": "Lharmonie Norte",
+        "imageSrc": "/local.png"
+      },
+      {
+        "id": 3,
+        "name": "Lharmonie Belgrano",
+        "callToAction": "/locales",
+        "imageAlt": "Lharmonie Sur",
+        "imageSrc": "/local.png"
+      },
+      {
+        "id": 4,
+        "name": "Lharmonie Recoleta",
+        "callToAction": "/locales",
+        "imageAlt": "Lharmonie Sur",
+        "imageSrc": "/local.png"
+      }
+    ]
+  },
   "featuresSection": {
     "title": "¿Por qué elegir Lharmonie?",
     "features": [

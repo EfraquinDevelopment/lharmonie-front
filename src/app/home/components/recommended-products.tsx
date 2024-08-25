@@ -4,6 +4,8 @@ import Link from "next/link";
 import React from "react";
 import content from "@/data/home.json";
 import ProductCard from "@/components/product-card";
+import Heading from "@/components/layout/heading";
+import LharmonieButton from "@/components/ui/lharmonie-button";
 
 const products = [
   {
@@ -40,22 +42,24 @@ const RecommendedProducts = () => {
   const { recommendedProducts } = content;
 
   const renderRecommendedProducts = () => {
-    return products.map((product) => <ProductCard key={product.id} {...product} />);
+    return products.map((product) => (
+      <ProductCard key={product.id} {...product} />
+    ));
   };
 
   return (
-    <section className="py-16 bg-[#F5F5F0] border-b border-[#232323]/10">
+    <section className="py-16 bg-lharmonie-primary border-b border-lharmonie-secondary/10">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-bold text-center mb-12 text-[#232323]">
+        <Heading level={2} className="text-center">
           {recommendedProducts.title}
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        </Heading>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-12">
           {renderRecommendedProducts()}
         </div>
         <div className="text-center mt-8">
-          <Button>
+          <LharmonieButton>
             <Link href="/tienda">{recommendedProducts.buttonText}</Link>
-          </Button>
+          </LharmonieButton>
         </div>
       </div>
     </section>

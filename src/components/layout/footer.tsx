@@ -13,7 +13,7 @@ const Footer = () => {
   } = content;
 
   return (
-    <footer className="bg-[#232323] text-white py-10">
+    <footer className="bg-lharmonie-secondary text-lharmonie-primary py-10">
       <div className="container px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
           <Logo invert clickable={false} />
@@ -26,7 +26,7 @@ const Footer = () => {
               <Link
                 key={index}
                 href={link.href}
-                className="text-sm text-gray-300 hover:text-white"
+                className="text-sm text-lharmonie-primary hover:text-lharmonie-primary/80"
               >
                 {link.label}
               </Link>
@@ -35,7 +35,7 @@ const Footer = () => {
         </div>
         <div>
           <h3 className="font-semibold mb-4">{contactTitle}</h3>
-          <address className="text-sm text-gray-300 not-italic">
+          <address className="text-sm text-lharmonie-primary not-italic">
             <p>Email: {contactDetails.email}</p>
             <p>Teléfono: {contactDetails.phone}</p>
             <div className="mt-4 flex space-x-4">
