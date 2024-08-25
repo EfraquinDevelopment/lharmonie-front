@@ -1,6 +1,6 @@
 "use client";
 
-import { Drawer } from "antd";
+import { Button, Drawer } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import { Logo } from "@/components/logo";
 import AppMenu from "./app-menu";
@@ -23,13 +23,14 @@ const Header = () => {
           </div>
         </div>
         <Cart className="hidden md:block mr-4" />
-        <div className="md:hidden flex items-center gap-3">
+        <div className="md:hidden flex items-center gap-3 pr-4">
           <Cart />
-          <button onClick={openDrawer}>
-            <MenuOutlined className="text-xl text-lharmonie-secondary" />
-          </button>
+          <Button
+            icon={<MenuOutlined className="text-xl text-lharmonie-secondary" />}
+            onClick={openDrawer}
+          />
           <Drawer
-            title={<Logo />}
+            title={<Logo clickable={false} />}
             placement="right"
             className="bg-lharmonie-primary"
             onClose={closeDrawer}

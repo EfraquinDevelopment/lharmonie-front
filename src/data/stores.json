@@ -30,32 +30,6 @@
           "Sabados y Domingos",
           "9:00hs a 20:00hs"
         ]
-      },
-      {
-        "id": 3,
-        "name": "Lharmonie Belgrano",
-        "address": "Las Heras 1234, CABA",
-        "imageAlt": "Lharmonie Sur",
-        "imageSrc": "/local.png",
-        "openTimes": [
-          "Lunes a viernes",
-          "11:00hs a 18:00hs",
-          "Sabados y Domingos",
-          "9:00hs a 20:00hs"
-        ]
-      },
-      {
-        "id": 4,
-        "name": "Lharmonie Recoleta",
-        "address": "Las Heras 1234, CABA",
-        "imageAlt": "Lharmonie Sur",
-        "imageSrc": "/local.png",
-        "openTimes": [
-          "Lunes a viernes",
-          "11:00hs a 18:00hs",
-          "Sabados y Domingos",
-          "9:00hs a 20:00hs"
-        ]
       }
     ]
   }

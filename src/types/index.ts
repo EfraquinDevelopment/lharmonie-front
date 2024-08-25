@@ -13,3 +13,12 @@ export interface Store {
   imageAlt: string;
   imageSrc: string;
 }
+
+export interface StoreData {
+  id: number;
+  name: string;
+  address: string;
+  imageAlt: string;
+  imageSrc: string;
+  openTimes: string[];
+}

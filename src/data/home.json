@@ -21,20 +21,6 @@
         "callToAction": "/locales",
         "imageAlt": "Lharmonie Norte",
         "imageSrc": "/local.png"
-      },
-      {
-        "id": 3,
-        "name": "Lharmonie Belgrano",
-        "callToAction": "/locales",
-        "imageAlt": "Lharmonie Sur",
-        "imageSrc": "/local.png"
-      },
-      {
-        "id": 4,
-        "name": "Lharmonie Recoleta",
-        "callToAction": "/locales",
-        "imageAlt": "Lharmonie Sur",
-        "imageSrc": "/local.png"
       }
     ]
   },

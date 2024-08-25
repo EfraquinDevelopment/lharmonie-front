@@ -7,7 +7,7 @@ interface Props {
   invert?: boolean;
 }
 
-export const Logo = ({ clickable=true, invert=false }: Props) => {
+export const Logo = ({ clickable = true, invert = false }: Props) => {
   return (
     <>
       {clickable ? (
