@@ -15,7 +15,7 @@ const Header = () => {
       <nav className="mx-auto flex justify-between items-center bg-white opacity-95 backdrop-blur">
         <div className="flex items-center gap-3">
           <Logo />
-          <div className="hidden md:flex space-x-4 bg-white">
+          <div className="hidden md:flex space-x-4 bg-white text-lharmonie-secondary">
             <AppMenu
               mode="horizontal"
               className="flex text-sm p-4 border-none"

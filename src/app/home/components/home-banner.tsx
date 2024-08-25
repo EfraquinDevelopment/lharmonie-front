@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import content from "@/data/home.json";
 import LharmonieButton from "@/components/ui/lharmonie-button";
+import Heading from "@/components/layout/heading";
 
 const HomeBanner = () => {
   const { homeBanner } = content;
@@ -18,10 +19,10 @@ const HomeBanner = () => {
           height={100}
           className="mx-auto mb-8"
         />
-        <h1 className="text-3xl md:text-6xl font-bold mb-4">
+        <Heading level={1} className="md:!text-5xl !font-bold">
           {homeBanner.title}
-        </h1>
-        <p className="text-lg md:text-xl mb-8">{homeBanner.description}</p>
+        </Heading>
+        <p className="text-lg md:text-xl mt-4 mb-8">{homeBanner.description}</p>
         <LharmonieButton>
           <Link href="/menu">{homeBanner.buttonText}</Link>
         </LharmonieButton>

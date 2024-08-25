@@ -35,7 +35,7 @@ const OurHistory = () => {
               alt={ourHistory.imageAlt}
               width={500}
               height={500}
-              className="rounded-lg flex-end"
+              className="flex-end"
             />
           </div>
         </div>

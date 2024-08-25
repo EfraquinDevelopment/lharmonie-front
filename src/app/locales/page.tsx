@@ -1,11 +1,13 @@
+import StoresBanner from "./components/stores-banner";
+import Stores from "./stores";
 
 const ContactoInfo = () => {
-    return (
-        <>
-            <h1>Contacto & Info</h1>
-            <p>Ponte en contacto con nosotros o encuentra más información.</p>
-        </>
-    );
-}
+  return (
+    <>
+      <StoresBanner />
+      <Stores />
+    </>
+  );
+};
 
 export default ContactoInfo;

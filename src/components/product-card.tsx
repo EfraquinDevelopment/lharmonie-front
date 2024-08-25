@@ -7,7 +7,7 @@ type Props = Product;
 const ProductCard = ({ description, id, imageSrc, name, price }: Props) => {
   return (
     <div key={id} className="group cursor-pointer">
-      <div className="relative pt-[100%] rounded-lg overflow-hidden mb-4">
+      <div className="relative pt-[100%] overflow-hidden mb-4">
         <Image
           src={imageSrc}
           alt={name}
