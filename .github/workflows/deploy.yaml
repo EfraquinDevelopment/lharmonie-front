@@ -18,5 +18,5 @@ jobs:
       with:
         vercel-token: ${{ secrets.VERCEL_SECRET }}
         github-token: ${{ secrets.GH_TOKEN }}
-        project-name: lharmonie
+        vercel-project-name: lharmonie
         working-directory: ./
