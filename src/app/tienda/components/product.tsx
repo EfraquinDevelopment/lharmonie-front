@@ -4,7 +4,7 @@ import { Button } from "antd";
 import React, { useState } from "react";
 import Checkout from "./checkout";
 
-const Product = ({ product }) => {
+const Product = ({ product }: any) => {
   const [cart, setCart] = useState(null);
 
   async function checkout() {}
