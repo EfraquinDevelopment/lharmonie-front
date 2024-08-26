@@ -18,5 +18,7 @@ jobs:
       with:
         vercel-token: ${{ secrets.VERCEL_SECRET }}
         github-token: ${{ secrets.GH_TOKEN }}
+        vercel-org-id: team_DHzfJC6nHBOMT2ToWx7fb884
+        vercel-project-id: prj_Ui3NGXrPxNhBQhCcxqGKWfrUwDWK
         vercel-project-name: lharmonie
         working-directory: ./
