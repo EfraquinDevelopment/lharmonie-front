@@ -20,5 +20,5 @@ export interface StoreData {
   address: string;
   imageAlt: string;
   imageSrc: string;
-  openTimes: string[];
+  openTimes: { days: string; hours: string }[];
 }

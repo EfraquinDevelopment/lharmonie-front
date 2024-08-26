@@ -17,13 +17,9 @@ const Store = ({
   storesLength,
 }: Props) => {
   return (
-    <section
-      key={id}
-      id={`${id}`}
-      className="mb-12 scroll-mt-[110px]"
-    >
+    <section key={id} id={`${id}`} className="mb-12 scroll-mt-[110px]">
       <div
-        className={`shadow-md rounded-md flex md:h-[600px] flex-col md:flex-row items-stretch ${
+        className={`flex md:h-[600px] flex-col md:flex-row items-stretch ${
           index % 2 === 0 ? "" : "md:flex-row-reverse"
         }`}
       >
@@ -33,16 +29,21 @@ const Store = ({
             alt={imageAlt}
             width={800}
             height={600}
-            className={`object-cover w-full h-full ${index % 2 === 0 ? "rounded-s-md" : "rounded-e-md"}`}
-          /> 
+            className={`object-cover w-full h-full`}
+          />
         </div>
-        <div className={`w-full md:w-1/2 bg-white p-8 flex flex-col justify-center ${index % 2 === 0 ? "rounded-e-md" : "rounded-s-md"}`}>
+        <div className={`w-full md:w-1/2  p-8 flex flex-col justify-center`}>
           <h2 className="text-3xl mb-2">{name}</h2>
-          <p className="text-lg mb-4">{address}</p>
-          {openTimes.map((linea, i) => (
-            <p key={i} className="text-sm">
-              {linea}
-            </p>
+          <p className="text-lg mb-6">{address}</p>
+          {openTimes.map(({ days, hours }, i) => (
+            <div className="mb-5 space-y-2">
+              <p key={i} className="text-sm">
+                {days}
+              </p>
+              <p key={i} className="text-sm">
+                {hours}
+              </p>
+            </div>
           ))}
         </div>
       </div>

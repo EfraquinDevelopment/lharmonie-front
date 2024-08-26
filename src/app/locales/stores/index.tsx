@@ -1,6 +1,4 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import { useRouter, usePathname } from "next/navigation";
 import Store from "@/app/locales/stores/store";
 import content from "@/data/stores.json";
 

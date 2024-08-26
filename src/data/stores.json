@@ -12,10 +12,14 @@
         "imageAlt": "Lharmonie Central",
         "imageSrc": "/local.png",
         "openTimes": [
-          "Lunes a viernes",
-          "11:00hs a 18:00hs",
-          "Sabados y Domingos",
-          "9:00hs a 20:00hs"
+          {
+            "days": "Lunes a viernes",
+            "hours": "11:00hs a 18:00hs"
+          },
+          {
+            "days": "Sabados y Domingos",
+            "hours": "9:00hs a 20:00hs"
+          }
         ]
       },
       {
@@ -25,10 +29,14 @@
         "imageAlt": "Lharmonie Norte",
         "imageSrc": "/local.png",
         "openTimes": [
-          "Lunes a viernes",
-          "11:00hs a 18:00hs",
-          "Sabados y Domingos",
-          "9:00hs a 20:00hs"
+          {
+            "days": "Lunes a viernes",
+            "hours": "11:00hs a 18:00hs"
+          },
+          {
+            "days": "Sabados y Domingos",
+            "hours": "9:00hs a 20:00hs"
+          }
         ]
       }
     ]
