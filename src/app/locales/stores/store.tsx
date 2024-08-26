@@ -36,13 +36,9 @@ const Store = ({
           <h2 className="text-3xl mb-2">{name}</h2>
           <p className="text-lg mb-6">{address}</p>
           {openTimes.map(({ days, hours }, i) => (
-            <div className="mb-5 space-y-2">
-              <p key={i} className="text-sm">
-                {days}
-              </p>
-              <p key={i} className="text-sm">
-                {hours}
-              </p>
+            <div key={i} className="mb-5 space-y-2">
+              <p className="text-sm">{days}</p>
+              <p className="text-sm">{hours}</p>
             </div>
           ))}
         </div>
