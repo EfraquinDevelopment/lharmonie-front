@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { StoreData } from "@/types";
+import classNames from "classnames";
 
 type Props = StoreData & {
   index: number;
@@ -32,7 +33,15 @@ const Store = ({
             className={`object-cover w-full h-full`}
           />
         </div>
-        <div className={`w-full md:w-1/2  p-8 flex flex-col justify-center`}>
+        <div
+          className={classNames(
+            "w-full md:w-1/2  p-8 flex flex-col justify-center",
+            {
+              "md:pl-32": index % 2 === 0,
+              "md:pr-16": index % 2 !== 0,
+            }
+          )}
+        >
           <h2 className="text-3xl mb-2">{name}</h2>
           <p className="text-lg mb-6">{address}</p>
           {openTimes.map(({ days, hours }, i) => (

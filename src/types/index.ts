@@ -12,6 +12,7 @@ export interface Store {
   callToAction: string;
   imageAlt: string;
   imageSrc: string;
+  mediaType: string;
 }
 
 export interface StoreData {
@@ -21,4 +22,9 @@ export interface StoreData {
   imageAlt: string;
   imageSrc: string;
   openTimes: { days: string; hours: string }[];
+}
+
+export enum MediaType {
+  Image = "image",
+  Video = "video",
 }

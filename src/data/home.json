@@ -13,14 +13,16 @@
         "name": "Lharmonie Centro",
         "callToAction": "/locales",
         "imageAlt": "Lharmonie Central",
-        "imageSrc": "/local.png"
+        "imageSrc": "/local.png",
+        "mediaType": "image"
       },
       {
         "id": 2,
         "name": "Lharmonie Palermo",
         "callToAction": "/locales",
         "imageAlt": "Lharmonie Norte",
-        "imageSrc": "/local.png"
+        "imageSrc": "/local.mp4",
+        "mediaType": "video"
       }
     ]
   },

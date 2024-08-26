@@ -14,7 +14,7 @@ const Stores = () => {
         <Heading level={2} className="text-center">
           {title}
         </Heading>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-12">
           {stores.map((store) => (
             <StoreItem
               key={store.id}
