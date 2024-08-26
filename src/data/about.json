@@ -1,0 +1,45 @@
+{
+  "aboutBanner": {
+    "title": "Sobre Nosotros",
+    "description": "Descubre la armonía en cada rincón de nuestra historia, donde cada taza cuenta una historia única"
+  },
+  "ourHistory": {
+    "title": "Nuestra Historia",
+    "paragraphs": [
+      "Lharmonie nació de la pasión por el café y el deseo de crear un espacio donde cada taza cuente una historia. Desde nuestros humildes comienzos, hemos crecido para convertirnos en un destino querido por los amantes del café en toda la ciudad.",
+      "Nuestro compromiso con la calidad, la sostenibilidad y la comunidad nos ha permitido expandirnos a múltiples locaciones, cada una con su propio carácter pero todas unidas por nuestra dedicación a ofrecer la mejor experiencia de café posible."
+    ],
+    "imageAlt": "Lharmonie Café",
+    "imageSrc": "/test-1.png"
+  },
+  "ourMission": {
+    "title": "Nuestra Misión",
+    "description": "En Lharmonie, nuestra misión es crear momentos de armonía a través del café. Nos esforzamos por ofrecer una experiencia única que va más allá de simplemente servir una bebida. Buscamos educar a nuestros clientes sobre el arte del café, desde la selección de los granos hasta las técnicas de preparación, creando así una comunidad de verdaderos apreciadores del café."
+  },
+  "ourValues":{
+    "title": "Nuestros Valores",
+    "values": [
+      {
+        "title": "Calidad",
+        "description": "Nos comprometemos a ofrecer la más alta calidad en todo lo que hacemos, desde la selección de los granos de café hasta la atención al cliente."
+      },
+      {
+        "title": "Sostenibilidad",
+        "description": "Nos esforzamos por ser un negocio sostenible, desde la forma en que obtenemos nuestros granos de café hasta la gestión de nuestros residuos."
+      },
+      {
+        "title": "Comunidad",
+        "description": "Creemos en la importancia de construir una comunidad fuerte y unida, tanto dentro de nuestras cafeterías como en las comunidades en las que operamos."
+      }
+    ]
+  },
+  "ourCompromise": {
+    "title": "Nuestro Compromiso",
+    "paragraphs": [
+      "En Lharmonie, nos comprometemos a ofrecer no solo el mejor café, sino también una experiencia única en cada visita. Nuestro equipo de baristas altamente capacitados se esfuerza por perfeccionar cada taza, mientras que nuestro ambiente acogedor invita a nuestros clientes a relajarse y disfrutar.",
+      "Además, nos enorgullece ser parte activa de nuestra comunidad, apoyando iniciativas locales y fomentando un espacio donde las ideas y las conversaciones puedan florecer. Creemos que el café tiene el poder de unir a las personas y catalizar el cambio positivo."
+    ],
+    "imageAlt": "Lharmonie Café",
+    "imageSrc": "/test-1.png"
+  }
+}
