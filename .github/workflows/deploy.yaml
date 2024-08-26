@@ -16,7 +16,7 @@ jobs:
     - name: Deploy to Vercel
       uses: amondnet/vercel-action@v20
       with:
-        vercel-token: ${{ secrets.VERCEL_TOKEN }}
+        vercel-token: ${{ secrets.VERCEL_SECRET }}
         github-token: ${{ secrets.GH_TOKEN }}
         project-name: lharmonie
         working-directory: ./
