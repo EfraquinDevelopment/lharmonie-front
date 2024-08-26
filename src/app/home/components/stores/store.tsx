@@ -19,11 +19,7 @@ const StoreItem = ({
   mediaType,
 }: Props) => {
   return (
-    <Link
-      href={`${callToAction}#${id}`}
-      key={id}
-      className="group cursor-pointer"
-    >
+    <div key={id} className="group cursor-pointer">
       <div className="relative aspect-[3/4] overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl lg:h-[800px] w-full">
         {mediaType === "image" ? (
           <Image
@@ -41,10 +37,12 @@ const StoreItem = ({
           <Heading level={3} className="!text-lg mb-4" reversed>
             {name}
           </Heading>
-          <LharmonieButton reversed>{ctoDescription}</LharmonieButton>
+          <LharmonieButton reversed>
+            <Link href={`${callToAction}#${id}`}>{ctoDescription}</Link>
+          </LharmonieButton>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

@@ -4,7 +4,7 @@ import content from "@/data/about.json";
 const OurMission = () => {
   const { ourMission } = content;
   return (
-    <section className="mb-32 bg-white py-24 px-12 rounded-2xl shadow-2xl relative overflow-hidden">
+    <section className="mb-32 bg-white py-24 px-12 shadow-2xl relative overflow-hidden">
       <div className="relative z-10">
         <h2 className="text-4xl md:text-5xl font-light text-center mb-12 tracking-wide">
           {ourMission.title}

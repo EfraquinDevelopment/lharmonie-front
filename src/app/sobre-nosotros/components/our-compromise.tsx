@@ -23,7 +23,7 @@ const OurCompromise = () => {
             alt={ourCompromise.imageAlt}
             width={600}
             height={400}
-            className="rounded-lg shadow-2xl"
+            className="shadow-2xl"
           />
         </div>
       </div>
