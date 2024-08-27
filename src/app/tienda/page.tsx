@@ -2,6 +2,7 @@ import ProductsGrid from "@/app/tienda/components/products-grid";
 import Filters from "@/app/tienda/components/filters";
 import Heading from "@/components/layout/heading";
 import content from "@/data/store.json";
+import { Suspense } from "react";
 
 const Productos = async () => {
   return (
@@ -13,11 +14,15 @@ const Productos = async () => {
         <div className="space-y-5 lg:space-y-0 lg:grid grid-cols-12 gap-5">
           {/* <div className="lg:hidden">searchbox</div> */}
           <aside className="col-span-3">
-            <Filters categories={content.categories} />
+            <Suspense fallback={<div>Cargando filtros...</div>}>
+              <Filters categories={content.categories} />
+            </Suspense>
           </aside>
           <div className="col-span-9">
             {/* <div className="hidden lg:block">searchbox</div> */}
-            <ProductsGrid products={content.products} />
+            <Suspense fallback={<div>Cargando productos...</div>}>
+              <ProductsGrid products={content.products} />
+            </Suspense>
           </div>
         </div>
       </div>
