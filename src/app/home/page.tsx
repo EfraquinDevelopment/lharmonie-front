@@ -3,6 +3,7 @@ import HomeBanner from "@/app/home/components/home-banner";
 import OurHistory from "@/app/home/components/our-history";
 import RecommendedProducts from "@/app/home/components/recommended-products";
 import Stores from "@/app/home/components/stores";
+import { Suspense } from "react";
 
 const Home = () => {
   return (
@@ -10,7 +11,9 @@ const Home = () => {
       <HomeBanner />
       <Stores />
       <FeaturesSection />
-      <RecommendedProducts />
+      <Suspense fallback={<div>Cargando productos...</div>}>
+        <RecommendedProducts />
+      </Suspense>
       <OurHistory />
     </>
   );
