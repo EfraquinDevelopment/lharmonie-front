@@ -1,4 +1,5 @@
 import { ItemType, MenuItemType } from "antd/es/menu/interface";
+import classNames from "classnames";
 import Link from "next/link";
 
 export const MENU_ITEMS = [
@@ -34,12 +35,9 @@ export const generateMenuItems = (
       label: (
         <div className="header-nav-item">
           <Link
-            style={{
-              ...(isActive && {
-                color: "#232323",
-                fontWeight: "bold",
-              }),
-            }}
+            className={classNames("!text-lharmonie-secondary", {
+              "font-semibold": isActive,
+            })}
             href={item.link}
           >
             {item.title}

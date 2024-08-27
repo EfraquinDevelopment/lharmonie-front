@@ -1,0 +1,55 @@
+{
+  "title": "Nuestra Tienda",
+  "products": [
+    {
+      "id": 1,
+      "name": "El libro del café",
+      "description": "Historia y cultura",
+      "price": 15000,
+      "imageSrc": "/product.png",
+      "category": 1,
+      "stock": 10
+    },
+    {
+      "id": 2,
+      "name": "Guía de Barista",
+      "description": "Técnicas profesionales",
+      "price": 12000,
+      "imageSrc": "/product.png",
+      "category": 1,
+      "stock": 10
+    },
+    {
+      "id": 3,
+      "name": "Café Especial",
+      "description": "Blend exclusivo",
+      "price": 8000,
+      "imageSrc": "/product.png",
+      "category": 2,
+      "stock": 10
+    },
+    {
+      "id": 4,
+      "name": "Taza Lharmonie",
+      "description": "Cerámica artesanal",
+      "price": 5000,
+      "imageSrc": "/product.png",
+      "category": 3,
+      "stock": 10
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Libros"
+    },
+    {
+      "id": 2,
+      "name": "Cafés"
+    },
+    {
+      "id": 3,
+      "name": "Accesorios"
+    }
+  ]
+}

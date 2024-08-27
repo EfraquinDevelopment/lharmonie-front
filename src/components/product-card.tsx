@@ -1,33 +1,39 @@
 import { Product } from "@/types";
 import Image from "next/image";
 import React from "react";
+import Heading from "./layout/heading";
 
 type Props = Product;
 
-const ProductCard = ({ description, id, imageSrc, name, price }: Props) => {
+const ProductCard = (product: Props) => {
   return (
-    <div key={id} className="group cursor-pointer">
-      <div className="relative pt-[100%] overflow-hidden mb-4">
-        <Image
-          src={imageSrc}
-          alt={name}
-          layout="fill"
-          objectFit="cover"
-          className="absolute top-0 left-0 w-full h-full"
-        />
+    <article className="group cursor-pointer">
+      <Image
+        src={product.imageSrc}
+        alt={product.name}
+        width={300}
+        height={300}
+        className="w-full h-[150px] sm:h-[200px]  md:h-[200px] 2xl:h-[280px] bg-gray-200 object-cover"
+      />
+      <div className="mt-1">
+        <Heading
+          level={2}
+          className="!text-sm !my-0 sm:!mb-1 lg:!text-xl font-medium lg:mb-2 relative inline-block"
+        >
+          {product.name}
+          <span className="absolute bottom-0 left-0 w-full h-0.5 bg-lharmonie-secondary transform scale-x-0 transition-transform duration-300 lg:group-hover:scale-x-100"></span>
+        </Heading>
+        <p className="text-xs lg:mb-1 text-gray-600 lg:text-sm">
+          {product.description}
+        </p>
+        <span className="text-sm lg:text-xl font-semibold">
+          {new Intl.NumberFormat("es-AR", {
+            style: "currency",
+            currency: "ARS",
+          }).format(product.price)}
+        </span>
       </div>
-      <h3 className="font-semibold text-lg mb-1 relative inline-block text-lharmonie-secondary">
-        {name}
-        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-lharmonie-secondary transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-      </h3>
-      <p className="text-sm text-gray-600 mb-2">{description}</p>
-      <p className="text-lg font-bold text-lharmonie-secondary">
-        {new Intl.NumberFormat("es-AR", {
-          style: "currency",
-          currency: "ARS",
-        }).format(+price)}
-      </p>
-    </div>
+    </article>
   );
 };
 

@@ -7,11 +7,18 @@ type Props = MenuProps;
 
 const AppMenu = ({ ...menuProps }: Props) => {
   const pathname = usePathname();
-  console.log( pathname );
 
   const menuItems = useMemo(() => generateMenuItems(pathname), [pathname]);
 
-  return <Menu selectedKeys={[pathname]} activeKey={pathname} items={menuItems} {...menuProps} />;
+  return (
+    <Menu
+      className="!bg-red-500"
+      selectedKeys={[pathname]}
+      activeKey={pathname}
+      items={menuItems}
+      {...menuProps}
+    />
+  );
 };
 
 export default AppMenu;

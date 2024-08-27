@@ -14,7 +14,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 @media (prefers-color-scheme: light) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -54,6 +53,11 @@ body {
   > .ant-menu.ant-menu-horizontal
   > .ant-menu-submenu-selected {
   background: none;
+}
+
+.ant-menu-item:hover::after,
+.ant-menu-item-selected::after {
+  @apply !border-lharmonie-secondary;
 }
 
 .header-nav-item {

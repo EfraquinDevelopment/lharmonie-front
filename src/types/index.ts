@@ -2,8 +2,10 @@ export interface Product {
   id: number;
   name: string;
   description: string;
-  price: string;
+  price: number;
   imageSrc: string;
+  category: number;
+  stock: number;
 }
 
 export interface Store {
@@ -22,6 +24,10 @@ export interface StoreData {
   imageAlt: string;
   imageSrc: string;
   openTimes: { days: string; hours: string }[];
+}
+export interface Category {
+  id: number;
+  name: string;
 }
 
 export enum MediaType {
