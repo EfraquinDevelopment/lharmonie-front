@@ -30,7 +30,7 @@ const StoreItem = ({
       key={id}
       className="group cursor-pointer"
     >
-      <div className="relative aspect-[3/4] overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl lg:h-[700px] w-full">
+      <div className="rounded-xl relative aspect-[3/4] overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl lg:h-[700px] xl:h-[800px] w-full">
         {mediaType === "image" ? (
           <Image
             src={imageSrc}

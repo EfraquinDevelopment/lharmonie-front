@@ -20,6 +20,7 @@ const Header = () => {
             onClick={openDrawer}
           />
           <AppMenu
+            disabledOverflow
             mode="horizontal"
             className="hidden lg:block text-sm border-none !p-0 bg-lharmonie-primary"
           />

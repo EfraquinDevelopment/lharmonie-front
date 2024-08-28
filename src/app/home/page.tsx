@@ -4,6 +4,7 @@ import OurHistory from "@/app/home/components/our-history";
 import RecommendedProducts from "@/app/home/components/recommended-products";
 import Stores from "@/app/home/components/stores";
 import { Suspense } from "react";
+import VideoSection from "./components/video-section";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Suspense fallback={<div>Cargando productos...</div>}>
         <RecommendedProducts />
       </Suspense>
+      <VideoSection />
       <OurHistory />
     </>
   );

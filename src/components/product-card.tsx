@@ -1,22 +1,34 @@
+"use client";
+
 import { Product } from "@/types";
 import Image from "next/image";
 import React from "react";
 import Heading from "./layout/heading";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
-type Props = Product;
+type Props = Product & {
+  index: number;
+};
 
-const ProductCard = (product: Props) => {
+const ProductCard = ({ index, ...product }: Props) => {
   return (
-    <article className="group cursor-pointer">
+    <motion.article
+      key={index}
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="group cursor-pointer"
+    >
       <Link href={`/tienda/${product.id}`}>
         <Image
           src={product.imageSrc}
           alt={product.name}
           width={300}
           height={300}
-          className="w-full h-[150px] sm:h-[200px]  md:h-[200px] 2xl:h-[280px] bg-gray-200 object-cover"
+          className="w-full h-[150px] sm:h-[200px]  md:h-[200px] 2xl:h-[280px] bg-gray-200 object-cover rounded-xl"
         />
         <div className="mt-1">
           <Heading
@@ -37,7 +49,7 @@ const ProductCard = (product: Props) => {
           </span>
         </div>
       </Link>
-    </article>
+    </motion.article>
   );
 };
 
