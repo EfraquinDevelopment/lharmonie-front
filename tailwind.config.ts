@@ -18,6 +18,7 @@ const config: Config = {
         lharmonie: {
           primary: "#F5F5F0",
           secondary: "#232323",
+          hover: "#8B4513",
         },
       },
       fontFamily: {

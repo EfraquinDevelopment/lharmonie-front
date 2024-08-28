@@ -8,15 +8,11 @@ type AppLayoutProps = {
 const AppLayout = ({ children }: AppLayoutProps) => {
   return (
     <div className="flex flex-col relative min-h-screen">
-        <Header />
-      <main className="flex-grow w-full mx-auto">
-        {children}
-      </main>
-     <Footer />
+      <Header />
+      <main className="flex-grow w-full mx-auto">{children}</main>
+      <Footer />
     </div>
   );
 };
 
 export default AppLayout;
-
-
