@@ -1,11 +1,28 @@
+import Image from "next/image";
+import content from "@/data/menu.json";
+import Heading from "@/components/layout/heading";
 
 const Menu = () => {
-    return (
-        <>
-            <h1>Menú</h1>
-            <p>Descubre nuestro delicioso menú.</p>
-        </>
-    );
-}
+  const { description, imageSrc, title } = content;
+  return (
+    <main className="bg-white">
+      <div className="bg-lharmonie-primary shadow-md py-24 px-6 text-center">
+        <Heading level={1} className="md:!text-5xl !font-bold">
+          {title}
+        </Heading>
+        <p className="text-xl text-gray-600">{description}</p>
+      </div>
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <Image
+          src={imageSrc}
+          alt="Menú de Lharmonie"
+          width={1200}
+          height={1697}
+          className="w-full h-auto shadow-lg"
+        />
+      </div>
+    </main>
+  );
+};
 
 export default Menu;
