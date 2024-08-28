@@ -11,8 +11,8 @@ const Header = () => {
   const { isOpen, openDrawer, closeDrawer } = useDrawer();
 
   return (
-    <header className="sticky top-0 z-50 shadow-md w-full border-b-[1.5px] border-lharmonie-secondary">
-      <nav className="flex items-center bg-lharmonie-primary opacity-95 backdrop-blur px-2">
+    <header className="sticky top-0 z-50 shadow-md w-full border-b-[1px] border-gray-400">
+      <nav className="flex items-center bg-lharmonie-primary opacity-95 backdrop-blur px-2  py-4">
         <div className="flex flex-1 justify-start w-fit">
           <Button
             className="lg:hidden bg-lharmonie-primary border-none shadow-none"
