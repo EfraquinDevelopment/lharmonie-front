@@ -1,9 +1,12 @@
+"use client";
+
 import Heading from "@/components/layout/heading";
 import LharmonieButton from "@/components/ui/lharmonie-button";
 import { Store } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 
 type Props = Store & {
   ctoDescription: string;
@@ -19,17 +22,31 @@ const StoreItem = ({
   mediaType,
 }: Props) => {
   return (
-    <div key={id} className="group cursor-pointer">
-      <div className="relative aspect-[3/4] overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl lg:h-[800px] w-full">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+      key={id}
+      className="group cursor-pointer"
+    >
+      <div className="relative aspect-[3/4] overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl lg:h-[700px] w-full">
         {mediaType === "image" ? (
           <Image
             src={imageSrc}
             alt={imageAlt}
             layout="fill"
             objectFit="cover"
+            className="transition-transform duration-500 ease-in-out group-hover:scale-110"
           />
         ) : (
-          <video autoPlay muted loop className="object-cover w-full h-full">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="object-cover w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-105"
+          >
             <source src={imageSrc} type="video/mp4" />
           </video>
         )}
@@ -42,7 +59,7 @@ const StoreItem = ({
           </LharmonieButton>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

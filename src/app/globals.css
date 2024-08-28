@@ -55,9 +55,8 @@ body {
   background: none;
 }
 
-.ant-menu-item:hover::after,
-.ant-menu-item-selected::after {
-  @apply !border-lharmonie-secondary;
+.ant-menu-item::after {
+  @apply !border-none;
 }
 
 .header-nav-item {
