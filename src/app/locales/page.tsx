@@ -3,7 +3,7 @@ import Stores from "./stores";
 
 const ContactoInfo = () => {
   return (
-    <div className="bg-gray-100">
+    <div>
       <StoresBanner />
       <Stores />
     </div>

@@ -31,7 +31,12 @@ export const Logo = ({
           <p className={textColor}>Lharmonie</p>
         </Link>
       ) : (
-        <div className={classNames("flex items-center text-2xl", {})}>
+        <div
+          className={classNames("flex items-center text-2xl", {
+            "text-2xl": size === "default",
+            "text-5xl md:text-9xl": size === "large",
+          })}
+        >
           <p className={textColor}>Lharmonie</p>
         </div>
       )}

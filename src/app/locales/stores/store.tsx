@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { StoreData } from "@/types";
+import { Store as StoreData } from "@/types";
 import classNames from "classnames";
 
 type Props = StoreData & {
@@ -9,7 +9,6 @@ type Props = StoreData & {
 
 const Store = ({
   id,
-  imageAlt,
   imageSrc,
   address,
   openTimes,
@@ -27,7 +26,7 @@ const Store = ({
         <div className="w-full md:w-1/2 ">
           <Image
             src={imageSrc}
-            alt={imageAlt}
+            alt={name}
             width={800}
             height={600}
             className={`object-cover w-full h-full`}

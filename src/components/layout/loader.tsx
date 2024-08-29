@@ -1,6 +1,7 @@
-"use client"
+"use client";
 import { Logo } from "@/components/logo";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { useState, useEffect, Dispatch, SetStateAction } from "react";
 
 const Loader = ({ onLoadingComplete }: { onLoadingComplete: () => void }) => {
@@ -17,7 +18,7 @@ const Loader = ({ onLoadingComplete }: { onLoadingComplete: () => void }) => {
       initial={{ y: "100vh" }}
       animate={{ y: "0vh" }}
       exit={{ y: "-100vh" }}
-      className="bg-lharmonie-secondary"
+      className="bg-lharmonie-primary"
       transition={{ duration: 1.5, ease: "easeInOut" }}
       style={{
         position: "fixed",
@@ -38,7 +39,7 @@ const Loader = ({ onLoadingComplete }: { onLoadingComplete: () => void }) => {
         transition={{ duration: 1, ease: "easeInOut" }}
         style={{ fontSize: "2rem", textAlign: "center" }}
       >
-       <Logo size="large" invert/>
+        <Logo size="large" clickable={false} />
       </motion.div>
     </motion.div>
   );

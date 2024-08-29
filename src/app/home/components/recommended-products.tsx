@@ -14,8 +14,8 @@ const RecommendedProducts = () => {
   const { products } = storeContent;
 
   return (
-    <section className="py-16 bg-lharmonie-primary border-b border-lharmonie-secondary/10">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="py-16 bg-white mx-4 shadow-xl rounded-xl">
+      <div className="mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

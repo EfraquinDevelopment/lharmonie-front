@@ -7,10 +7,12 @@
     "stores": [
       {
         "id": 1,
+        "codeName": "LH1",
         "name": "Lharmonie Centro",
-        "address": "Las Heras 1234, CABA",
-        "imageAlt": "Lharmonie Central",
+        "callToAction": "/locales",
         "imageSrc": "/local.png",
+        "mediaType": "image",
+        "address": "Las Heras 1234, CABA",
         "openTimes": [
           {
             "days": "Lunes a viernes",
@@ -24,10 +26,50 @@
       },
       {
         "id": 2,
+        "codeName": "LH2",
         "name": "Lharmonie Palermo",
-        "address": "Las Heras 1234, CABA",
-        "imageAlt": "Lharmonie Norte",
+        "callToAction": "/locales",
         "imageSrc": "/local.png",
+        "mediaType": "image",
+        "address": "Las Heras 1234, CABA",
+        "openTimes": [
+          {
+            "days": "Lunes a viernes",
+            "hours": "11:00hs a 18:00hs"
+          },
+          {
+            "days": "Sabados y Domingos",
+            "hours": "9:00hs a 20:00hs"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "codeName": "LH3",
+        "name": "Lharmonie Belgrano",
+        "callToAction": "/locales",
+        "imageSrc": "/local.png",
+        "mediaType": "image",
+        "address": "Las Heras 1234, CABA",
+        "openTimes": [
+          {
+            "days": "Lunes a viernes",
+            "hours": "11:00hs a 18:00hs"
+          },
+          {
+            "days": "Sabados y Domingos",
+            "hours": "9:00hs a 20:00hs"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "codeName": "LH4",
+        "name": "Lharmonie Once",
+        "callToAction": "/locales",
+        "imageSrc": "/local.png",
+        "mediaType": "image",
+        "address": "Las Heras 1234, CABA",
         "openTimes": [
           {
             "days": "Lunes a viernes",

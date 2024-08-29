@@ -28,7 +28,7 @@ html {
 
 body {
   color: rgb(var(--foreground-rgb));
-  @apply bg-lharmonie-secondary
+  @apply bg-lharmonie-primary;
 }
 
 @layer utilities {

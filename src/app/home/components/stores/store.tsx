@@ -16,50 +16,57 @@ const StoreItem = ({
   id,
   callToAction,
   name,
-  imageAlt,
   imageSrc,
   ctoDescription,
   mediaType,
+  codeName,
+  address,
 }: Props) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-      key={id}
-      className="group cursor-pointer"
-    >
-      <div className="rounded-xl relative aspect-[3/4] overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl lg:h-[700px] xl:h-[800px] w-full">
-        {mediaType === "image" ? (
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            layout="fill"
-            objectFit="cover"
-            className="transition-transform duration-500 ease-in-out group-hover:scale-110"
-          />
-        ) : (
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="object-cover w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-105"
-          >
-            <source src={imageSrc} type="video/mp4" />
-          </video>
-        )}
-        <div className="absolute inset-0 bg-lharmonie-secondary opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex flex-col items-center justify-center p-6">
-          <Heading level={3} className="!text-lg mb-4" reversed>
-            {name}
-          </Heading>
-          <LharmonieButton reversed>
-            <Link href={`${callToAction}#${id}`}>{ctoDescription}</Link>
-          </LharmonieButton>
+    <Link href={`${callToAction}#${id}`} className="group cursor-pointer">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, delay: 0.5 }}
+        key={id}
+      >
+        <div className="rounded-xl relative aspect-[3/4] overflow-hidden shadow-md transition-shadow duration-300 2xl:h-[700px] w-full">
+          {mediaType === "image" ? (
+            <Image
+              src={imageSrc}
+              alt={name}
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-500 ease-in-out"
+            />
+          ) : (
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="object-cover w-full h-full transition-transform duration-500 ease-in-out"
+            >
+              <source src={imageSrc} type="video/mp4" />
+            </video>
+          )}
+          <div className="absolute inset-0 bg-lharmonie-secondary opacity-60 transition-opacity duration-300 flex flex-col items-center justify-center p-6"></div>
+          <div className="absolute inset-0 transition-opacity duration-300 flex flex-col items-center justify-center p-6">
+            <Heading level={3} className="!text-lxl !mb-0" reversed>
+              {codeName}
+            </Heading>
+            <p className="mb-5 text-lg text-lharmonie-primary">{address}</p>
+            <LharmonieButton
+              className=" group-hover:!bg-lharmonie-hover group-hover:!text-lharmonie-primary"
+              reversed
+            >
+              {ctoDescription}
+            </LharmonieButton>
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 };
 

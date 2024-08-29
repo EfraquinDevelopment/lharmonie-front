@@ -28,7 +28,7 @@ const ProductCard = ({ index, ...product }: Props) => {
           alt={product.name}
           width={300}
           height={300}
-          className="w-full h-[150px] sm:h-[200px]  md:h-[200px] 2xl:h-[280px] bg-gray-200 object-cover rounded-xl"
+          className="w-full xl:h-[400px] bg-gray-200 object-cover rounded-xl"
         />
         <div className="mt-1">
           <Heading

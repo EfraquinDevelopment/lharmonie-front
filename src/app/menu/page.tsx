@@ -5,7 +5,7 @@ import Heading from "@/components/layout/heading";
 const Menu = () => {
   const { description, imageSrc, title } = content;
   return (
-    <main className="bg-white">
+    <main className="bg-lharmonie-primary">
       <div className="bg-lharmonie-primary shadow-md py-24 px-6 text-center">
         <Heading level={1} className="md:!text-5xl !font-bold">
           {title}
@@ -18,7 +18,7 @@ const Menu = () => {
           alt="Menú de Lharmonie"
           width={1200}
           height={1697}
-          className="w-full h-auto shadow-lg"
+          className="w-full h-auto shadow-lg rounded-xl"
         />
       </div>
     </main>

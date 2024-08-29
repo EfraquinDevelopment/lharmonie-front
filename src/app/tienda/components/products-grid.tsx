@@ -18,7 +18,7 @@ const ProductsGrid = ({ products }: Props) => {
     : products;
 
   return (
-    <section className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
+    <section className="grid grid-cols-2 xl:grid-cols-4 gap-5">
       {filteredProducts.map((product, index) => (
         <ProductCard key={product.id} index={index} {...product} />
       ))}
