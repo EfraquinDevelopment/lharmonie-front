@@ -12,7 +12,7 @@ const VideoSection = () => {
     <section className="relative h-screen overflow-hidden">
       <Video
         src="/video-home.mp4"
-        poster="/video-home.jpg"
+        poster="/video-home.mp4"
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 text-center bg-lharmonie-secondary bg-opacity-60 flex flex-col gap-10 items-center justify-center">
