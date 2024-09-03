@@ -1,6 +1,7 @@
 import { ShoppingCartOutlined } from "@ant-design/icons";
-import useDrawer from "@/hooks/useDrawer";
-import { Button, Drawer } from "antd";
+import { useCartContext, useDrawer } from "@/hooks";
+import { Button, Drawer, Badge } from "antd";
+import CartDrawerContent from "@/components/cart-drawer-content";
 
 type Props = {
   className?: string;
@@ -8,25 +9,33 @@ type Props = {
 
 const Cart = ({ className }: Props) => {
   const { isOpen, openDrawer, closeDrawer } = useDrawer();
+  const { cartItems } = useCartContext();
 
   return (
     <>
-      <Button
-        icon={
-          <ShoppingCartOutlined className="text-xl text-lharmonie-secondary" />
-        }
-        onClick={openDrawer}
-        className={className}
-      />
+      <div className="pr-4">
+        <Badge color="#232323" count={cartItems.length}>
+          <Button
+            icon={
+              <ShoppingCartOutlined className="text-xl text-lharmonie-secondary" />
+            }
+            onClick={openDrawer}
+            className={className}
+          />
+        </Badge>
+      </div>
 
       <Drawer
-        title={<h2 className="font-medium text-xl">Cart</h2>}
+        className="!bg-lharmonie-primary"
+        title={
+          <h2 className="font-light text-3xl ml-4 text-gray-800">Tu Carrito</h2>
+        }
         placement="right"
         onClose={closeDrawer}
         open={isOpen}
         destroyOnClose={true}
       >
-        <p>Cart content</p>
+        <CartDrawerContent />
       </Drawer>
     </>
   );
