@@ -1,26 +1,19 @@
 "use client";
 
-import LharmonieButton from "@/components/ui/lharmonie-button";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import content from "@/data/home.json";
 import Heading from "@/components/layout/heading";
+import Video from "@/components/ui/video";
 
 const VideoSection = () => {
   const { homeBanner } = content;
 
   return (
     <section className="relative h-screen overflow-hidden">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
+      <Video
+        src="/video-home.mp4"
         className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="/video-home.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      />
       <div className="absolute inset-0 text-center bg-lharmonie-secondary bg-opacity-60 flex flex-col gap-10 items-center justify-center">
         <motion.div
           initial={{ y: "100%", opacity: 0 }}
