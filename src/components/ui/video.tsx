@@ -3,9 +3,10 @@ import React, { useEffect, useRef } from "react";
 interface VideoProps {
   src: string;
   className?: string;
+  poster: string;
 }
 
-const Video: React.FC<VideoProps> = ({ src, className }) => {
+const Video: React.FC<VideoProps> = ({ src, className, poster }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -13,7 +14,7 @@ const Video: React.FC<VideoProps> = ({ src, className }) => {
 
     if (videoElement) {
       videoElement.play().catch(() => {
-        if (videoElement) videoElement.controls = true;
+        videoElement.poster = poster;
       });
     }
   }, []);
