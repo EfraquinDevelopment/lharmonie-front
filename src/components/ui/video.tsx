@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import Image from "next/image";
+import React, { useEffect, useRef, useState } from "react";
 
 interface VideoProps {
   src: string;
@@ -7,6 +8,7 @@ interface VideoProps {
 }
 
 const Video: React.FC<VideoProps> = ({ src, className, poster }) => {
+  const [showImage, setShowImage] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -14,12 +16,14 @@ const Video: React.FC<VideoProps> = ({ src, className, poster }) => {
 
     if (videoElement) {
       videoElement.play().catch(() => {
-        videoElement.poster = poster;
+        setShowImage(true);
       });
     }
   }, []);
 
-  return (
+  return showImage ? (
+    <Image src={src} alt={src} className={className} layout="fill" />
+  ) : (
     <video
       ref={videoRef}
       className={className}
