@@ -5,6 +5,7 @@ import { MinusOutlined, DeleteOutlined, PlusOutlined } from "@ant-design/icons";
 
 import { useCartContext } from "@/hooks";
 import { Product } from "@/types";
+import LharmonieButton from "@/components/ui/lharmonie-button";
 
 const { Text } = Typography;
 
@@ -79,14 +80,13 @@ const CartDrawerContent = () => {
             ${total.toFixed(2)}
           </Text>
         </div>
-        <Button
-          type="primary"
+        <LharmonieButton
           size="large"
           block
           className="bg-gray-800 hover:bg-gray-700 border-none h-14 text-lg font-light tracking-wide transition-all duration-300 ease-in-out transform hover:scale-105"
         >
           Finalizar Compra
-        </Button>
+        </LharmonieButton>
       </div>
     </div>
   );

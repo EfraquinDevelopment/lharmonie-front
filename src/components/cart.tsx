@@ -2,6 +2,7 @@ import { ShoppingCartOutlined } from "@ant-design/icons";
 import { useCartContext, useDrawer } from "@/hooks";
 import { Button, Drawer, Badge } from "antd";
 import CartDrawerContent from "@/components/cart-drawer-content";
+import { useMemo } from "react";
 
 type Props = {
   className?: string;
@@ -9,12 +10,14 @@ type Props = {
 
 const Cart = ({ className }: Props) => {
   const { isOpen, openDrawer, closeDrawer } = useDrawer();
-  const { cartItems } = useCartContext();
+  const { getTotalItemsQty,cartItems } = useCartContext();
+
+  const itemsQuantity = useMemo(() => getTotalItemsQty(), [cartItems]);
 
   return (
     <>
       <div className="pr-4">
-        <Badge color="#232323" count={cartItems.length}>
+        <Badge color="#232323" count={itemsQuantity}>
           <Button
             icon={
               <ShoppingCartOutlined className="text-xl text-lharmonie-secondary" />

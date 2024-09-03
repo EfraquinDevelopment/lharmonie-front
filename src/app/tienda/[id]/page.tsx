@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import Product from "@/app/tienda/[id]/components/product";
+import ProductDetailBreadcrumb from "@/app/tienda/[id]/components/product-detail-breadcrumb";
 
 const ProductDetail = ({ params: { id } }: { params: { id: string } }) => {
   const product = content.products.find(
@@ -16,15 +17,9 @@ const ProductDetail = ({ params: { id } }: { params: { id: string } }) => {
   }
 
   return (
-    <main className="bg-gray-200">
+    <main className="bg-[#f8f8f5]">
       <div className="container mx-auto px-4 py-8">
-        <Link
-          href="/tienda"
-          className="inline-flex items-center space-x-2 text-gray-600 hover:text-gray-900 mb-8"
-        >
-          <ArrowLeft size={20} />
-          <span>Volver a la tienda</span>
-        </Link>
+        <ProductDetailBreadcrumb productName={product.name} />
         <Product {...product} />
       </div>
     </main>

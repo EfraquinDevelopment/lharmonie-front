@@ -8,7 +8,25 @@
       "price": 15000,
       "imageSrc": "/product.png",
       "category": 1,
-      "stock": 10
+      "stock": 10,
+      "attributes": [
+        {
+          "name": "Autor",
+          "value": "Juan Perez"
+        },
+        {
+          "name": "Editorial",
+          "value": "Editorial Cafeina"
+        },
+        {
+          "name": "Año",
+          "value": "2020"
+        },
+        {
+          "name": "Páginas",
+          "value": "200"
+        }
+      ]
     },
     {
       "id": 2,
@@ -17,7 +35,25 @@
       "price": 12000,
       "imageSrc": "/product.png",
       "category": 1,
-      "stock": 10
+      "stock": 10,
+      "attributes": [
+        {
+          "name": "Autor",
+          "value": "Maria Rodriguez"
+        },
+        {
+          "name": "Editorial",
+          "value": "Editorial Cafeina"
+        },
+        {
+          "name": "Año",
+          "value": "2019"
+        },
+        {
+          "name": "Páginas",
+          "value": "150"
+        }
+      ]
     },
     {
       "id": 3,
@@ -26,7 +62,25 @@
       "price": 8000,
       "imageSrc": "/product.png",
       "category": 2,
-      "stock": 10
+      "stock": 10,
+      "attributes": [
+        {
+          "name": "Origen",
+          "value": "Colombia"
+        },
+        {
+          "name": "Variedad",
+          "value": "Arabica"
+        },
+        {
+          "name": "Tostado",
+          "value": "Medio"
+        },
+        {
+          "name": "Molienda",
+          "value": "Gruesa"
+        }
+      ]
     },
     {
       "id": 4,
@@ -35,7 +89,21 @@
       "price": 5000,
       "imageSrc": "/product.png",
       "category": 3,
-      "stock": 10
+      "stock": 10,
+      "attributes": [
+        {
+          "name": "Material",
+          "value": "Cerámica"
+        },
+        {
+          "name": "Color",
+          "value": "Blanco"
+        },
+        {
+          "name": "Capacidad",
+          "value": "250ml"
+        }
+      ]
     }
   ],
   "categories": [

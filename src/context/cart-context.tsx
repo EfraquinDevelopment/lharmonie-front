@@ -7,10 +7,12 @@ export type CartItem = Product & { quantity: number };
 
 interface CartContextState {
   cartItems: CartItem[];
-  addToCart: (item: Product) => void;
+  addToCart: (item: Product, qty?: number) => void;
   removeFromCart: (itemId: number) => void;
   updateCartQuantity: (itemId: number, amount: number) => void;
   getTotal: () => number;
+  getTotalItemsQty: () => number;
+  checkCartItemQuantity: (item: Product, qty: number) => boolean;
 }
 
 const CartContext = createContext<CartContextState | undefined>(undefined);
@@ -33,20 +35,22 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const addToCart = (item: Product) => {
+  const addToCart = (item: Product, qty = 1) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find(
         (cartItem) => cartItem.id === item.id
       );
 
       if (existingItem) {
+        const isMoreThanStock = existingItem.quantity + qty > item.stock;
+        const quantity = isMoreThanStock
+          ? item.stock
+          : qty + existingItem.quantity;
         return prevItems.map((cartItem) =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
-            : cartItem
+          cartItem.id === item.id ? { ...cartItem, quantity } : cartItem
         );
       } else {
-        return [...prevItems, { ...item, quantity: 1 }];
+        return [...prevItems, { ...item, quantity: qty }];
       }
     });
   };
@@ -66,8 +70,19 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     );
   };
 
+  const checkCartItemQuantity = (item: Product, qty: number) => {
+    const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
+    if (existingItem) {
+      return existingItem.quantity + qty >= item.stock;
+    }
+    return item.stock <= qty;
+  };
+
   const getTotal = () =>
     cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+  const getTotalItemsQty = () =>
+    cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   const removeFromCart = (itemId: number) =>
     setCartItems(cartItems.filter((item) => item.id !== itemId));
@@ -80,6 +95,8 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         removeFromCart,
         updateCartQuantity,
         getTotal,
+        getTotalItemsQty,
+        checkCartItemQuantity,
       }}
     >
       {children}
