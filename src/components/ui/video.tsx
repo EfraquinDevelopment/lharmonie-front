@@ -9,27 +9,40 @@ interface VideoProps {
 
 const Video: React.FC<VideoProps> = ({ src, className, poster }) => {
   const [showImage, setShowImage] = useState(false);
+  const [isEffectDone, setIsEffectDone] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const videoElement = videoRef.current;
 
     if (videoElement) {
-      videoElement.play().catch(() => {
-        setShowImage(true);
-      });
+      videoElement
+        .play()
+        .catch(() => {
+          setShowImage(true);
+        })
+        .finally(() => {
+          setIsEffectDone(true);
+        });
+    } else {
+      setIsEffectDone(true);
     }
   }, []);
 
-  return (
-    <video
-      ref={videoRef}
+  if (!isEffectDone) {
+    return null;
+  }
+
+  return showImage ? (
+    <Image
+      src={poster}
+      alt={src}
       className={className}
-      muted={!showImage}
-      playsInline={!showImage}
-      autoPlay={!showImage}
-      controls={false}
-    >
+      layout="fill"
+      objectFit="cover"
+    />
+  ) : (
+    <video ref={videoRef} className={className} muted playsInline autoPlay loop>
       <source src={src} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
