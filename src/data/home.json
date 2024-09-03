@@ -121,6 +121,11 @@
     "buttonText": "Ver Todos los Productos"
   },
   "spotifySection": {
-    "spotifyPlaylist": "https://open.spotify.com/playlist/71uCbY8azH8h31FRxXGdv8?si=780w6QXoR2GeKmgkYmQhhA&pi=u-e7XAWLEXRdSM"
+    "title": "Nuestra Melodía",
+    "body": " Sumérgete en la atmósfera de Lharmonie con nuestra cuidadosa selección musical. Cada canción ha sido elegida para complementar tu experiencia de café.",
+    "boxTitle": "Playlist Lharmonie",
+    "boxText": "Disfruta de nuestra playlist exclusiva, diseñada para acompañar tus momentos en Lharmonie. Desde suaves melodías acústicas hasta ritmos jazz relajantes, nuestra selección musical realza la experiencia única de nuestro café.",
+    "buttonText": "Escuchar en Spotify",
+    "playlistUrl": "https://open.spotify.com/playlist/71uCbY8azH8h31FRxXGdv8?si=780w6QXoR2GeKmgkYmQhhA&pi=u-e7XAWLEXRdSM"
   }
 }
