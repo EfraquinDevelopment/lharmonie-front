@@ -6,6 +6,7 @@ import { Button } from "antd";
 import Image from "next/image";
 import React, { useState } from "react";
 import AddToCartButton from "@/app/tienda/[id]/components/add-to-cart-button";
+import AttributesSection from "@/app/tienda/[id]/components/attributes-section";
 
 type Props = Product;
 
@@ -19,40 +20,32 @@ const ProductContent = (product: Props) => {
 
   return (
     <div className="lg:flex lg:items-start lg:space-x-8">
-      <div className="lg:w-1/2">
-        <div className="aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden">
+      <div className="lg:w-1/2 flex justify-center">
+        <div className="aspect-w-1 aspect-h-1 rounded-lg bg-white overflow-hidden shadow-xl">
           <Image
             src={product.imageSrc}
             alt={product.name}
-            width={600}
-            height={600}
-            className="object-center object-cover"
+            width={550}
+            height={550}
+            className="object-center object-cover max-h-[550px]"
           />
         </div>
       </div>
 
       <div className="mt-10 lg:mt-0 lg:w-1/2">
-        <h1 className="text-3xl font-light text-gray-900 mb-4">
+        <h1 className="text-5xl font-light text-gray-900 mb-4">
           {product.name}
         </h1>
-        <p className="text-2xl text-gray-900 mb-6">
+        <p className="text-3xl text-[#8B7355] mb-6 font-semibold">
           {new Intl.NumberFormat("es-AR", {
             style: "currency",
             currency: "ARS",
           }).format(product.price)}
         </p>
-        <p className="text-gray-700 mb-6">{product.description}</p>
-        <div className="mb-6">
-          <h2 className="text-lg font-semibold mb-2">Características</h2>
-          <ul className="list-disc list-inside text-gray-700">
-            {product.attributes.map((attribute) => (
-              <li key={attribute.name}>
-                <span className="font-semibold">{attribute.name}: </span>
-                {attribute.value}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <p className="text-xl text-gray-700 mb-8 italic">
+          {product.description}
+        </p>
+        <AttributesSection attributes={product.attributes} />
         <div className="flex items-center mb-6">
           <Button
             disabled={quantity === 1}

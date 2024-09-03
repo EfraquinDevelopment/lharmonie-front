@@ -6,7 +6,7 @@
       "name": "El libro del café",
       "description": "Historia y cultura",
       "price": 15000,
-      "imageSrc": "/product.png",
+      "imageSrc": "/libro-test.png",
       "category": 1,
       "stock": 10,
       "attributes": [
@@ -60,7 +60,7 @@
       "name": "Café Especial",
       "description": "Blend exclusivo",
       "price": 8000,
-      "imageSrc": "/product.png",
+      "imageSrc": "/libro-test.png",
       "category": 2,
       "stock": 10,
       "attributes": [
