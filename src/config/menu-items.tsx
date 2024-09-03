@@ -29,6 +29,8 @@ export const generateMenuItems = (
   pathname: string
 ): ItemType<MenuItemType>[] => {
   return MENU_ITEMS.map((item) => {
+    console.log(item.link, pathname);
+
     const isActive = pathname === item.link;
     return {
       key: item.link,

@@ -36,19 +36,7 @@ const Product = (product: Props) => {
         <div className="mb-8">
           <p className="text-gray-600 leading-relaxed">{product.description}</p>
         </div>
-        <div className="flex items-center space-x-4 mb-8">
-          <label htmlFor="quantity" className="text-lg">
-            Cantidad
-          </label>
-          <input
-            type="number"
-            id="quantity"
-            min="1"
-            defaultValue="1"
-            className="border border-gray-300 px-3 py-2 w-20 text-center"
-          />
-        </div>
-        <LharmonieButton onClick={handleCartClick}>
+        <LharmonieButton className="w-fit" onClick={handleCartClick}>
           Agregar al carrito
         </LharmonieButton>
       </div>
