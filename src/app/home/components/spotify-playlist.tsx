@@ -22,8 +22,8 @@ const SpotifyPlaylist = () => {
       <p className="text-center text-xl mb-12 max-w-2xl mx-auto">{body}</p>
 
       <div className="overflow-hidden">
-        <div className="flex flex-col md:flex-row gap-5">
-          <div className="md:w-1/2 p-8 rounded-lg bg-[#8B7355]">
+        <div className="flex flex-col md:flex-row">
+          <div className="md:w-1/2 p-8 -md:rounded-t-lg md:rounded-s-lg bg-[#8B7355]">
             <h3 className="text-3xl font-light mb-4 text-lharmonie-primary">
               {boxTitle}
             </h3>

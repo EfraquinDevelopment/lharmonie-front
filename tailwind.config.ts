@@ -9,10 +9,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        "-md": { max: "767px" },
+        "-lg": { max: "1023px" },
+        "-xl": { max: "1279px" },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "spotify-gradient":
+          "linear-gradient(to bottom, #8E723C 50%, #000000 50%)",
+        "mobile-spotify-gradient":
+          "linear-gradient(to bottom, #8E723C 50%, #000000 50%)",
       },
       colors: {
         lharmonie: {

@@ -22,16 +22,23 @@ export const Spotify = ({
   const url = new URL(link);
   url.pathname = url.pathname.replace(/\/intl-\w+\//, "/");
   return (
-    <iframe
-      title="Spotify Web Player"
-      src={`https://open.spotify.com/embed${url.pathname}`}
-      width={width}
-      height={height}
-      allow={allow}
+    <div
+      className="-md:rounded-b-lg md:rounded-l-none md:rounded-r-lg"
       style={{
-        ...style,
+        background: "linear-gradient(to bottom, #8E723C 50%, #806636 50%)",
       }}
-      {...props}
-    />
+    >
+      <iframe
+        title="Spotify Web Player"
+        src={`https://open.spotify.com/embed${url.pathname}`}
+        width={width}
+        height={height}
+        allow={allow}
+        style={{
+          ...style,
+        }}
+        {...props}
+      />
+    </div>
   );
 };
