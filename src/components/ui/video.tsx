@@ -19,7 +19,7 @@ const Video: React.FC<VideoProps> = ({ src, className, poster }) => {
       videoElement
         .play()
         .catch(() => {
-          setShowImage(true);
+          videoElement.controls = false;
         })
         .finally(() => {
           setIsEffectDone(true);
@@ -33,15 +33,7 @@ const Video: React.FC<VideoProps> = ({ src, className, poster }) => {
     return null;
   }
 
-  return showImage ? (
-    <Image
-      src={poster}
-      alt={src}
-      className={className}
-      layout="fill"
-      objectFit="cover"
-    />
-  ) : (
+  return (
     <video ref={videoRef} className={className} muted playsInline autoPlay loop>
       <source src={src} type="video/mp4" />
       Your browser does not support the video tag.
