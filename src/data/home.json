@@ -119,5 +119,8 @@
   "recommendedProducts": {
     "title": "Productos Destacados",
     "buttonText": "Ver Todos los Productos"
+  },
+  "spotifySection": {
+    "spotifyPlaylist": "https://open.spotify.com/playlist/71uCbY8azH8h31FRxXGdv8?si=780w6QXoR2GeKmgkYmQhhA&pi=u-e7XAWLEXRdSM"
   }
 }
