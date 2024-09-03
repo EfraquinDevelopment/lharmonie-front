@@ -8,7 +8,7 @@ const Loader = ({ onLoadingComplete }: { onLoadingComplete: () => void }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       onLoadingComplete();
-    }, 3000); // Duración del loader
+    }, 2000); // Duración del loader
 
     return () => clearTimeout(timer);
   }, [onLoadingComplete]);
