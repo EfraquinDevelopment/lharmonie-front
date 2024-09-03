@@ -1,5 +1,5 @@
 import { ShoppingCartOutlined } from "@ant-design/icons";
-import useDrawer from "@/hooks/useDrawer";
+import { useCartContext, useDrawer } from "@/hooks";
 import { Button, Drawer, Badge } from "antd";
 import { useContext } from "react";
 import CartContext from "@/context/cart-context";
@@ -10,13 +10,7 @@ type Props = {
 
 const Cart = ({ className }: Props) => {
   const { isOpen, openDrawer, closeDrawer } = useDrawer();
-  const cartContext = useContext(CartContext);
-
-  if (!cartContext) {
-    throw new Error("useCart must be used within a CartProvider");
-  }
-
-  const { cartItems } = cartContext;
+  const { cartItems } = useCartContext();
 
   return (
     <>

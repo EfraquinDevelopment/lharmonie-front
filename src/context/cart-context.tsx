@@ -3,8 +3,10 @@
 import { Product } from "@/types";
 import React, { createContext, useState, useEffect, ReactNode } from "react";
 
+export type CartItem = Product & { quantity: number };
+
 interface CartContextState {
-  cartItems: Product[];
+  cartItems: CartItem[];
   addToCart: (item: Product) => void;
   removeFromCart: (itemId: number) => void;
 }
@@ -16,12 +18,12 @@ interface CartProviderProps {
 }
 
 export const CartProvider = ({ children }: CartProviderProps) => {
-  const [cartItems, setCartItems] = useState<Product[]>([]);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   useEffect(() => {
     const storedCartItems = JSON.parse(
       localStorage.getItem("cartItems") || "[]"
-    ) as Product[];
+    ) as CartItem[];
     setCartItems(storedCartItems);
   }, []);
 
@@ -30,7 +32,21 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   }, [cartItems]);
 
   const addToCart = (item: Product) => {
-    setCartItems([...cartItems, item]);
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find(
+        (cartItem) => cartItem.id === item.id
+      );
+
+      if (existingItem) {
+        return prevItems.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
+        );
+      } else {
+        return [...prevItems, { ...item, quantity: 1 }];
+      }
+    });
   };
 
   const removeFromCart = (itemId: number) => {

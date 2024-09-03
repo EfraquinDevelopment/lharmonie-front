@@ -5,7 +5,7 @@ import { MenuOutlined } from "@ant-design/icons";
 import { Logo } from "@/components/logo";
 import AppMenu from "./app-menu";
 import Cart from "@/components/cart";
-import useDrawer from "@/hooks/useDrawer";
+import { useDrawer } from "@/hooks";
 
 const Header = () => {
   const { isOpen, openDrawer, closeDrawer } = useDrawer();

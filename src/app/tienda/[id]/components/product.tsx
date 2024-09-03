@@ -1,5 +1,6 @@
 "use client";
 import LharmonieButton from "@/components/ui/lharmonie-button";
+import { useCartContext } from "@/hooks";
 import { Product } from "@/types";
 import Image from "next/image";
 import React from "react";
@@ -7,18 +8,12 @@ import React from "react";
 type Props = Product;
 
 const Product = (product: Props) => {
-  const addToCart = () => {
-    const cartItems = localStorage.getItem("cartItems");
-    let items = [];
+  const { addToCart } = useCartContext();
 
-    if (cartItems) {
-      items = JSON.parse(cartItems);
-    }
-
-    items.push(product);
-
-    localStorage.setItem("cartItems", JSON.stringify(items));
+  const handleCartClick = () => {
+    addToCart(product);
   };
+
   return (
     <div className="flex flex-col md:flex-row md:space-x-8">
       <div className="w-full md:w-1/2 mb-8 md:mb-0">
@@ -53,7 +48,7 @@ const Product = (product: Props) => {
             className="border border-gray-300 px-3 py-2 w-20 text-center"
           />
         </div>
-        <LharmonieButton onClick={addToCart}>
+        <LharmonieButton onClick={handleCartClick}>
           Agregar al carrito
         </LharmonieButton>
       </div>
