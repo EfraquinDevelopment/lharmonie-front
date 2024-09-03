@@ -9,7 +9,10 @@ const AppMenu = ({ ...menuProps }: Props) => {
   const pathname = usePathname();
   const currentKey = "/" + pathname.split("/")[1];
 
-  const menuItems = useMemo(() => generateMenuItems(currentKey), [pathname]);
+  const menuItems = useMemo(
+    () => generateMenuItems(currentKey),
+    [pathname, currentKey]
+  );
 
   return (
     <Menu

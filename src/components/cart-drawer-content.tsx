@@ -12,7 +12,7 @@ const { Text } = Typography;
 const CartDrawerContent = () => {
   const { cartItems, removeFromCart, getTotal, updateCartQuantity } =
     useCartContext();
-  const total = useMemo(() => getTotal(), [cartItems]);
+  const total = useMemo(() => getTotal(), [cartItems, getTotal]);
 
   const handleAddQty = (item: Product) => updateCartQuantity(item.id, 1);
   const handleRemoveQty = (item: Product) => updateCartQuantity(item.id, -1);

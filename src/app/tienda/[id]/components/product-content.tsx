@@ -9,7 +9,7 @@ import AddToCartButton from "@/app/tienda/[id]/components/add-to-cart-button";
 
 type Props = Product;
 
-const Product = (product: Props) => {
+const ProductContent = (product: Props) => {
   const { checkCartItemQuantity } = useCartContext();
   const [quantity, setQuantity] = useState(1);
 
@@ -82,4 +82,4 @@ const Product = (product: Props) => {
   );
 };
 
-export default Product;
+export default ProductContent;

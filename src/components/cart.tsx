@@ -10,9 +10,12 @@ type Props = {
 
 const Cart = ({ className }: Props) => {
   const { isOpen, openDrawer, closeDrawer } = useDrawer();
-  const { getTotalItemsQty,cartItems } = useCartContext();
+  const { getTotalItemsQty, cartItems } = useCartContext();
 
-  const itemsQuantity = useMemo(() => getTotalItemsQty(), [cartItems]);
+  const itemsQuantity = useMemo(
+    () => getTotalItemsQty(),
+    [cartItems, getTotalItemsQty]
+  );
 
   return (
     <>
