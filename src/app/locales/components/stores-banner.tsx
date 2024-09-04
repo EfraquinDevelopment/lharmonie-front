@@ -23,7 +23,7 @@ const StoresBanner = () => {
 
   return (
     <motion.section
-      className="h-[calc(100vh-30rem)] flex items-center justify-center bg-lharmonie-primary text-lharmonie-secondary relative"
+      className="flex items-center justify-center bg-lharmonie-primary text-lharmonie-secondary relative"
       initial="hidden"
       animate="visible"
       variants={fadeIn}
@@ -45,7 +45,7 @@ const StoresBanner = () => {
           </p>
         </motion.div>
         <motion.div
-          className="flex flex-wrap justify-center gap-4"
+          className="md:flex justify-center gap-4"
           initial="hidden"
           animate="visible"
           variants={fadeIn}

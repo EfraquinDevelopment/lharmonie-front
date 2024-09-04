@@ -37,6 +37,7 @@ const Cart = ({ className }: Props) => {
           <h2 className="font-light text-3xl ml-4 text-gray-800">Tu Carrito</h2>
         }
         placement="right"
+        size="large"
         onClose={closeDrawer}
         open={isOpen}
         destroyOnClose={true}

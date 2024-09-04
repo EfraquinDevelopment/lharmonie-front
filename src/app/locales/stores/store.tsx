@@ -25,12 +25,13 @@ const Store = ({
   name,
   index,
   storesLength,
+  id,
 }: Props) => {
   const isEven = index % 2 === 0;
 
   return (
     <motion.section
-      id={`store-${index}`}
+      id={id.toString()}
       className="mb-24 scroll-mt-[110px]"
       initial="hidden"
       whileInView="visible"
@@ -38,54 +39,53 @@ const Store = ({
       transition={{ duration: 0.7, ease: "easeInOut" }}
     >
       <div
-        className={classNames(
-          "flex flex-col md:h-[600px] md:flex-row items-stretch",
-          {
-            "md:flex-row-reverse": !isEven,
-          }
-        )}
+        className={classNames("flex flex-col md:flex-row", {
+          "md:flex-row-reverse": !isEven,
+        })}
       >
         <motion.div
           className="w-full md:w-1/2 overflow-hidden"
           variants={fadeIn}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+          transition={{ duration: 1.2, ease: "easeOut", delay: 0.4 }}
         >
           <Image
             src={imageSrc}
             alt={name}
             width={600}
             height={900}
-            className="object-cover w-full h-full rounded-xl shadow-lg"
+            className="object-cover w-full h-[400px] lg:h-[600px] rounded-xl shadow-lg"
           />
         </motion.div>
         <motion.div
           className={classNames(
-            "w-full md:w-1/2 p-8 flex flex-col justify-center",
+            "w-full md:w-1/2 flex flex-col justify-center",
             {
-              "md:pl-16 items-end": isEven,
+              "md:pl-16 md:items-end": isEven,
               "md:pr-16": !isEven,
             }
           )}
           variants={textUpward}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
         >
-          <h2 className="text-3xl md:text-4xl mb-4 text-gray-800">{name}</h2>
-          <p className="text-lg mb-6 text-gray-600">{address}</p>
-          {openTimes.map(({ days, hours }, i) => (
-            <motion.div
-              key={i}
-              className="mb-4 space-y-1"
-              variants={textUpward}
-              transition={{
-                duration: 0.7,
-                delay: 0.3 + i * 0.2,
-                ease: "easeOut",
-              }}
-            >
-              <p className="text-sm font-semibold text-gray-700">{days}</p>
-              <p className="text-sm text-gray-600">{hours}</p>
-            </motion.div>
-          ))}
+          <div className="mt-5 md:mt-0">
+            <h2 className="text-3xl md:text-4xl mb-4 text-gray-800">{name}</h2>
+            <p className="text-lg mb-6 text-gray-600 text-left">{address}</p>
+            {openTimes.map(({ days, hours }, i) => (
+              <motion.div
+                key={i}
+                className="mb-4 space-y-1"
+                variants={textUpward}
+                transition={{
+                  duration: 0.7,
+                  delay: 0.3 + i * 0.2,
+                  ease: "easeOut",
+                }}
+              >
+                <p className="text-sm font-semibold text-gray-700">{days}</p>
+                <p className="text-sm text-gray-600">{hours}</p>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
       {index < storesLength - 1 && (
