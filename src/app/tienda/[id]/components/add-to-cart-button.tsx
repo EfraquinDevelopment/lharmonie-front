@@ -54,7 +54,7 @@ const AddToCartButton = ({ product, quantity, setQuantity }: Props) => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
             transition={{ duration: 0.2 }}
-            className="flex items-center justify-center"
+            className="flex items-center justify-center text-lharmonie-primary"
           >
             <CheckCircle className="w-5 h-5 mr-2" />
             Producto añadido
@@ -66,7 +66,7 @@ const AddToCartButton = ({ product, quantity, setQuantity }: Props) => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
             transition={{ duration: 0.2 }}
-            className="flex items-center justify-center"
+            className="flex items-center justify-center text-lharmonie-primary"
           >
             <ShoppingCart className="w-5 h-5 mr-2" />
             Añadir al carrito
