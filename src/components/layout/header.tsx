@@ -4,7 +4,7 @@ import { Button, Drawer } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import { Logo } from "@/components/logo";
 import AppMenu from "./app-menu";
-import Cart from "@/components/cart";
+import Cart from "@/components/cart/cart";
 import { useDrawer } from "@/hooks";
 
 const Header = () => {

@@ -10,9 +10,12 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
+        "-xs": { max: "374px" },
+        "-sm": { max: "639px" },
         "-md": { max: "767px" },
         "-lg": { max: "1023px" },
         "-xl": { max: "1279px" },
+        xs: { min: "375px" },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
