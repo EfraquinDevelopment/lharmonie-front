@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Store as StoreData } from "@/types";
+import { motion } from "framer-motion";
 import classNames from "classnames";
 
 type Props = StoreData & {
@@ -7,8 +8,17 @@ type Props = StoreData & {
   storesLength: number;
 };
 
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
+const textUpward = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const Store = ({
-  id,
   imageSrc,
   address,
   openTimes,
@@ -16,45 +26,78 @@ const Store = ({
   index,
   storesLength,
 }: Props) => {
+  const isEven = index % 2 === 0;
+
   return (
-    <section key={id} id={`${id}`} className="mb-12 scroll-mt-[110px]">
+    <motion.section
+      id={`store-${index}`}
+      className="mb-24 scroll-mt-[110px]"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.7, ease: "easeInOut" }}
+    >
       <div
-        className={`flex md:h-[600px] flex-col md:flex-row items-stretch ${
-          index % 2 === 0 ? "" : "md:flex-row-reverse"
-        }`}
+        className={classNames(
+          "flex flex-col md:h-[600px] md:flex-row items-stretch",
+          {
+            "md:flex-row-reverse": !isEven,
+          }
+        )}
       >
-        <div className="w-full md:w-1/2 ">
+        <motion.div
+          className="w-full md:w-1/2 overflow-hidden"
+          variants={fadeIn}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+        >
           <Image
             src={imageSrc}
             alt={name}
-            width={800}
-            height={600}
-            className={`object-cover w-full h-full`}
+            width={600}
+            height={900}
+            className="object-cover w-full h-full rounded-xl shadow-lg"
           />
-        </div>
-        <div
+        </motion.div>
+        <motion.div
           className={classNames(
-            "w-full md:w-1/2  p-8 flex flex-col justify-center",
+            "w-full md:w-1/2 p-8 flex flex-col justify-center",
             {
-              "md:pl-32": index % 2 === 0,
-              "md:pr-16": index % 2 !== 0,
+              "md:pl-16 items-end": isEven,
+              "md:pr-16": !isEven,
             }
           )}
+          variants={textUpward}
+          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
         >
-          <h2 className="text-3xl mb-2">{name}</h2>
-          <p className="text-lg mb-6">{address}</p>
+          <h2 className="text-3xl md:text-4xl mb-4 text-gray-800">{name}</h2>
+          <p className="text-lg mb-6 text-gray-600">{address}</p>
           {openTimes.map(({ days, hours }, i) => (
-            <div key={i} className="mb-5 space-y-2">
-              <p className="text-sm">{days}</p>
-              <p className="text-sm">{hours}</p>
-            </div>
+            <motion.div
+              key={i}
+              className="mb-4 space-y-1"
+              variants={textUpward}
+              transition={{
+                duration: 0.7,
+                delay: 0.3 + i * 0.2,
+                ease: "easeOut",
+              }}
+            >
+              <p className="text-sm font-semibold text-gray-700">{days}</p>
+              <p className="text-sm text-gray-600">{hours}</p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
       {index < storesLength - 1 && (
-        <div className="border-b border-gray-300 my-12"></div>
+        <motion.div
+          className="border-b border-gray-300 my-12"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: "easeInOut" }}
+        />
       )}
-    </section>
+    </motion.section>
   );
 };
 
