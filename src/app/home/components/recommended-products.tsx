@@ -14,19 +14,20 @@ const RecommendedProducts = () => {
   const { products } = storeContent;
 
   return (
-    <section className="py-16 bg-white mx-4 shadow-xl rounded-xl">
+    <section className="py-8 bg-white mx-4 shadow-xl rounded-xl">
       <div className="mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          className="mb-8"
         >
           <Heading level={2} className="text-center">
             {recommendedProducts.title}
           </Heading>
         </motion.div>
-        <ProductsGrid products={products} />
+        <ProductsGrid reccomended products={products} />
         <div className="text-center mt-8">
           <motion.div
             initial={{ y: "100%", opacity: 0 }}

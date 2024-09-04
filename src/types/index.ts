@@ -7,6 +7,7 @@ export interface Product {
   category: number;
   stock: number;
   attributes: { name: string; value: string }[];
+  isRecommended: boolean;
 }
 
 export interface Store {

@@ -1,7 +1,6 @@
 "use client";
 import Store from "@/app/locales/stores/store";
 import content from "@/data/stores.json";
-import { useEffect, useState } from "react";
 
 const Stores = () => {
   const {
@@ -13,7 +12,7 @@ const Stores = () => {
   }
 
   return (
-    <main className="container mx-auto py-16 px-4">
+    <main className="container mx-auto py-16 px-4 ">
       {stores.map((store, index) => (
         <Store
           key={store.id}

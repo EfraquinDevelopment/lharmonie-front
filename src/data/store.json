@@ -26,7 +26,8 @@
           "name": "Páginas",
           "value": "200"
         }
-      ]
+      ],
+      "isRecommended": true
     },
     {
       "id": 2,
@@ -36,6 +37,7 @@
       "imageSrc": "/product.png",
       "category": 1,
       "stock": 10,
+
       "attributes": [
         {
           "name": "Autor",
@@ -53,7 +55,8 @@
           "name": "Páginas",
           "value": "150"
         }
-      ]
+      ],
+      "isRecommended": true
     },
     {
       "id": 3,
@@ -80,7 +83,8 @@
           "name": "Molienda",
           "value": "Gruesa"
         }
-      ]
+      ],
+      "isRecommended": true
     },
     {
       "id": 4,
@@ -103,7 +107,8 @@
           "name": "Capacidad",
           "value": "250ml"
         }
-      ]
+      ],
+      "isRecommended": true
     }
   ],
   "categories": [

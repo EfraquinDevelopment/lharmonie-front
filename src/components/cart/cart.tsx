@@ -1,8 +1,8 @@
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { useCartContext, useDrawer } from "@/hooks";
 import { Button, Drawer, Badge } from "antd";
-import CartDrawerContent from "@/components/cart-drawer-content";
 import { useMemo } from "react";
+import CartDrawerContent from "@/components/cart/cart-drawer-content";
 
 type Props = {
   className?: string;

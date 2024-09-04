@@ -23,7 +23,7 @@ const StoresBanner = () => {
 
   return (
     <motion.section
-      className="flex items-center justify-center bg-lharmonie-primary text-lharmonie-secondary relative"
+      className="flex items-center justify-center shadow-xl pb-6 bg-lharmonie-primary text-lharmonie-secondary mt-8 relative"
       initial="hidden"
       animate="visible"
       variants={fadeIn}
@@ -45,7 +45,7 @@ const StoresBanner = () => {
           </p>
         </motion.div>
         <motion.div
-          className="md:flex justify-center gap-4"
+          className="flex md:flex-row flex-col justify-center gap-4 mx-4"
           initial="hidden"
           animate="visible"
           variants={fadeIn}
