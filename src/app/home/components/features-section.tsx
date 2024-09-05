@@ -19,7 +19,7 @@ const FeaturesSection = () => {
   const { featuresSection } = content;
 
   return (
-    <section className="py-16 w-full text-lharmonie-primary bg-lharmonie-secondary">
+    <section className="w-full text-lharmonie-primary bg-lharmonie-secondary">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

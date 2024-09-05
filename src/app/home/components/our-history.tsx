@@ -12,7 +12,7 @@ const OurHistory = () => {
   const { ourHistory } = content;
 
   return (
-    <section className="py-20 bg-lharmonie-primary mx-4 text-lharmonie-secondary">
+    <section className="bg-lharmonie-primary mx-4 text-lharmonie-secondary">
       <div className="mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
