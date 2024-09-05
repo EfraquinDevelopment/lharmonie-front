@@ -3,10 +3,11 @@
 import { useCartContext } from "@/hooks";
 import { Product } from "@/types";
 import { Button } from "antd";
-import Image from "next/image";
 import React, { useState } from "react";
 import AddToCartButton from "@/app/tienda/[id]/components/add-to-cart-button";
 import AttributesSection from "@/app/tienda/[id]/components/attributes-section";
+import "react-medium-image-zoom/dist/styles.css";
+import ProductImage from "@/app/tienda/[id]/components/product-image";
 
 type Props = Product;
 
@@ -22,13 +23,7 @@ const ProductContent = (product: Props) => {
     <div className="lg:flex lg:items-start lg:space-x-8">
       <div className="lg:w-1/2 flex justify-center">
         <div className="aspect-w-1 aspect-h-1 rounded-lg bg-white overflow-hidden shadow-xl">
-          <Image
-            src={product.imageSrc}
-            alt={product.name}
-            width={550}
-            height={550}
-            className="object-center object-cover max-h-[550px]"
-          />
+          <ProductImage src={product.imageSrc} alt={product.name} />
         </div>
       </div>
 
