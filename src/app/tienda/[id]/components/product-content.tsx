@@ -6,7 +6,6 @@ import { Button } from "antd";
 import React, { useState } from "react";
 import AddToCartButton from "@/app/tienda/[id]/components/add-to-cart-button";
 import AttributesSection from "@/app/tienda/[id]/components/attributes-section";
-import "react-medium-image-zoom/dist/styles.css";
 import ProductImage from "@/app/tienda/[id]/components/product-image";
 
 type Props = Product;
