@@ -14,8 +14,8 @@ const Stores = () => {
   } = content;
 
   return (
-    <section className="py-16 w-full bg-lharmonie-primary text-lharmonie-secondary">
-      <div className=" mx-auto px-4 relative z-10">
+    <section className="py-16 w-full bg-lharmonie-primary px-4 text-lharmonie-secondary">
+      <div className=" mx-auto relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 mt-12 gap-5">
           {stores.map((store) => (
             <StoreItem

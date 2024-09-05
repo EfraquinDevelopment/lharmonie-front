@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import content from "@/data/home.json";
 import { Spotify } from "@/components/spotify";
+import Heading from "@/components/layout/heading";
 
 const SpotifyPlaylist = () => {
   const {
@@ -14,14 +15,17 @@ const SpotifyPlaylist = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="container mx-auto mb-10 px-4"
+      className="mx-4 pt-20 pb-36"
     >
-      <h2 className="text-4xl md:text-5xl font-light mb-8 text-center">
-        {title}
-      </h2>
-      <p className="text-center text-xl mb-12 max-w-2xl mx-auto">{body}</p>
-
-      <div className="overflow-hidden">
+      <div className="flex justify-center">
+        <div className="max-w-[85ch]">
+          <Heading level={2} className="text-center !text-4xl">
+            {title}
+          </Heading>
+          <p className="text-xl mb-12">{body}</p>
+        </div>
+      </div>
+      <div className="overflow-hidden container mx-auto">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 p-8 -md:rounded-t-lg md:rounded-s-lg bg-[#8B7355]">
             <h3 className="text-3xl font-light mb-4 text-lharmonie-primary">

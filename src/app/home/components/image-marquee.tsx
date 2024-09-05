@@ -17,7 +17,7 @@ const ImageMarquee = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 1, delay: 0.5 }}
-      className="px-4 py-16"
+      className="mx-4 py-16"
     >
       <Marquee autoFill className="bg-white rounded-xl shadow-xl">
         {images.map((image, index) => (
