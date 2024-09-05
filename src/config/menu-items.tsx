@@ -54,7 +54,7 @@ export const generateMenuItems = (
               </span>
               <Link
                 className={classNames(
-                  "!text-lharmonie-secondary hidden lg:block",
+                  "!text-lharmonie-secondary hidden  lg:block",
                   { "font-semibold": isActive }
                 )}
                 href={item.link}
