@@ -15,9 +15,10 @@ const LharmonieButton = ({
   return (
     <Button
       type="text"
+      size="large"
       className={classNames(
         className,
-        "font-semibold rounded-xl hover:!bg-lharmonie-hover hover:!text-lharmonie-primary",
+        "font-semibold rounded-3xl hover:!bg-lharmonie-hover hover:!text-lharmonie-primary",
         {
           "bg-lharmonie-primary text-lharmonie-secondary": reversed,
           "bg-lharmonie-secondary text-lharmonie-primary": !reversed,

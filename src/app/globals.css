@@ -50,17 +50,54 @@ body {
   background: none;
 }
 
+.ant-menu-submenu-active::after {
+  @apply !border-none;
+}
+
 .ant-menu-item::after {
   @apply !border-none;
 }
 
-.header-nav-item {
-  font-size: 14px;
-  font-weight: 500;
-  color: #6b7280;
-  transition: color 0.3s;
+.ant-menu-item:hover {
+  @apply !border-none font-bold transition-colors;
+}
+
+.ant-menu-submenu-title {
+  @apply lg:!text-lharmonie-secondary !text-lharmonie-secondary;
 }
 
 .header-nav-item:hover {
   @apply text-lharmonie-secondary;
+}
+
+.ant-menu-submenu::after {
+  @apply !border-none;
+}
+
+.ant-menu-submenu:hover {
+  @apply !font-bold;
+}
+
+.ant-menu-submenu a {
+  @apply !text-lharmonie-secondary;
+}
+
+.ant-menu-submenu.ant-menu-submenu-horizontal:hover {
+  @apply font-bold transition-colors;
+}
+
+.ant-menu-inline {
+  @apply !border-none;
+}
+
+.ant-menu-item-selected {
+  @apply -lg:!bg-[#8B7355] !text-lharmonie-secondary;
+}
+
+.ant-menu-submenu-selected {
+  @apply -lg:!bg-[#8B7355];
+}
+
+.ant-menu-submenu-arrow {
+  @apply !text-lharmonie-secondary;
 }

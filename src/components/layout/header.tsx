@@ -6,9 +6,12 @@ import { Logo } from "@/components/logo";
 import AppMenu from "./app-menu";
 import Cart from "@/components/cart/cart";
 import { useDrawer } from "@/hooks";
+import useBreakpoint from "@/hooks/useBreakpoint";
+import { X } from "lucide-react";
 
 const Header = () => {
   const { isOpen, openDrawer, closeDrawer } = useDrawer();
+  const { breakpoint } = useBreakpoint();
 
   return (
     <header className="sticky top-0 z-50 shadow-md w-full border-b-[1px] border-gray-400">
@@ -35,18 +38,29 @@ const Header = () => {
           <Cart className="bg-[#F0F0EB] border-none shadow-none" />
         </div>
         <Drawer
-          title={<Logo clickable={false} />}
           placement="left"
-          className="bg-[#F0F0EB]"
+          size={breakpoint === "xs" ? "large" : "default"}
           onClose={closeDrawer}
           open={isOpen}
-          destroyOnClose={true}
+          destroyOnClose
+          width="100%"
+          styles={{ body: { padding: 0 } }}
+          closeIcon={null}
+          style={{ padding: 0, background: "#f8f8f5" }}
         >
-          <AppMenu
-            onClick={closeDrawer}
-            mode="vertical"
-            className="text-sm p-4 border-none"
-          />
+          <div className="h-full flex flex-col">
+            <div className="flex justify-between items-center p-4 border-b border-[#8B7355]">
+              <h2 className="text-2xl font-light text-[#8B7355]">Lharmonie</h2>
+              <button onClick={closeDrawer} aria-label="Close menu">
+                <X className="text-[#8B7355] text-2xl" />
+              </button>
+            </div>
+            <AppMenu
+              onClick={closeDrawer}
+              mode="inline"
+              className="text-sm p-4 border-none !bg-[#f8f8f5]"
+            />
+          </div>
         </Drawer>
       </nav>
     </header>

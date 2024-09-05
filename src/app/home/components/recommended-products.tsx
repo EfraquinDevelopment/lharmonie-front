@@ -14,7 +14,7 @@ const RecommendedProducts = () => {
   const { products } = storeContent;
 
   return (
-    <section className="py-8 bg-white mx-4 shadow-xl rounded-xl">
+    <section className="bg-white mx-4 shadow-xl rounded-xl py-6">
       <div className="mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -23,7 +23,7 @@ const RecommendedProducts = () => {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <Heading level={2} className="text-center">
+          <Heading level={2} className="text-center !text-4xl">
             {recommendedProducts.title}
           </Heading>
         </motion.div>

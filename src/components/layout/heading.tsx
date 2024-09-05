@@ -10,7 +10,7 @@ const Heading = ({ children, className, reversed }: Props) => {
     <Title
       className={classNames(className, "!text-3xl !font-medium", {
         "!text-lharmonie-primary": reversed,
-        "!text-lharmonie-secondary": !reversed,
+        "!text-lharmonie-hover": !reversed,
       })}
     >
       {children}
