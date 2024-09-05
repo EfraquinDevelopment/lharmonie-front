@@ -15,7 +15,7 @@ const SpotifyPlaylist = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="mx-4 pt-20 pb-36"
+      className="mx-4"
     >
       <div className="flex justify-center">
         <div className="max-w-[85ch]">

@@ -10,7 +10,7 @@ import VideoSection from "@/app/home/components/video-section";
 
 const Home = () => {
   return (
-    <>
+    <main className="space-y-24 lg:space-y-36 pb-24 lg:pb-32">
       <VideoSection />
       <Stores />
       <Suspense fallback={<div>Cargando productos...</div>}>
@@ -18,8 +18,8 @@ const Home = () => {
       </Suspense>
       <ImageMarquee />
       <OurHistory />
-     <SpotifyPlaylist/>
-    </>
+      <SpotifyPlaylist />
+    </main>
   );
 };
 
