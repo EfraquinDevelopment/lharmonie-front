@@ -60,6 +60,11 @@ body {
 
 .ant-menu-item:hover {
   @apply !border-none font-semibold transition-colors;
+  @apply !border-none font-bold transition-colors;
+}
+
+.ant-menu-submenu-title {
+  @apply lg:!text-lharmonie-secondary !text-white;
 }
 
 .ant-menu-submenu-title {
@@ -85,6 +90,10 @@ body {
 /* .ant-menu-submenu.ant-menu-submenu-horizontal:hover {
   @apply font-semibold transition-colors;
 } */
+
+.ant-menu-submenu.ant-menu-submenu-horizontal:hover {
+  @apply font-bold transition-colors;
+}
 
 .ant-menu-inline {
   @apply !border-none;
