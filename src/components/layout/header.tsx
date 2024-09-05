@@ -6,9 +6,11 @@ import { Logo } from "@/components/logo";
 import AppMenu from "./app-menu";
 import Cart from "@/components/cart/cart";
 import { useDrawer } from "@/hooks";
+import useBreakpoint from "@/hooks/useBreakpoint";
 
 const Header = () => {
   const { isOpen, openDrawer, closeDrawer } = useDrawer();
+  const { breakpoint, breakpoints } = useBreakpoint();
 
   return (
     <header className="sticky top-0 z-50 shadow-md w-full border-b-[1px] border-gray-400">
@@ -38,6 +40,7 @@ const Header = () => {
           title={<Logo clickable={false} />}
           placement="left"
           className="bg-[#F0F0EB]"
+          size={breakpoint === "xs" ? "large" : "default"}
           onClose={closeDrawer}
           open={isOpen}
           destroyOnClose={true}
