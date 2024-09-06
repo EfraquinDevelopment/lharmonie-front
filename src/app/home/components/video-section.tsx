@@ -11,15 +11,14 @@ const VideoSection = () => {
   return (
     <section className="relative h-screen overflow-hidden">
       <Video
-        src="/video-home.mp4"
-        poster="/fallback-home-video.png"
+        src={homeBanner.videoSrc}
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 text-center bg-lharmonie-secondary bg-opacity-60 flex flex-col gap-10 items-center justify-center">
         <motion.div
           initial={{ y: "100%", opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
         >
           <Heading
             level={1}
@@ -32,7 +31,7 @@ const VideoSection = () => {
         <motion.p
           initial={{ y: "100%", opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.4 }}
+          transition={{ duration: 0.9, delay: 0.3 }}
           className="text-lg md:text-xl max-w-[70ch] text-lharmonie-primary"
         >
           {homeBanner.description}

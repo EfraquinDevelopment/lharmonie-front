@@ -25,10 +25,10 @@ const StoreItem = ({
   return (
     <Link href={`${callToAction}#${id}`} className="group cursor-pointer">
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
         key={id}
       >
         <div className="rounded-xl relative aspect-[3/4] overflow-hidden shadow-md transition-shadow duration-300 2xl:h-[700px] w-full">

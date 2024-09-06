@@ -2,7 +2,8 @@
   "homeBanner": {
     "title": "Descubre la armonía en cada taza",
     "description": "Bienvenido a Lharmonie, donde el café se convierte en una experiencia única. Cafeterías acogedoras y singulares. Elegantes y minimalistas.",
-    "buttonText": "Explora Nuestro Menú"
+    "buttonText": "Explora Nuestro Menú",
+    "videoSrc": "/video-home-2.mp4"
   },
   "storesSection": {
     "title": "Descubre nuestros locales",
@@ -13,7 +14,7 @@
         "codeName": "LH1",
         "name": "Lharmonie Centro",
         "callToAction": "/locales",
-        "imageSrc": "/lh2.mp4",
+        "imageSrc": "/lh2-compressed.mp4",
         "mediaType": "video",
         "address": "Las Heras 1234, CABA",
         "openTimes": [
@@ -32,7 +33,7 @@
         "codeName": "LH2",
         "name": "Lharmonie Palermo",
         "callToAction": "/locales",
-        "imageSrc": "/lh3.mp4",
+        "imageSrc": "/lh3-compressed.mp4",
         "mediaType": "video",
         "address": "Las Heras 1234, CABA",
         "openTimes": [
@@ -51,7 +52,7 @@
         "codeName": "LH3",
         "name": "Lharmonie Belgrano",
         "callToAction": "/locales",
-        "imageSrc": "/lh4.mp4",
+        "imageSrc": "/lh4-compressed.mp4",
         "mediaType": "video",
         "address": "Las Heras 1234, CABA",
         "openTimes": [
@@ -70,7 +71,7 @@
         "codeName": "LH4",
         "name": "Lharmonie Once",
         "callToAction": "/locales",
-        "imageSrc": "/lh5.mp4",
+        "imageSrc": "/lh5-compressed.mp4",
         "mediaType": "video",
         "address": "Las Heras 1234, CABA",
         "openTimes": [

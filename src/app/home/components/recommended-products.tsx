@@ -20,7 +20,7 @@ const RecommendedProducts = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
           className="mb-8"
         >
           <Heading level={2} className="text-center !text-4xl">

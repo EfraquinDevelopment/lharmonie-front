@@ -18,7 +18,7 @@ const OurHistory = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3, delay: 0.25 }}
           className="text-4xl font-bold mb-12 text-center"
         >
           <Heading level={2} className="!text-4xl">
@@ -30,7 +30,7 @@ const OurHistory = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3, delay: 0.25 }}
             className="col-span-7 md:flex justify-end flex-col"
           >
             <div className="flex flex-col justify-center mx-auto">
@@ -51,7 +51,7 @@ const OurHistory = () => {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3, delay: 0.25 }}
           >
             <Image
               src={ourHistory.imageSrc}

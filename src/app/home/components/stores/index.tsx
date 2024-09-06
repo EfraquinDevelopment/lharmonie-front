@@ -2,15 +2,10 @@
 
 import StoreItem from "@/app/home/components/stores/store";
 import content from "@/data/home.json";
-import Heading from "@/components/layout/heading";
-import { motion } from "framer-motion";
-import LharmonieButton from "@/components/ui/lharmonie-button";
-import Link from "next/link";
 
 const Stores = () => {
   const {
-    homeBanner,
-    storesSection: { title, stores, ctoDescription },
+    storesSection: { stores, ctoDescription },
   } = content;
 
   return (
