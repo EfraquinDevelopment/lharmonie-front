@@ -12,7 +12,10 @@ const OurHistory = () => {
   const { ourHistory } = content;
 
   return (
-    <section className="bg-lharmonie-primary mx-4 text-lharmonie-secondary">
+    <section
+      id="3"
+      className="bg-lharmonie-primary scroll-mt-[110px] mx-4 text-lharmonie-secondary"
+    >
       <div className="mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

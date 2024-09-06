@@ -4,6 +4,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect } from "react";
 
 interface SectionProps {
+  id: string;
   title: string;
   content: string;
   imageSrc: string;
@@ -12,6 +13,7 @@ interface SectionProps {
 }
 
 function AboutUsSection({
+  id,
   title,
   content,
   imageSrc,
@@ -20,7 +22,8 @@ function AboutUsSection({
 }: SectionProps) {
   return (
     <motion.div
-      className={`flex flex-col ${
+      id={id}
+      className={`flex flex-col scroll-mt-[160px] ${
         reversed ? "md:flex-row-reverse" : "md:flex-row"
       } items-center gap-12`}
       initial={{ opacity: 0, y: 50 }}

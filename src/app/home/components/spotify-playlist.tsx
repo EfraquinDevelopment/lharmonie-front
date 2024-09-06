@@ -11,15 +11,16 @@ const SpotifyPlaylist = () => {
 
   return (
     <motion.div
+      id="4"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0.25 }}
-      className="mx-4"
+      className="mx-4 lg:scroll-mt-[120px] scroll-mt-[100px]"
     >
-      <div className="flex justify-center">
+      <div className="container mx-auto flex justify-start">
         <div className="max-w-[85ch]">
-          <Heading level={2} className="text-center !text-4xl">
+          <Heading level={2} className=" !text-4xl">
             {title}
           </Heading>
           <p className="text-xl mb-12">{body}</p>

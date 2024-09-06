@@ -2,15 +2,31 @@ import { ItemType, MenuItemType } from "antd/es/menu/interface";
 import classNames from "classnames";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import content from "@/data/store.json";
+
+const { categories } = content;
 
 export const MENU_ITEMS = [
   {
     title: "Inicio",
     link: "/home",
+    children: [
+      { title: "Locales", link: "/home#1" },
+      { title: "Productos Destacados", link: "/home#2" },
+      { title: "Nuestra Historia", link: "/home#3" },
+      { title: "Nuestra Melodia", link: "/home#4" },
+    ],
   },
   {
     title: "Tienda",
     link: "/tienda",
+    children: [
+      { title: "Todos", link: "/tienda" },
+      ...categories.map((category) => ({
+        title: category.name,
+        link: `/tienda?category=${category.id}`,
+      })),
+    ],
   },
   {
     title: "Menu",
@@ -29,6 +45,11 @@ export const MENU_ITEMS = [
   {
     title: "Sobre Nosotros",
     link: "/sobre-nosotros",
+    children: [
+      { title: "Nuestra Historia", link: "/sobre-nosotros#1" },
+      { title: "Nuestro Cafe", link: "/sobre-nosotros#2" },
+      { title: "Nuestros Laminados", link: "/sobre-nosotros#3" },
+    ],
   },
 ];
 
@@ -84,7 +105,7 @@ export const generateMenuItems = (
               label: (
                 <div>
                   <Link
-                    className="!text-lharmonie-secondary hover:!font-normal"
+                    className="lg:!text-lharmonie-secondary hover:!font-normal"
                     href={child.link}
                   >
                     {child.title}
