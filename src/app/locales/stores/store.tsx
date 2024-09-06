@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Store as StoreData } from "@/types";
 import { motion } from "framer-motion";
 import classNames from "classnames";
+import { Clock, MapPin } from "lucide-react";
 
 type Props = StoreData & {
   index: number;
@@ -32,59 +33,87 @@ const Store = ({
   return (
     <motion.section
       id={id.toString()}
-      className="mb-24 scroll-mt-[110px]"
+      className="mb-24 scroll-mt-[110px] font-['EB_Garamond',serif]"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.7, ease: "easeInOut" }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
     >
       <div
-        className={classNames("flex flex-col md:flex-row", {
+        className={classNames("flex flex-col md:flex-row items-center", {
           "md:flex-row-reverse": !isEven,
         })}
       >
         <motion.div
-          className="w-full md:w-1/2 overflow-hidden"
+          className="w-full md:w-1/2 overflow-hidden shadow-2xl"
+          whileHover={{ scale: 1.02 }}
           variants={fadeIn}
-          transition={{ duration: 1.2, ease: "easeOut", delay: 0.4 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.25 }}
         >
           <Image
             src={imageSrc}
             alt={name}
-            width={600}
-            height={900}
-            className="object-cover w-full h-[400px] lg:h-[600px] rounded-xl shadow-lg"
+            width={500}
+            height={800}
+            className="object-cover w-full h-[400px] lg:h-[500px] rounded-xl shadow-2xl"
           />
         </motion.div>
         <motion.div
           className={classNames(
             "w-full md:w-1/2 flex flex-col justify-center",
             {
-              "md:pl-16 md:items-end": isEven,
+              "md:pl-16": isEven,
               "md:pr-16": !isEven,
             }
           )}
           variants={textUpward}
-          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
         >
-          <div className="mt-5 md:mt-0">
-            <h2 className="text-3xl md:text-4xl mb-4 text-gray-800">{name}</h2>
-            <p className="text-lg mb-6 text-gray-600 text-left">{address}</p>
-            {openTimes.map(({ days, hours }, i) => (
-              <motion.div
-                key={i}
-                className="mb-4 space-y-1"
-                variants={textUpward}
-                transition={{
-                  duration: 0.7,
-                  delay: 0.3 + i * 0.2,
-                  ease: "easeOut",
-                }}
+          <div className="mt-8 md:mt-0">
+            <h2 className="text-3xl md:text-4xl mb-4 font-light text-[#8B7355]">
+              {name}
+            </h2>
+            <div className="flex items-center mb-6">
+              <MapPin className="w-5 h-5 mr-2 text-[#8B7355]" />
+              <p className="text-lg text-gray-600">{address}</p>
+            </div>
+            <div className="flex items-start mb-6">
+              <Clock className="w-5 h-5 mr-2 text-[#8B7355] mt-1" />
+              <div>
+                {openTimes.map(({ days, hours }, i) => (
+                  <motion.div
+                    key={i}
+                    className="mb-4 space-y-1"
+                    variants={textUpward}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.1 + i * 0.1,
+                      ease: "easeOut",
+                    }}
+                  >
+                    <p className="text-sm font-semibold text-gray-700">
+                      {days}
+                    </p>
+                    <p className="text-sm text-gray-600">{hours}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+            <motion.a
+              href={`https://www.google.com/maps?q=${encodeURIComponent(
+                address
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <motion.button
+                className="bg-[#8B7355] text-white py-2 px-6 rounded-full hover:bg-[#9c8164] transition-colors duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <p className="text-sm font-semibold text-gray-700">{days}</p>
-                <p className="text-sm text-gray-600">{hours}</p>
-              </motion.div>
-            ))}
+                Ver en el mapa
+              </motion.button>
+            </motion.a>
           </div>
         </motion.div>
       </div>
@@ -94,7 +123,7 @@ const Store = ({
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7, ease: "easeInOut" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
         />
       )}
     </motion.section>
