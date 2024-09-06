@@ -5,12 +5,7 @@ import Menu from "./components/menu";
 const MenuPage = () => {
   const { description, imageSrc, title } = content;
 
-  return (
-    <main className="bg-lharmonie-primary">
-      <MenuBanner title={title} description={description} />
-      <Menu imageSrc={imageSrc} />
-    </main>
-  );
+  return <Menu imageSrc={imageSrc} title={title} description={description} />;
 };
 
 export default MenuPage;

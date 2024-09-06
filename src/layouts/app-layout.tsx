@@ -6,6 +6,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import Loader from "@/components/layout/loader";
 import { usePathname } from "next/navigation";
 import PageTransition from "@/components/layout/page-transition";
+import { ChevronUp } from "lucide-react";
+import ScrollTopButton from "@/components/layout/scroll-top-button";
 
 type AppLayoutProps = {
   children: ReactNode;
@@ -41,6 +43,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
             </motion.div>
           </>
         )}
+        <ScrollTopButton />
       </div>
     );
   }
@@ -52,6 +55,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
         <main className="flex-grow w-full mx-auto">{children}</main>
       </PageTransition>
       <Footer />
+      <ScrollTopButton />
     </div>
   );
 };
