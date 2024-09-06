@@ -23,7 +23,7 @@ const ScrollTopButton = () => {
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3 }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed z-[10000000000] bottom-8 right-8 bg-[#8B7355] text-white p-3 rounded-full shadow-lg hover:bg-[#9c8164] transition-colors duration-300"
+          className="fixed z-[100] bottom-8 right-8 bg-[#8B7355] text-white p-3 rounded-full shadow-lg hover:bg-[#9c8164] transition-colors duration-300"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
