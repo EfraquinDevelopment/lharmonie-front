@@ -63,7 +63,7 @@ body {
 }
 
 .ant-menu-submenu-title {
-  @apply -lg:!text-white !text-lharmonie-secondary;
+  @apply !text-lharmonie-secondary;
 }
 
 /* .header-nav-item:hover {
@@ -79,7 +79,7 @@ body {
 } */
 
 .ant-menu-submenu a {
-  @apply !text-lharmonie-secondary -lg:!text-white;
+  @apply !text-lharmonie-secondary;
 }
 
 /* .ant-menu-submenu.ant-menu-submenu-horizontal:hover {
@@ -95,11 +95,11 @@ body {
 }
 
 .ant-menu-submenu-selected {
-  @apply -lg:!bg-[#8B7355];
+  @apply -lg:!bg-[#8B7355] -lg:!text-white;
 }
 
 .ant-menu-submenu-arrow {
-  @apply !text-lharmonie-secondary -lg:!text-white;
+  @apply !text-lharmonie-secondary;
 }
 
 .header-nav-item {

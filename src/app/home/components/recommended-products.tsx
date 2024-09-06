@@ -14,7 +14,10 @@ const RecommendedProducts = () => {
   const { products } = storeContent;
 
   return (
-    <section className="bg-white mx-4 shadow-xl rounded-xl py-6">
+    <section
+      id="2"
+      className="bg-white mx-4 scroll-mt-[110px] shadow-xl rounded-xl py-6"
+    >
       <div className="mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
