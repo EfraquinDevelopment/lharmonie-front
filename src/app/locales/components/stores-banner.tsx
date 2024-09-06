@@ -27,7 +27,7 @@ const StoresBanner = () => {
       initial="hidden"
       animate="visible"
       variants={fadeIn}
-      transition={{ duration: 1, ease: "easeOut" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="flex-col">
         <motion.div
@@ -35,7 +35,7 @@ const StoresBanner = () => {
           initial="hidden"
           animate="visible"
           variants={textUpward}
-          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
         >
           <Heading level={1} className="md:!text-5xl !font-bold">
             {storesBanner.title}
@@ -49,7 +49,7 @@ const StoresBanner = () => {
           initial="hidden"
           animate="visible"
           variants={fadeIn}
-          transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
         >
           {stores.map((store) => (
             <Link
@@ -60,14 +60,14 @@ const StoresBanner = () => {
               <motion.h3
                 className="text-xl font-medium mb-2"
                 variants={textUpward}
-                transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
+                transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}
               >
                 {store.name}
               </motion.h3>
               <motion.p
                 className="text-sm text-gray-600"
                 variants={textUpward}
-                transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
+                transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
               >
                 {store.address}
               </motion.p>
