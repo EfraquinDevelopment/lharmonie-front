@@ -15,7 +15,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
   const [loading, setLoading] = useState(true);
   const pathname = usePathname();
 
-  if (pathname === "/home") {
+  if (pathname === "/home" || pathname === "/") {
     return (
       <div className="flex flex-col relative min-h-screen">
         <AnimatePresence>

@@ -19,7 +19,7 @@ const ProductCard = ({ index, ...product }: Props) => {
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      transition={{ duration: 0.25, delay: index * 0.05 }}
       className="group cursor-pointer"
     >
       <Link href={`/tienda/${product.id}`}>
