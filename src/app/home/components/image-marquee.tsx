@@ -22,6 +22,7 @@ const ImageMarquee = () => {
       <Marquee autoFill className="bg-white rounded-xl shadow-xl">
         {images.map((image, index) => (
           <Image
+            loading="lazy"
             key={index}
             src={image}
             alt="food"

@@ -6,7 +6,14 @@ import Stores from "@/app/home/components/stores";
 import { Suspense } from "react";
 import SpotifyPlaylist from "@/app/home/components/spotify-playlist";
 import ImageMarquee from "@/app/home/components/image-marquee";
-import VideoSection from "@/app/home/components/video-section";
+import dynamic from "next/dynamic";
+
+const VideoSection = dynamic(
+  () => import("@/app/home/components/video-section"),
+  {
+    ssr: false,
+  }
+);
 
 const Home = () => {
   return (
