@@ -59,39 +59,39 @@ body {
 }
 
 .ant-menu-item:hover {
-  @apply !border-none font-bold transition-colors;
+  @apply !border-none font-semibold transition-colors;
 }
 
 .ant-menu-submenu-title {
-  @apply lg:!text-lharmonie-secondary !text-lharmonie-secondary;
+  @apply -lg:!text-white !text-lharmonie-secondary;
 }
 
-.header-nav-item:hover {
-  @apply text-lharmonie-secondary;
-}
+/* .header-nav-item:hover {
+  @apply text-lharmonie-secondary font-semibold;
+} */
 
 .ant-menu-submenu::after {
   @apply !border-none;
 }
 
-.ant-menu-submenu:hover {
-  @apply !font-bold;
-}
+/* .ant-menu-submenu:hover {
+  @apply !font-semibold;
+} */
 
 .ant-menu-submenu a {
-  @apply !text-lharmonie-secondary;
+  @apply !text-lharmonie-secondary -lg:!text-white;
 }
 
-.ant-menu-submenu.ant-menu-submenu-horizontal:hover {
-  @apply font-bold transition-colors;
-}
+/* .ant-menu-submenu.ant-menu-submenu-horizontal:hover {
+  @apply font-semibold transition-colors;
+} */
 
 .ant-menu-inline {
   @apply !border-none;
 }
 
 .ant-menu-item-selected {
-  @apply -lg:!bg-[#8B7355] !text-lharmonie-secondary;
+  @apply -lg:!bg-[#8B7355] !text-lharmonie-secondary -lg:!text-white;
 }
 
 .ant-menu-submenu-selected {
@@ -99,5 +99,9 @@ body {
 }
 
 .ant-menu-submenu-arrow {
-  @apply !text-lharmonie-secondary;
+  @apply !text-lharmonie-secondary -lg:!text-white;
+}
+
+.header-nav-item {
+  @apply !text-base;
 }

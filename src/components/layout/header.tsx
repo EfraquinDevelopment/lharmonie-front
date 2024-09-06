@@ -35,7 +35,7 @@ const Header = () => {
           <Logo />
         </div>
         <div className="flex-1 flex justify-end">
-          <Cart className="bg-[#F0F0EB] border-none shadow-none" />
+          <Cart className="bg-[#F0F0EB] hover:!bg-inherit border-none shadow-none" />
         </div>
         <Drawer
           placement="left"

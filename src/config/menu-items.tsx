@@ -41,7 +41,7 @@ export const generateMenuItems = (
     return {
       key: item.link,
       label: (
-        <div className="header-nav-item flex gap-[6px] hover:!font-bold items-center">
+        <div className="header-nav-item flex gap-[6px] items-center">
           {item.children ? (
             <>
               <span
@@ -79,15 +79,12 @@ export const generateMenuItems = (
       ),
       children: item.children
         ? item.children.map((child) => {
-            const isChildActive = pathname === child.link;
             return {
               key: child.link,
               label: (
                 <div>
                   <Link
-                    className={classNames("!text-lharmonie-secondary", {
-                      "font-semibold": isChildActive,
-                    })}
+                    className="!text-lharmonie-secondary hover:!font-normal"
                     href={child.link}
                   >
                     {child.title}
