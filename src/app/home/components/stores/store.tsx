@@ -34,6 +34,7 @@ const StoreItem = ({
         <div className="rounded-xl relative aspect-[3/4] overflow-hidden shadow-md transition-shadow duration-300 2xl:h-[700px] w-full">
           {mediaType === "image" ? (
             <Image
+              loading="lazy"
               src={imageSrc}
               alt={name}
               layout="fill"
