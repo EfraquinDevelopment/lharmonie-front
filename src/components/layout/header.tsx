@@ -9,6 +9,7 @@ import { useDrawer } from "@/hooks";
 import useBreakpoint from "@/hooks/useBreakpoint";
 import { X } from "lucide-react";
 import SearchBar from "@/components/layout/search-bar";
+import { Suspense } from "react";
 
 const Header = () => {
   const { isOpen, openDrawer, closeDrawer } = useDrawer();
@@ -40,13 +41,17 @@ const Header = () => {
           </div>
           <div className="flex-1 flex justify-end items-center">
             <div className="hidden md:block">
-              <SearchBar />
+              <Suspense>
+                <SearchBar />
+              </Suspense>
             </div>
             <Cart className="bg-[#F0F0EB] hover:!bg-inherit border-none shadow-none" />
           </div>
         </div>
         <div className="block md:hidden mt-4 w-full">
-          <SearchBar />
+          <Suspense>
+            <SearchBar />
+          </Suspense>
         </div>
 
         <Drawer

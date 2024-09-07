@@ -3,7 +3,6 @@ import Filters from "@/app/tienda/components/filters";
 import Heading from "@/components/layout/heading";
 import content from "@/data/store.json";
 import { Suspense } from "react";
-import SearchBar from "@/app/tienda/components/search-bar";
 
 const Productos = async () => {
   return (
@@ -12,7 +11,6 @@ const Productos = async () => {
         <Heading level={1} className="text-center">
           {content.title}
         </Heading>
-        {/* <SearchBar /> */}
         <div className="space-y-5 lg:space-y-0 lg:grid grid-cols-12 gap-5">
           <aside className="col-span-3">
             <Suspense fallback={<div>Cargando filtros...</div>}>
