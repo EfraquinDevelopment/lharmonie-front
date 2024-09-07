@@ -127,3 +127,26 @@ body {
 .ant-carousel .slick-next {
   @apply !text-lharmonie-secondary;
 } */
+.ant-menu-submenu::after {
+  @apply !border-none;
+}
+
+.ant-menu-submenu.ant-menu-submenu-horizontal:hover {
+  @apply font-bold transition-colors;
+}
+
+.ant-menu-inline {
+  @apply !border-none;
+}
+
+.ant-menu-item-selected {
+  @apply -lg:!bg-[#8B7355] !text-white;
+}
+
+.ant-menu-submenu-selected {
+  @apply -lg:!bg-[#8B7355];
+}
+
+.ant-menu-submenu-arrow {
+  @apply !text-lharmonie-secondary;
+}
