@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Carousel, Row, Col } from "antd";
+import { Carousel } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { Product } from "@/types";
 import ProductCard from "@/components/product-card";
