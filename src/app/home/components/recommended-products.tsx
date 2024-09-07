@@ -16,9 +16,9 @@ const RecommendedProducts = () => {
   return (
     <section
       id="2"
-      className="bg-white mx-4 scroll-mt-[110px] shadow-xl rounded-xl py-6"
+      className="bg-lharmonie-primary mx-4 scroll-mt-[110px] shadow-2xl rounded-xl 2xl:h-[700px] py-5"
     >
-      <div className="mx-auto px-4">
+      <div className="mx-auto px-4 space-y-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ const RecommendedProducts = () => {
           </Heading>
         </motion.div>
         <ProductsGrid reccomended products={products} />
-        <div className="text-center mt-8">
+        <div className="text-center">
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

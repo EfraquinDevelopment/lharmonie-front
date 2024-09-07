@@ -3,6 +3,7 @@ import { Store as StoreData } from "@/types";
 import { motion } from "framer-motion";
 import classNames from "classnames";
 import { Clock, MapPin } from "lucide-react";
+import LharmonieButton from "@/components/ui/lharmonie-button";
 
 type Props = StoreData & {
   index: number;
@@ -106,13 +107,7 @@ const Store = ({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <motion.button
-                className="bg-[#8B7355] text-white py-2 px-6 rounded-full hover:bg-[#9c8164] transition-colors duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Ver en el mapa
-              </motion.button>
+              <LharmonieButton>Ver en el mapa</LharmonieButton>
             </motion.a>
           </div>
         </motion.div>

@@ -53,33 +53,31 @@ const Filters = ({ categories }: Props) => {
           "hidden lg:block": !showFilters,
         })}
       >
-        <Button
-          type="text"
+        <LharmonieButton
           onClick={() => handleCategorySelection(null)}
-          className={`w-full text-left py-2 px-4 rounded-md transition-all duration-300 ${
+          className={`w-full text-left rounded-md transition-all duration-300 flex justify-start ${
             searchParams.get(CATEGORY_PARAM) === null
-              ? "bg-[#8B7355] text-white hover:!bg-[#8B7355] hover:!text-white font-semibold"
-              : "!text-gray-700 hover:!bg-[#f0ebe5]"
+              ? "hover:!text-white font-semibold"
+              : "!text-gray-700 hover:!bg-gray-100 hover:!text-gray-700 !bg-inherit !font-normal"
           }`}
         >
-          <div className="flex w-full justify-start">Todos</div>
-        </Button>
+          Todos
+        </LharmonieButton>
         {categories.map((category) => {
           const isActive =
             searchParams.get(CATEGORY_PARAM) === category.id.toString();
           return (
-            <Button
+            <LharmonieButton
               key={category.id}
-              type="text"
               onClick={() => handleCategorySelection(category.id)}
-              className={`w-full text-left py-2 px-4 rounded-md transition-all duration-300 ${
+              className={`w-full text-left rounded-md transition-all duration-300 flex justify-start ${
                 isActive
-                  ? "bg-[#8B7355] text-white hover:!bg-[#8B7355] hover:!text-white font-semibold"
-                  : "!text-gray-700 hover:!bg-[#f0ebe5]"
+                  ? "hover:!text-white font-semibold"
+                  : "!text-gray-700 hover:!bg-gray-100 hover:!text-gray-700 !bg-inherit !font-normal"
               }`}
             >
-              <div className="flex w-full justify-start"> {category.name}</div>
-            </Button>
+              {category.name}
+            </LharmonieButton>
           );
         })}
       </div>

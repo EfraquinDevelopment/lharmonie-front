@@ -38,10 +38,11 @@ const AddToCartButton = ({ product, quantity, setQuantity }: Props) => {
       disabled={isAdded || isDisabled}
       onClick={handleCartClick}
       className={classNames(
-        "w-full h-fit  text-white  hover:!text-white py-3 px-6 rounded-md transition-colors",
+        "w-full h-fit  text-white hover:!text-white py-3 px-6 rounded-full transition-colors",
         {
           "!bg-[#38a169] hover:!bg-[#38a169] hover:!border-[#38a169]": isAdded,
-          "bg-[#8B7355] hover:!bg-[#9c8164] hover:!border-[#9c8164]": !isAdded,
+          "bg-lharmonie-hover/80 hover:!bg-lharmonie-hover/70 hover:!border-[#9c8164]":
+            !isAdded,
           "hover:!bg-[#0000000B] hover:!border-[#0000000B]": isDisabled,
         }
       )}

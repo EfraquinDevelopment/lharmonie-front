@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 import NextImage from "next/image";
 import { downloadAsPdf } from "@/utils";
+import LharmonieButton from "@/components/ui/lharmonie-button";
 
 type Props = {
   imageSrc: string;
@@ -48,15 +49,12 @@ const MenuContent = ({ imageSrc, description, title }: Props) => {
         </motion.div>
 
         <div className="flex justify-center">
-          <motion.button
+          <LharmonieButton
             onClick={() => downloadAsPdf(imageSrc, "Lharmonie_Menu.pdf")}
-            className="bg-[#8B7355] text-white py-2 px-6 rounded-full hover:bg-[#9c8164] transition-colors duration-300 flex items-center shadow-md"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
             <Download className="mr-2" />
             Descargar menú
-          </motion.button>
+          </LharmonieButton>
         </div>
       </div>
     </div>
