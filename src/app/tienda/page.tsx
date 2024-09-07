@@ -17,7 +17,7 @@ const Productos = async () => {
               <Filters categories={content.categories} />
             </Suspense>
           </aside>
-          <div className="col-span-9 shadow-2xl py-10 mx-4 px-12 rounded-xl">
+          <div className="col-span-9 shadow-2xl py-10 rounded-xl px-4">
             <Suspense fallback={<div>Cargando productos...</div>}>
               <ProductsGrid products={content.products} />
             </Suspense>

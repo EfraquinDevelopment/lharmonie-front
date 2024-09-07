@@ -55,7 +55,7 @@ const ProductsGrid = ({ products, reccomended = false }: Props) => {
   );
 
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5">
+    <section className="grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5">
       {filteredProducts.map((product, index) => (
         <ProductCard key={product.id} index={index} {...product} />
       ))}

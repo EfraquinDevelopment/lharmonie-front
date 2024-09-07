@@ -58,14 +58,14 @@ const Filters = ({ categories }: Props) => {
           className={`w-full text-left rounded-md transition-all duration-300 flex justify-start ${
             searchParams.get(CATEGORY_PARAM) === null
               ? "hover:!text-white font-semibold"
-              : "!text-gray-700 hover:!bg-gray-100 hover:!text-gray-700 !bg-inherit !font-normal"
+              : "!text-gray-950 hover:!bg-slate-100 hover:!text-gray-950 !bg-inherit !font-normal"
           }`}
         >
           Todos
         </LharmonieButton>
         {categories.map((category) => {
           const isActive =
-            searchParams.get(CATEGORY_PARAM) === category.id.toString();
+            searchParams.get(CATEGORY_PARAM) === category.codeName;
           return (
             <LharmonieButton
               key={category.id}
@@ -73,7 +73,7 @@ const Filters = ({ categories }: Props) => {
               className={`w-full text-left rounded-md transition-all duration-300 flex justify-start ${
                 isActive
                   ? "hover:!text-white font-semibold"
-                  : "!text-gray-700 hover:!bg-gray-100 hover:!text-gray-700 !bg-inherit !font-normal"
+                  : "!text-gray-950 hover:!bg-slate-100 hover:!text-gray-950 !bg-inherit !font-normal"
               }`}
             >
               {category.name}
