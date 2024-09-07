@@ -16,7 +16,7 @@ const SpotifyPlaylist = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0.25 }}
-      className="mx-4 lg:scroll-mt-[120px] scroll-mt-[100px]"
+      className="mx-4 lg:scroll-mt-[120px] scroll-mt-[150px]"
     >
       <div className="container mx-auto flex justify-start">
         <div className="max-w-[85ch]">

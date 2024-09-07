@@ -14,7 +14,7 @@ const OurHistory = () => {
   return (
     <section
       id="3"
-      className="bg-lharmonie-primary scroll-mt-[110px] mx-4 text-lharmonie-secondary"
+      className="bg-lharmonie-primary md:scroll-mt-[110px] scroll-mt-[160px]  mx-4 text-lharmonie-secondary"
     >
       <div className="mx-auto">
         <motion.div
