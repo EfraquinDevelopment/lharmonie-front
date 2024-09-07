@@ -17,11 +17,11 @@ const Filters = ({ categories }: Props) => {
   const searchParams = useSearchParams();
   const [showFilters, setShowFilters] = useState(false);
 
-  const handleCategorySelection = (id: number | null) => {
+  const handleCategorySelection = (codeName: string | null) => {
     const params = new URLSearchParams(searchParams.toString());
 
-    if (id) {
-      params.set(CATEGORY_PARAM, id.toString());
+    if (codeName) {
+      params.set(CATEGORY_PARAM, codeName);
     } else {
       params.delete(CATEGORY_PARAM);
     }
@@ -69,7 +69,7 @@ const Filters = ({ categories }: Props) => {
           return (
             <LharmonieButton
               key={category.id}
-              onClick={() => handleCategorySelection(category.id)}
+              onClick={() => handleCategorySelection(category.codeName)}
               className={`w-full text-left rounded-md transition-all duration-300 flex justify-start ${
                 isActive
                   ? "hover:!text-white font-semibold"

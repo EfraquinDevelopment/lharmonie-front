@@ -4,19 +4,19 @@ import { Product } from "@/types";
 import Image from "next/image";
 import React from "react";
 import Heading from "./layout/heading";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 type Props = Product & {
   index: number;
+  reccomended?: boolean;
 };
 
-const ProductCard = ({ index, ...product }: Props) => {
+const ProductCard = ({ index, reccomended = false, ...product }: Props) => {
   return (
     <motion.article
       key={index}
-      initial={{ opacity: 0, scale: 0.8 }}
+      initial={{ opacity: reccomended ? 1 : 0, scale: reccomended ? 1 : 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.25, delay: index * 0.05 }}
@@ -28,7 +28,7 @@ const ProductCard = ({ index, ...product }: Props) => {
           alt={product.name}
           width={300}
           height={300}
-          className="w-full sm:h-[350px] bg-gray-200 object-cover rounded-xl"
+          className="w-full h-[200px] md:h-[300px] bg-gray-200 object-cover rounded-xl"
         />
         <div className="mt-1">
           <Heading
@@ -41,7 +41,7 @@ const ProductCard = ({ index, ...product }: Props) => {
           <p className="text-xs lg:mb-1 text-gray-600 lg:text-sm">
             {product.description}
           </p>
-          <span className="text-sm lg:text-xl font-semibold">
+          <span className="text-sm lg:text-xl font-semibold text-black">
             {new Intl.NumberFormat("es-AR", {
               style: "currency",
               currency: "ARS",

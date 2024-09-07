@@ -6,8 +6,8 @@
       "name": "El libro del café",
       "description": "Historia y cultura",
       "price": 15000,
-      "imageSrc": "/libro-test.png",
-      "category": 1,
+      "imageSrc": "/product.png",
+      "category": "libros",
       "stock": 10,
       "attributes": [
         {
@@ -34,8 +34,8 @@
       "name": "Guía de Barista",
       "description": "Técnicas profesionales",
       "price": 12000,
-      "imageSrc": "/product.png",
-      "category": 1,
+      "imageSrc": "/product.jpg",
+      "category": "libros",
       "stock": 10,
 
       "attributes": [
@@ -63,8 +63,8 @@
       "name": "Café Especial",
       "description": "Blend exclusivo",
       "price": 8000,
-      "imageSrc": "/libro-test.png",
-      "category": 2,
+      "imageSrc": "/product.jpg",
+      "category": "cafes",
       "stock": 10,
       "attributes": [
         {
@@ -91,8 +91,226 @@
       "name": "Taza Lharmonie",
       "description": "Cerámica artesanal",
       "price": 5000,
-      "imageSrc": "/product.png",
-      "category": 3,
+      "imageSrc": "/product.jpg",
+      "category": "accesorios",
+      "stock": 10,
+      "attributes": [
+        {
+          "name": "Material",
+          "value": "Cerámica"
+        },
+        {
+          "name": "Color",
+          "value": "Blanco"
+        },
+        {
+          "name": "Capacidad",
+          "value": "250ml"
+        }
+      ],
+      "isRecommended": true
+    },
+    {
+      "id": 5,
+      "name": "El libro del café",
+      "description": "Historia y cultura",
+      "price": 15000,
+      "imageSrc": "/product.jpg",
+      "category": "libros",
+      "stock": 10,
+      "attributes": [
+        {
+          "name": "Autor",
+          "value": "Juan Perez"
+        },
+        {
+          "name": "Editorial",
+          "value": "Editorial Cafeina"
+        },
+        {
+          "name": "Año",
+          "value": "2020"
+        },
+        {
+          "name": "Páginas",
+          "value": "200"
+        }
+      ],
+      "isRecommended": true
+    },
+    {
+      "id": 6,
+      "name": "Guía de Barista",
+      "description": "Técnicas profesionales",
+      "price": 12000,
+      "imageSrc": "/product.jpg",
+      "category": "libros",
+      "stock": 10,
+
+      "attributes": [
+        {
+          "name": "Autor",
+          "value": "Maria Rodriguez"
+        },
+        {
+          "name": "Editorial",
+          "value": "Editorial Cafeina"
+        },
+        {
+          "name": "Año",
+          "value": "2019"
+        },
+        {
+          "name": "Páginas",
+          "value": "150"
+        }
+      ],
+      "isRecommended": true
+    },
+    {
+      "id": 7,
+      "name": "Café Especial",
+      "description": "Blend exclusivo",
+      "price": 8000,
+      "imageSrc": "/product.jpg",
+      "category": "cafes",
+      "stock": 10,
+      "attributes": [
+        {
+          "name": "Origen",
+          "value": "Colombia"
+        },
+        {
+          "name": "Variedad",
+          "value": "Arabica"
+        },
+        {
+          "name": "Tostado",
+          "value": "Medio"
+        },
+        {
+          "name": "Molienda",
+          "value": "Gruesa"
+        }
+      ],
+      "isRecommended": true
+    },
+    {
+      "id": 8,
+      "name": "Taza Lharmonie",
+      "description": "Cerámica artesanal",
+      "price": 5000,
+      "imageSrc": "/product.jpg",
+      "category": "accesorios",
+      "stock": 10,
+      "attributes": [
+        {
+          "name": "Material",
+          "value": "Cerámica"
+        },
+        {
+          "name": "Color",
+          "value": "Blanco"
+        },
+        {
+          "name": "Capacidad",
+          "value": "250ml"
+        }
+      ],
+      "isRecommended": true
+    },
+    {
+      "id": 9,
+      "name": "El libro del café",
+      "description": "Historia y cultura",
+      "price": 15000,
+      "imageSrc": "/product.jpg",
+      "category": "libros",
+      "stock": 10,
+      "attributes": [
+        {
+          "name": "Autor",
+          "value": "Juan Perez"
+        },
+        {
+          "name": "Editorial",
+          "value": "Editorial Cafeina"
+        },
+        {
+          "name": "Año",
+          "value": "2020"
+        },
+        {
+          "name": "Páginas",
+          "value": "200"
+        }
+      ],
+      "isRecommended": true
+    },
+    {
+      "id": 10,
+      "name": "Guía de Barista",
+      "description": "Técnicas profesionales",
+      "price": 12000,
+      "imageSrc": "/product.jpg",
+      "category": "libros",
+      "stock": 10,
+
+      "attributes": [
+        {
+          "name": "Autor",
+          "value": "Maria Rodriguez"
+        },
+        {
+          "name": "Editorial",
+          "value": "Editorial Cafeina"
+        },
+        {
+          "name": "Año",
+          "value": "2019"
+        },
+        {
+          "name": "Páginas",
+          "value": "150"
+        }
+      ],
+      "isRecommended": true
+    },
+    {
+      "id": 11,
+      "name": "Café Especial",
+      "description": "Blend exclusivo",
+      "price": 8000,
+      "imageSrc": "/product.jpg",
+      "category": "cafes",
+      "stock": 10,
+      "attributes": [
+        {
+          "name": "Origen",
+          "value": "Colombia"
+        },
+        {
+          "name": "Variedad",
+          "value": "Arabica"
+        },
+        {
+          "name": "Tostado",
+          "value": "Medio"
+        },
+        {
+          "name": "Molienda",
+          "value": "Gruesa"
+        }
+      ],
+      "isRecommended": true
+    },
+    {
+      "id": 12,
+      "name": "Taza Lharmonie",
+      "description": "Cerámica artesanal",
+      "price": 5000,
+      "imageSrc": "/product.jpg",
+      "category": "accesorios",
       "stock": 10,
       "attributes": [
         {
@@ -114,15 +332,18 @@
   "categories": [
     {
       "id": 1,
-      "name": "Libros"
+      "name": "Libros",
+      "codeName": "libros"
     },
     {
       "id": 2,
-      "name": "Cafés"
+      "name": "Cafés",
+      "codeName": "cafes"
     },
     {
       "id": 3,
-      "name": "Accesorios"
+      "name": "Accesorios",
+      "codeName": "accesorios"
     }
   ]
 }

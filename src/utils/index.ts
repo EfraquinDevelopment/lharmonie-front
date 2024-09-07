@@ -11,3 +11,11 @@ export const downloadAsPdf = async (imageSrc: string, fileName: string) => {
     doc.save(fileName);
   };
 };
+
+export const chunkArray = <TArray>(array: TArray[], size: number) => {
+  const chunks = [];
+  for (let i = 0; i < array.length; i += size) {
+    chunks.push(array.slice(i, i + size));
+  }
+  return chunks;
+};

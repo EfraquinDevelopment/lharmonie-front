@@ -6,8 +6,8 @@ import content from "@/data/home.json";
 import Heading from "@/components/layout/heading";
 import LharmonieButton from "@/components/ui/lharmonie-button";
 import storeContent from "@/data/store.json";
-import ProductsGrid from "@/app/tienda/components/products-grid";
 import { motion } from "framer-motion";
+import ProductCarousel from "./product-carousel";
 
 const RecommendedProducts = () => {
   const { recommendedProducts } = content;
@@ -30,7 +30,7 @@ const RecommendedProducts = () => {
             {recommendedProducts.title}
           </Heading>
         </motion.div>
-        <ProductsGrid reccomended products={products} />
+        <ProductCarousel products={products} />
         <div className="text-center">
           <motion.div
             initial={{ y: "100%", opacity: 0 }}

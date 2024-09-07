@@ -105,3 +105,16 @@ body {
 .header-nav-item {
   @apply !text-base;
 }
+
+.slick-dots li button {
+  @apply !bg-lharmonie-hover;
+}
+
+.slick-dots li.slick-active button {
+  @apply !bg-lharmonie-secondary;
+}
+
+/* .ant-carousel .slick-prev,
+.ant-carousel .slick-next {
+  @apply !text-lharmonie-secondary;
+} */

@@ -1,4 +1,3 @@
-import { TAILWIND_BREAKPOINTS } from "@/lib/constants";
 import type { Config } from "tailwindcss";
 
 const config: Config = {

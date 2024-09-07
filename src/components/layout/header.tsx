@@ -11,7 +11,6 @@ import { X } from "lucide-react";
 
 const Header = () => {
   const { isOpen, openDrawer, closeDrawer } = useDrawer();
-  const { breakpoint } = useBreakpoint();
 
   return (
     <header className="sticky top-0 z-50 shadow-md w-full border-b-[1px] border-gray-400">
@@ -39,7 +38,6 @@ const Header = () => {
         </div>
         <Drawer
           placement="left"
-          size={breakpoint === "xs" ? "large" : "default"}
           onClose={closeDrawer}
           open={isOpen}
           destroyOnClose

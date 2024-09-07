@@ -4,7 +4,7 @@ export interface Product {
   description: string;
   price: number;
   imageSrc: string;
-  category: number;
+  category: string;
   stock: number;
   attributes: { name: string; value: string }[];
   isRecommended: boolean;
@@ -24,6 +24,7 @@ export interface Store {
 export interface Category {
   id: number;
   name: string;
+  codeName: string;
 }
 
 export enum MediaType {

@@ -1,44 +1,34 @@
 import { TAILWIND_BREAKPOINTS } from "@/lib/constants";
 import { useState, useEffect } from "react";
 
-export const getBreakpointsWithoutPx = (): Record<string, number> => {
-  return Object.entries(TAILWIND_BREAKPOINTS).reduce((acc, [key, value]) => {
-    acc[key] = parseInt(value, 10);
-    return acc;
-  }, {} as Record<string, number>);
-};
+const breakpoints = TAILWIND_BREAKPOINTS;
 
 const useBreakpoint = () => {
-  const [breakpoint, setBreakpoint] = useState("");
-  const breakpoints = getBreakpointsWithoutPx();
+  const [isSm, setIsSm] = useState(false);
+  const [isMd, setIsMd] = useState(false);
+  const [isLg, setIsLg] = useState(false);
+  const [isXl, setIsXl] = useState(false);
+  const [is2xl, setIs2xl] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
 
-      if (width < breakpoints.sm) {
-        setBreakpoint("xs");
-      } else if (width >= breakpoints.sm && width < breakpoints.md) {
-        setBreakpoint("sm");
-      } else if (width >= breakpoints.md && width < breakpoints.lg) {
-        setBreakpoint("md");
-      } else if (width >= breakpoints.lg && width < breakpoints.xl) {
-        setBreakpoint("lg");
-      } else if (width >= breakpoints.xl && width < breakpoints["2xl"]) {
-        setBreakpoint("xl");
-      } else {
-        setBreakpoint("2xl");
-      }
+      setIsSm(width >= breakpoints.sm);
+      setIsMd(width >= breakpoints.md);
+      setIsLg(width >= breakpoints.lg);
+      setIsXl(width >= breakpoints.xl);
+      setIs2xl(width >= breakpoints["2xl"]);
     };
 
-    window.addEventListener("resize", handleResize);
-
     handleResize();
+
+    window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return { breakpoint, breakpoints };
+  return { isSm, isMd, isLg, isXl, is2xl };
 };
 
 export default useBreakpoint;
