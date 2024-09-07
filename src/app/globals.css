@@ -60,11 +60,9 @@ body {
 
 .ant-menu-item:hover {
   @apply !border-none font-semibold transition-colors;
-<<<<<<< HEAD
 }
 
 .ant-menu-submenu-title {
-=======
   @apply !border-none font-bold transition-colors;
 }
 
@@ -73,7 +71,6 @@ body {
 }
 
 .ant-menu-submenu-title {
->>>>>>> nico
   @apply !text-lharmonie-secondary;
 }
 
@@ -97,13 +94,10 @@ body {
   @apply font-semibold transition-colors;
 } */
 
-<<<<<<< HEAD
-=======
 .ant-menu-submenu.ant-menu-submenu-horizontal:hover {
   @apply font-bold transition-colors;
 }
 
->>>>>>> nico
 .ant-menu-inline {
   @apply !border-none;
 }
