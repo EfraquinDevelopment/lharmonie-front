@@ -16,7 +16,7 @@ const RecommendedProducts = () => {
   return (
     <section
       id="2"
-      className="bg-lharmonie-primary mx-4 scroll-mt-[110px] shadow-2xl rounded-xl 2xl:h-[700px] py-5"
+      className="bg-lharmonie-primary mx-4 md:scroll-mt-[110px] scroll-mt-[110px] shadow-2xl rounded-xl 2xl:h-[700px] py-5"
     >
       <div className="mx-auto px-4 space-y-10">
         <motion.div

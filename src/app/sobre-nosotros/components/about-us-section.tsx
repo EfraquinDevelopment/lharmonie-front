@@ -23,7 +23,7 @@ function AboutUsSection({
   return (
     <motion.div
       id={id}
-      className={`flex flex-col scroll-mt-[160px] ${
+      className={`flex flex-col scroll-mt-[210px] md:scroll-mt-[160px] ${
         reversed ? "md:flex-row-reverse" : "md:flex-row"
       } items-center gap-12`}
       initial={{ opacity: 0, y: 50 }}

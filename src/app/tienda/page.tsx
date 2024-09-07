@@ -12,7 +12,7 @@ const Productos = async () => {
         <Heading level={1} className="text-center">
           {content.title}
         </Heading>
-        <SearchBar />
+        {/* <SearchBar /> */}
         <div className="space-y-5 lg:space-y-0 lg:grid grid-cols-12 gap-5">
           <aside className="col-span-3">
             <Suspense fallback={<div>Cargando filtros...</div>}>

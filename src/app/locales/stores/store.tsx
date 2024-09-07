@@ -34,7 +34,7 @@ const Store = ({
   return (
     <motion.section
       id={id.toString()}
-      className="mb-24 scroll-mt-[110px] font-['EB_Garamond',serif]"
+      className="mb-24 md:scroll-mt-[110px] scroll-mt-[160px] font-['EB_Garamond',serif]"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
