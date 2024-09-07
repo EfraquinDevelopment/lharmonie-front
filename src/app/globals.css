@@ -150,3 +150,10 @@ body {
 .ant-menu-submenu-arrow {
   @apply !text-lharmonie-secondary;
 }
+.slick-dots li button {
+  @apply !bg-lharmonie-hover;
+}
+
+.slick-dots li.slick-active button {
+  @apply !bg-lharmonie-secondary;
+}
