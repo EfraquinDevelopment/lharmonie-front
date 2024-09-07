@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const images = [
   "/cafe_no_bg.png",
@@ -28,7 +28,7 @@ const ImageMarquee = () => {
             alt="food"
             width={300}
             height={300}
-            className="w-[150px] md:w-full h-[100px] md:h-[150px]"
+            className="w-[100px] h-[80px] sm:w-[150px] md:w-full sm:h-[100px] md:h-[150px]"
           />
         ))}
       </Marquee>

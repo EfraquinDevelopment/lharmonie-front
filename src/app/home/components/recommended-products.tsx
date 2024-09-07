@@ -6,8 +6,8 @@ import content from "@/data/home.json";
 import Heading from "@/components/layout/heading";
 import LharmonieButton from "@/components/ui/lharmonie-button";
 import storeContent from "@/data/store.json";
-import ProductsGrid from "@/app/tienda/components/products-grid";
 import { motion } from "framer-motion";
+import ProductCarousel from "./product-carousel";
 
 const RecommendedProducts = () => {
   const { recommendedProducts } = content;
@@ -16,9 +16,9 @@ const RecommendedProducts = () => {
   return (
     <section
       id="2"
-      className="bg-white mx-4 md:scroll-mt-[110px] scroll-mt-[160px] shadow-xl rounded-xl py-6"
+      className="bg-lharmonie-primary mx-4 md:scroll-mt-[110px] scroll-mt-[110px] shadow-2xl rounded-xl 2xl:h-[700px] py-5"
     >
-      <div className="mx-auto px-4">
+      <div className="mx-auto px-4 space-y-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -30,8 +30,8 @@ const RecommendedProducts = () => {
             {recommendedProducts.title}
           </Heading>
         </motion.div>
-        <ProductsGrid reccomended products={products} />
-        <div className="text-center mt-8">
+        <ProductCarousel products={products} />
+        <div className="text-center">
           <motion.div
             initial={{ y: "100%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

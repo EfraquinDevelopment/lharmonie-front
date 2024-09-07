@@ -60,9 +60,20 @@ body {
 
 .ant-menu-item:hover {
   @apply !border-none font-semibold transition-colors;
+<<<<<<< HEAD
 }
 
 .ant-menu-submenu-title {
+=======
+  @apply !border-none font-bold transition-colors;
+}
+
+.ant-menu-submenu-title {
+  @apply lg:!text-lharmonie-secondary !text-white;
+}
+
+.ant-menu-submenu-title {
+>>>>>>> nico
   @apply !text-lharmonie-secondary;
 }
 
@@ -86,6 +97,13 @@ body {
   @apply font-semibold transition-colors;
 } */
 
+<<<<<<< HEAD
+=======
+.ant-menu-submenu.ant-menu-submenu-horizontal:hover {
+  @apply font-bold transition-colors;
+}
+
+>>>>>>> nico
 .ant-menu-inline {
   @apply !border-none;
 }
@@ -104,4 +122,47 @@ body {
 
 .header-nav-item {
   @apply !text-base;
+}
+
+.slick-dots li button {
+  @apply !bg-lharmonie-hover;
+}
+
+.slick-dots li.slick-active button {
+  @apply !bg-lharmonie-secondary;
+}
+
+/* .ant-carousel .slick-prev,
+.ant-carousel .slick-next {
+  @apply !text-lharmonie-secondary;
+} */
+.ant-menu-submenu::after {
+  @apply !border-none;
+}
+
+.ant-menu-submenu.ant-menu-submenu-horizontal:hover {
+  @apply font-bold transition-colors;
+}
+
+.ant-menu-inline {
+  @apply !border-none;
+}
+
+.ant-menu-item-selected {
+  @apply -lg:!bg-[#8B7355] !text-white;
+}
+
+.ant-menu-submenu-selected {
+  @apply -lg:!bg-[#8B7355];
+}
+
+.ant-menu-submenu-arrow {
+  @apply !text-lharmonie-secondary;
+}
+.slick-dots li button {
+  @apply !bg-lharmonie-hover;
+}
+
+.slick-dots li.slick-active button {
+  @apply !bg-lharmonie-secondary;
 }

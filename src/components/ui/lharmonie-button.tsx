@@ -18,10 +18,10 @@ const LharmonieButton = ({
       size="large"
       className={classNames(
         className,
-        "font-semibold rounded-3xl hover:!bg-lharmonie-hover hover:!text-lharmonie-primary",
+        "font-semibold rounded-3xl hover:!bg-lharmonie-hover/70 hover:!text-lharmonie-primary",
         {
           "bg-lharmonie-primary text-lharmonie-secondary": reversed,
-          "bg-lharmonie-secondary text-lharmonie-primary": !reversed,
+          "bg-lharmonie-hover/80 text-lharmonie-primary": !reversed,
         }
       )}
       {...props}

@@ -6,7 +6,7 @@ import { Suspense } from "react";
 
 const Productos = async () => {
   return (
-    <main className="bg-[#f8f8f5]">
+    <main>
       <div className="py-10 px-8 sm:max-w-full mx-auto sm:mx-0">
         <Heading level={1} className="text-center">
           {content.title}
@@ -17,7 +17,7 @@ const Productos = async () => {
               <Filters categories={content.categories} />
             </Suspense>
           </aside>
-          <div className="col-span-9">
+          <div className="col-span-9 shadow-2xl py-10 rounded-xl px-4">
             <Suspense fallback={<div>Cargando productos...</div>}>
               <ProductsGrid products={content.products} />
             </Suspense>
