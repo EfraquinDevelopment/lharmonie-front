@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Heading from "@/components/layout/heading";
 import classNames from "classnames";
-import { CATEGORY_PARAM } from "@/lib/constants";
+import { CATEGORY_PARAM, SEARCH_PARAM } from "@/lib/constants";
 import { Button } from "antd";
 
 type Props = {
@@ -22,6 +22,7 @@ const Filters = ({ categories }: Props) => {
 
     if (codeName) {
       params.set(CATEGORY_PARAM, codeName);
+      params.delete(SEARCH_PARAM);
     } else {
       params.delete(CATEGORY_PARAM);
     }
@@ -83,52 +84,6 @@ const Filters = ({ categories }: Props) => {
       </div>
     </section>
   );
-
-  // return (
-  //   <section className="lg:max-w-[80%]">
-  //     <LharmonieButton
-  //       className="lg:hidden w-full lg:px-0 py-2 transition-colors mb-3"
-  //       onClick={() => setShowFilters(!showFilters)}
-  //     >
-  //       {showFilters ? "Ocultar Filtros" : "Mostrar Filtros"}
-  //     </LharmonieButton>
-  //     <Heading
-  //       level={2}
-  //       className={classNames("!text-base lg:!text-2xl !font-light", {
-  //         "hidden lg:block": !showFilters,
-  //       })}
-  //     >
-  //       Filtros
-  //     </Heading>
-  //     <div
-  //       className={classNames("flex flex-wrap gap-2 lg:block lg:space-y-2", {
-  //         "hidden lg:block": !showFilters,
-  //       })}
-  //     >
-  //       <LharmonieButton
-  //         onClick={() => handleCategorySelection(null)}
-  //         reversed={searchParams.has(CATEGORY_PARAM)}
-  //         className="lg:w-full px-4 py-2 transition-colors justify-start shadow-md"
-  //       >
-  //         Todos
-  //       </LharmonieButton>
-  //       {categories.map((category) => (
-  //         <LharmonieButton
-  //           key={category.id}
-  //           reversed={
-  //             searchParams.get(CATEGORY_PARAM) !== category.id.toString()
-  //           }
-  //           onClick={() => handleCategorySelection(category.id)}
-  //           className="lg:w-full px-4 py-2
-
-  //           justify-start shadow-md"
-  //         >
-  //           {category.name}
-  //         </LharmonieButton>
-  //       ))}
-  //     </div>
-  //   </section>
-  // );
 };
 
 export default Filters;

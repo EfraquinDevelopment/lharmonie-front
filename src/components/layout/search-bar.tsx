@@ -19,6 +19,10 @@ const SearchBar = () => {
   }, [pathname]);
 
   useEffect(() => {
+    if (searchParams.get(CATEGORY_PARAM)) {
+      setSearchTerm("");
+      return;
+    }
     const currentSearchTerm = searchParams.get(SEARCH_PARAM);
     if (currentSearchTerm) {
       setSearchTerm(currentSearchTerm);
