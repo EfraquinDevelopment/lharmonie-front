@@ -1,14 +1,13 @@
 "use client";
 import { Logo } from "@/components/logo";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import { useState, useEffect, Dispatch, SetStateAction } from "react";
+import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const Loader = ({ onLoadingComplete }: { onLoadingComplete: () => void }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       onLoadingComplete();
-    }, 2000); // Duración del loader
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, [onLoadingComplete]);

@@ -24,7 +24,7 @@ export const MENU_ITEMS = [
       { title: "Todos", link: "/tienda" },
       ...categories.map((category) => ({
         title: category.name,
-        link: `/tienda?category=${category.id}`,
+        link: `/tienda?category=${category.codeName}`,
       })),
     ],
   },

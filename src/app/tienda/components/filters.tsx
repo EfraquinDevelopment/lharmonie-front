@@ -7,7 +7,6 @@ import { useSearchParams } from "next/navigation";
 import Heading from "@/components/layout/heading";
 import classNames from "classnames";
 import { CATEGORY_PARAM, SEARCH_PARAM } from "@/lib/constants";
-import { Button } from "antd";
 
 type Props = {
   categories: Category[];
@@ -59,7 +58,7 @@ const Filters = ({ categories }: Props) => {
           className={`w-full text-left rounded-md transition-all duration-300 flex justify-start ${
             searchParams.get(CATEGORY_PARAM) === null
               ? "hover:!text-white font-semibold"
-              : "!text-gray-950 hover:!bg-slate-100 hover:!text-gray-950 !bg-inherit !font-normal"
+              : "!text-gray-950 hover:!text-gray-950 !bg-inherit !font-normal"
           }`}
         >
           Todos
@@ -74,7 +73,7 @@ const Filters = ({ categories }: Props) => {
               className={`w-full text-left rounded-md transition-all duration-300 flex justify-start ${
                 isActive
                   ? "hover:!text-white font-semibold"
-                  : "!text-gray-950 hover:!bg-slate-100 hover:!text-gray-950 !bg-inherit !font-normal"
+                  : "!text-gray-950 hover:!text-gray-950 !bg-inherit !font-normal"
               }`}
             >
               {category.name}
