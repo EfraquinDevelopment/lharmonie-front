@@ -40,9 +40,9 @@ const Cart = ({ className }: Props) => {
         size="large"
         onClose={closeDrawer}
         open={isOpen}
-        destroyOnClose={true}
+        destroyOnClose
       >
-        <CartDrawerContent />
+        <CartDrawerContent closeDrawer={closeDrawer} />
       </Drawer>
     </>
   );

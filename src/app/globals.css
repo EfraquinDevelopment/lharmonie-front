@@ -99,7 +99,7 @@ body {
 }
 
 .header-nav-item {
-  @apply !text-base;
+  @apply !text-base hover:!font-semibold;
 }
 
 .slick-dots li button {
@@ -124,6 +124,10 @@ body {
 
 .ant-menu-item-selected {
   @apply -lg:!bg-[#8B7355] lg:!text-lharmonie-secondary -lg:!text-white;
+}
+
+.ant-menu-submenu-selected {
+  @apply -lg:!bg-[#8B7355];
 }
 
 .ant-menu-submenu-selected {

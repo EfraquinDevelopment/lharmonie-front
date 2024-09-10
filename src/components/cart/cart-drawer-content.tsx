@@ -4,10 +4,15 @@ import { List, Typography, Divider } from "antd";
 import { useCartContext } from "@/hooks";
 import LharmonieButton from "@/components/ui/lharmonie-button";
 import CartDrawerItem from "@/components/cart/cart-drawer-item";
+import Link from "next/link";
 
 const { Text } = Typography;
 
-const CartDrawerContent = () => {
+interface Props {
+  closeDrawer: () => void;
+}
+
+const CartDrawerContent = ({ closeDrawer }: Props) => {
   const { cartItems, getTotal } = useCartContext();
   const total = useMemo(() => getTotal(), [cartItems, getTotal]);
 
@@ -30,11 +35,13 @@ const CartDrawerContent = () => {
           </Text>
         </div>
         <LharmonieButton
+          onClick={closeDrawer}
+          disabled={cartItems.length === 0}
           size="large"
           block
           className="bg-gray-800 hover:bg-gray-700 border-none h-14 text-lg font-light tracking-wide transition-all duration-300 ease-in-out transform hover:scale-[1.01]"
         >
-          Finalizar Compra
+          <Link href="/checkout">Finalizar Compra</Link>
         </LharmonieButton>
       </div>
     </div>
