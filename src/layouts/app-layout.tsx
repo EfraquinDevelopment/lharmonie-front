@@ -5,57 +5,43 @@ import { ReactNode, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Loader from "@/components/layout/loader";
 import { usePathname } from "next/navigation";
-import PageTransition from "@/components/layout/page-transition";
-import { ChevronUp } from "lucide-react";
 import ScrollTopButton from "@/components/layout/scroll-top-button";
+import PageTransition from "@/components/layout/page-transition";
 
 type AppLayoutProps = {
   children: ReactNode;
 };
 
+const MainLayoutContent = ({ children }: AppLayoutProps) => {
+  return (
+    <PageTransition>
+      <Header />
+      <main className="flex-grow w-full mx-auto">{children}</main>
+      <Footer />
+      <ScrollTopButton />
+    </PageTransition>
+  );
+};
+
 const AppLayout = ({ children }: AppLayoutProps) => {
   const [loading, setLoading] = useState(true);
   const pathname = usePathname();
+  const isHome = pathname === "/home" || pathname === "/";
 
-  if (pathname === "/home" || pathname === "/") {
+  if (isHome) {
     return (
       <div className="flex flex-col relative min-h-screen">
         <AnimatePresence>
           {loading && <Loader onLoadingComplete={() => setLoading(false)} />}
         </AnimatePresence>
-        {!loading && (
-          <>
-            <Header />
-            <motion.main
-              className="flex-grow w-full mx-auto"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              {children}
-            </motion.main>
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-            >
-              <Footer />
-            </motion.div>
-          </>
-        )}
-        <ScrollTopButton />
+        {!loading && <MainLayoutContent children={children} />}
       </div>
     );
   }
 
   return (
     <div className="flex flex-col relative min-h-screen">
-      <Header />
-      <PageTransition>
-        <main className="flex-grow w-full mx-auto">{children}</main>
-      </PageTransition>
-      <Footer />
-      <ScrollTopButton />
+      <MainLayoutContent children={children} />
     </div>
   );
 };

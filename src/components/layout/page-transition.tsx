@@ -5,6 +5,11 @@ import { usePathname } from "next/navigation";
 const PageTransition = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
+  const isHome = pathname === "/home" || pathname === "/";
+
+  if (isHome) {
+    return <>{children}</>;
+  }
 
   useEffect(() => {
     setIsVisible(true);
@@ -22,7 +27,7 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
         {isVisible && (
           <motion.div
             key={pathname}
-            className="bg-lharmonie-secondary"
+            className="bg-lharmonie-hover"
             initial={{ translateX: "0%" }}
             animate={{ translateX: "100%" }}
             exit={{ translateX: "100%" }}
