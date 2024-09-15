@@ -2,7 +2,7 @@
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import { ReactNode, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Loader from "@/components/layout/loader";
 import { usePathname } from "next/navigation";
 import ScrollTopButton from "@/components/layout/scroll-top-button";
@@ -34,14 +34,14 @@ const AppLayout = ({ children }: AppLayoutProps) => {
         <AnimatePresence>
           {loading && <Loader onLoadingComplete={() => setLoading(false)} />}
         </AnimatePresence>
-        {!loading && <MainLayoutContent children={children} />}
+        {!loading && <MainLayoutContent>{children}</MainLayoutContent>}
       </div>
     );
   }
 
   return (
     <div className="flex flex-col relative min-h-screen">
-      <MainLayoutContent children={children} />
+      <MainLayoutContent>{children}</MainLayoutContent>
     </div>
   );
 };

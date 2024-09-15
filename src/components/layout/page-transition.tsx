@@ -7,10 +7,6 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
   const [isVisible, setIsVisible] = useState(false);
   const isHome = pathname === "/home" || pathname === "/";
 
-  if (isHome) {
-    return <>{children}</>;
-  }
-
   useEffect(() => {
     setIsVisible(true);
 
@@ -20,6 +16,10 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
 
     return () => clearTimeout(timeout);
   }, [pathname]);
+
+  if (isHome) {
+    return <>{children}</>;
+  }
 
   return (
     <>
