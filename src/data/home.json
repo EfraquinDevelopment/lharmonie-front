@@ -2,7 +2,6 @@
   "homeBanner": {
     "title": "Descubre la armonía en cada taza",
     "description": "Bienvenido a Lharmonie, donde el café se convierte en una experiencia única. Cafeterías acogedoras y singulares. Elegantes y minimalistas.",
-    "buttonText": "Explora Nuestro Menú",
     "videoSrc": "/video-home-2.mp4"
   },
   "storesSection": {
@@ -84,26 +83,6 @@
             "hours": "9:00hs a 20:00hs"
           }
         ]
-      }
-    ]
-  },
-  "featuresSection": {
-    "title": "¿Por qué elegir Lharmonie?",
-    "features": [
-      {
-        "icon": "CoffeeOutlined",
-        "title": "Café de Calidad",
-        "description": "Seleccionamos los mejores granos para ofrecerte una experiencia única en cada taza."
-      },
-      {
-        "icon": "BookOutlined",
-        "title": "Ambiente Acogedor",
-        "description": "Un espacio perfecto para relajarte, leer un libro o trabajar mientras disfrutas de tu café."
-      },
-      {
-        "icon": "EnvironmentOutlined",
-        "title": "Múltiples Locaciones",
-        "description": "Encuentra tu Lharmonie favorito en diferentes puntos de la ciudad."
       }
     ]
   },
