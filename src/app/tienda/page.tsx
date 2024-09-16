@@ -3,13 +3,26 @@ import Filters from "@/app/tienda/components/filters";
 import Heading from "@/components/layout/heading";
 import content from "@/data/store.json";
 import { Suspense } from "react";
-import { WooProduct } from "@/types/woocommerce";
 import { getWooProducts } from "@/data/woocommerce/getWooProducts";
 import { getWooCategories } from "@/data/woocommerce/getWooCategories";
+import OrderBy from "@/app/tienda/components/order-by";
+import { orderOptions } from "@/config/store";
+import { WooCategory } from "@/types/woocommerce";
 
-const Productos = async () => {
-  const products = await getWooProducts();
+interface Props {
+  searchParams: { [key: string]: string | undefined };
+}
+
+const getCategoryIdBySlug = (categories: WooCategory[], slug?: string) =>
+  categories.find((cat) => cat.slug === slug)?.id;
+
+const Productos = async ({ searchParams }: Props) => {
+  const { order = orderOptions[0].value, category, search } = searchParams;
+
   const categories = await getWooCategories();
+  const categoryId = getCategoryIdBySlug(categories, category);
+
+  const products = await getWooProducts(order, categoryId, search);
 
   return (
     <main>
@@ -23,10 +36,15 @@ const Productos = async () => {
               <Filters categories={categories} />
             </Suspense>
           </aside>
-          <div className="col-span-9 shadow-2xl py-10 rounded-xl px-4">
-            <Suspense fallback={<div>Cargando productos...</div>}>
-              <ProductsGrid products={products} />
-            </Suspense>
+          <div className="col-span-9">
+            <div className="mb-2 flex justify-end">
+              <OrderBy />
+            </div>
+            <div className="shadow-2xl py-10 rounded-xl px-4">
+              <Suspense fallback={<div>Cargando productos...</div>}>
+                <ProductsGrid products={products} />
+              </Suspense>
+            </div>
           </div>
         </div>
       </div>

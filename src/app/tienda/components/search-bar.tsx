@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, X } from "lucide-react";
-import { CATEGORY_PARAM, SEARCH_PARAM } from "@/lib/constants";
+import { CATEGORY_PARAM, ORDER_PARAM, SEARCH_PARAM } from "@/lib/constants";
 
 export default function SearchBar() {
   const router = useRouter();
@@ -25,6 +25,7 @@ export default function SearchBar() {
       if (value) {
         params.set(SEARCH_PARAM, value);
         params.delete(CATEGORY_PARAM);
+        params.delete(ORDER_PARAM);
       } else {
         params.delete(SEARCH_PARAM);
       }

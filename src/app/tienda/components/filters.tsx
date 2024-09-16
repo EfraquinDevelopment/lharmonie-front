@@ -3,10 +3,10 @@
 import LharmonieButton from "@/components/ui/lharmonie-button";
 import { Category } from "@/types";
 import React, { useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Heading from "@/components/layout/heading";
 import classNames from "classnames";
-import { CATEGORY_PARAM, SEARCH_PARAM } from "@/lib/constants";
+import { CATEGORY_PARAM, ORDER_PARAM, SEARCH_PARAM } from "@/lib/constants";
 import { WooCategory } from "@/types/woocommerce";
 
 type Props = {
@@ -15,6 +15,7 @@ type Props = {
 
 const Filters = ({ categories }: Props) => {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const [showFilters, setShowFilters] = useState(false);
 
   const handleCategorySelection = (codeName: string | null) => {
@@ -23,10 +24,11 @@ const Filters = ({ categories }: Props) => {
     if (codeName) {
       params.set(CATEGORY_PARAM, codeName);
       params.delete(SEARCH_PARAM);
+      params.delete(ORDER_PARAM);
     } else {
       params.delete(CATEGORY_PARAM);
     }
-    window.history.pushState(null, "", `?${params.toString()}`);
+    router.push(`?${params.toString()}`);
     setShowFilters(false);
   };
 

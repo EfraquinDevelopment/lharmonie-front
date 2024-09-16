@@ -1,5 +1,6 @@
 export const CATEGORY_PARAM = "category";
 export const SEARCH_PARAM = "search";
+export const ORDER_PARAM = "order";
 export const TAILWIND_BREAKPOINTS = Object.freeze({
   sm: 640,
   md: 768,
