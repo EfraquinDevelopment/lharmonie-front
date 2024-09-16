@@ -144,3 +144,10 @@ body {
 .slick-dots li.slick-active button {
   @apply !bg-lharmonie-secondary;
 }
+
+.group:hover .group-hover\:block {
+  display: block;
+}
+.group:focus-within .group-focus-within\:block {
+  display: block;
+}

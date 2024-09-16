@@ -31,3 +31,9 @@ export enum MediaType {
   Image = "image",
   Video = "video",
 }
+
+export interface MenuHeaderItem {
+  title: string;
+  link: string;
+  children?: { title: string; link: string }[];
+}

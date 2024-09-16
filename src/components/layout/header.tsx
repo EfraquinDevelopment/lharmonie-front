@@ -3,7 +3,7 @@
 import { Button, Drawer } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import { Logo } from "@/components/logo";
-import AppMenu from "./app-menu";
+import AppMenu from "./menu/app-menu";
 import Cart from "@/components/cart/cart";
 import { useDrawer } from "@/hooks";
 import useBreakpoint from "@/hooks/useBreakpoint";
@@ -29,11 +29,11 @@ const Header = () => {
               }
               onClick={openDrawer}
             />
-            <AppMenu
-              disabledOverflow
-              mode="horizontal"
-              className="hidden lg:block text-sm border-none !p-0 bg-[#F0F0EB]"
-            />
+            <div className="hidden lg:block ">
+              <AppMenu
+              // hidden lg:block className="text-sm border-none !p-0 bg-[#F0F0EB]"
+              />
+            </div>
           </div>
           <div className="flex justify-center">
             <Logo />
@@ -70,11 +70,7 @@ const Header = () => {
                 <X className="text-[#8B7355] text-2xl" />
               </button>
             </div>
-            <AppMenu
-              onClick={closeDrawer}
-              mode="inline"
-              className="text-sm p-4 border-none !bg-[#f8f8f5]"
-            />
+            <AppMenu onClick={closeDrawer} />
           </div>
         </Drawer>
       </nav>
