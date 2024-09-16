@@ -1,7 +1,7 @@
 export async function getAcfData(pageId: string) {
   const timestamp = new Date().getTime();
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages/${pageId}?t=${timestamp}`
+    `${process.env.API_URL}/wp-json/wp/v2/pages/${pageId}?t=${timestamp}`
   );
 
   if (!res.ok) {
