@@ -6,6 +6,7 @@ import SpotifyPlaylist from "@/app/home/components/spotify-playlist";
 import ImageMarquee from "@/app/home/components/image-marquee";
 import dynamic from "next/dynamic";
 import { getHomePageData } from "@/data/pages/getPageData";
+import { getWooProducts } from "@/data/woocommerce/getWooProducts";
 
 const VideoSection = dynamic(
   () => import("@/app/home/components/video-section"),
@@ -16,6 +17,7 @@ const VideoSection = dynamic(
 
 const HomePage = async () => {
   const acfData = await getHomePageData();
+  const products = await getWooProducts();
 
   if (!acfData) {
     return null;
@@ -26,7 +28,7 @@ const HomePage = async () => {
       <VideoSection {...acfData.banner} />
       <Stores />
       <Suspense fallback={<div>Cargando productos...</div>}>
-        <RecommendedProducts />
+        <RecommendedProducts products={products} />
       </Suspense>
       <ImageMarquee />
       <OurHistory />

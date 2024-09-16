@@ -14,7 +14,6 @@ type Props = WooProduct;
 const ProductContent = (product: Props) => {
   const { checkCartItemQuantity } = useCartContext();
   const [quantity, setQuantity] = useState(1);
-  console.log(product);
 
   const incrementQuantity = () => setQuantity((prev) => prev + 1);
   const decrementQuantity = () =>

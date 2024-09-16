@@ -5,6 +5,7 @@ import { Product } from "@/types";
 import ProductCard from "@/components/product-card";
 import useBreakpoint from "@/hooks/useBreakpoint";
 import classNames from "classnames";
+import { WooProduct } from "@/types/woocommerce";
 
 type ArrowProps = PropsWithChildren<{
   type: "prev" | "next";
@@ -29,7 +30,7 @@ const Arrow = ({ children, type, onClick }: ArrowProps) => {
 };
 
 type Props = {
-  products: Product[];
+  products: WooProduct[];
 };
 
 const ProductCarousel = ({ products }: Props) => {

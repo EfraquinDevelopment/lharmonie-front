@@ -8,11 +8,14 @@ import LharmonieButton from "@/components/ui/lharmonie-button";
 import storeContent from "@/data/store.json";
 import { motion } from "framer-motion";
 import ProductCarousel from "./product-carousel";
+import { WooProduct } from "@/types/woocommerce";
 
-const RecommendedProducts = () => {
+interface Props {
+  products: WooProduct[];
+}
+
+const RecommendedProducts = ({ products }: Props) => {
   const { recommendedProducts } = content;
-  const { products } = storeContent;
-
   return (
     <section
       id="2"
