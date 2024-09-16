@@ -1,8 +1,4 @@
-import { useCategories } from "@/context/categories-context";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useMemo } from "react";
-import { getItems } from "@/config/menu-items";
 import classNames from "classnames";
 import { ChevronDown } from "lucide-react";
 import { MenuHeaderItem } from "@/types";
@@ -20,12 +16,13 @@ const AppMenuDesktop = ({ menuItems, currentKey }: Props) => {
           <Link
             href={item.link}
             className={classNames(
-              "text-lharmonie-secondary  transition-all duration-100 ease-in-out",
+              "text-lharmonie-secondary transition-all duration-200 ease-in-out",
               {
                 "font-semibold": currentKey === item.link,
                 "hover:font-semibold": currentKey !== item.link,
               }
             )}
+            style={{ transitionProperty: "color, font-weight" }}
           >
             {item.title}
             {item.children && (
@@ -34,7 +31,11 @@ const AppMenuDesktop = ({ menuItems, currentKey }: Props) => {
           </Link>
 
           {item.children && (
-            <div className="absolute left-0 hidden group-hover:block group-focus-within:block bg-white shadow-lg z-10">
+            <div
+              className={classNames(
+                "absolute left-0 transform opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200 ease-out bg-white shadow-lg z-10"
+              )}
+            >
               {item.children.map((child) => (
                 <Link
                   key={child.link}
