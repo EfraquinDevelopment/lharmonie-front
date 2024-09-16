@@ -7,9 +7,10 @@ import { useSearchParams } from "next/navigation";
 import Heading from "@/components/layout/heading";
 import classNames from "classnames";
 import { CATEGORY_PARAM, SEARCH_PARAM } from "@/lib/constants";
+import { WooCategory } from "@/types/woocommerce";
 
 type Props = {
-  categories: Category[];
+  categories: WooCategory[];
 };
 
 const Filters = ({ categories }: Props) => {
@@ -64,12 +65,11 @@ const Filters = ({ categories }: Props) => {
           Todos
         </LharmonieButton>
         {categories.map((category) => {
-          const isActive =
-            searchParams.get(CATEGORY_PARAM) === category.codeName;
+          const isActive = searchParams.get(CATEGORY_PARAM) === category.slug;
           return (
             <LharmonieButton
               key={category.id}
-              onClick={() => handleCategorySelection(category.codeName)}
+              onClick={() => handleCategorySelection(category.slug)}
               className={`w-full text-left rounded-md transition-all duration-300 flex justify-start ${
                 isActive
                   ? "hover:!text-white font-semibold"

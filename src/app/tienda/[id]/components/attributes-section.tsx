@@ -1,9 +1,10 @@
 import { Product } from "@/types";
+import { WooProduct } from "@/types/woocommerce";
 import { Coffee } from "lucide-react";
 import React from "react";
 
 interface Props {
-  attributes: Product["attributes"];
+  attributes: WooProduct["attributes"];
 }
 
 const AttributesSection = ({ attributes }: Props) => {
@@ -19,7 +20,7 @@ const AttributesSection = ({ attributes }: Props) => {
         {attributes.map((attribute) => (
           <li key={attribute.name} className="flex items-center">
             <span className="w-24 font-semibold">{attribute.name}:</span>
-            <span>{attribute.value}</span>
+            <span>{attribute.options[0]}</span>
           </li>
         ))}
       </ul>

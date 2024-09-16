@@ -3,15 +3,16 @@
 import ProductCard from "@/components/product-card";
 import { CATEGORY_PARAM, SEARCH_PARAM } from "@/lib/constants";
 import { Product } from "@/types";
+import { WooProduct } from "@/types/woocommerce";
 import { useSearchParams } from "next/navigation";
 
 type Props = {
-  products: Product[];
+  products: WooProduct[];
   reccomended?: boolean;
 };
 
 const getFilteredProducts = (
-  products: Product[],
+  products: WooProduct[],
   category: string | null,
   search: string | null,
   reccomended: boolean
@@ -23,7 +24,7 @@ const getFilteredProducts = (
       .toLowerCase();
 
   if (reccomended) {
-    return products.filter((product) => product.isRecommended);
+    return products.filter((product) => product.featured);
   }
 
   if (search) {
@@ -35,7 +36,7 @@ const getFilteredProducts = (
 
   if (category) {
     return products.filter(
-      (product) => product.category.toString() === category
+      (product) => product.categories[0].slug === category
     );
   }
 

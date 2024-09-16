@@ -2,11 +2,17 @@ import React from "react";
 import content from "@/data/store.json";
 import ProductDetailBreadcrumb from "@/app/tienda/[id]/components/product-detail-breadcrumb";
 import ProductContent from "@/app/tienda/[id]/components/product-content";
+import { getWooProduct } from "@/data/woocommerce/getWooProduct";
 
-const ProductDetail = ({ params: { id } }: { params: { id: string } }) => {
-  const product = content.products.find(
-    (product) => product.id.toString() === id
-  );
+const ProductDetail = async ({
+  params: { id },
+}: {
+  params: { id: string };
+}) => {
+  const product = await getWooProduct(id);
+  // const product = content.products.find(
+  //   (product) => product.id.toString() === id
+  // );
 
   if (!product) {
     return <div>Producto no encontrado</div>;

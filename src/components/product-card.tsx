@@ -6,8 +6,9 @@ import React from "react";
 import Heading from "./layout/heading";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { WooProduct } from "@/types/woocommerce";
 
-type Props = Product & {
+type Props = WooProduct & {
   index: number;
   reccomended?: boolean;
 };
@@ -24,7 +25,7 @@ const ProductCard = ({ index, reccomended = false, ...product }: Props) => {
     >
       <Link href={`/tienda/${product.id}`}>
         <Image
-          src={product.imageSrc}
+          src={product.images[0].src}
           alt={product.name}
           width={300}
           height={300}
@@ -45,7 +46,7 @@ const ProductCard = ({ index, reccomended = false, ...product }: Props) => {
             {new Intl.NumberFormat("es-AR", {
               style: "currency",
               currency: "ARS",
-            }).format(product.price)}
+            }).format(+product.price)}
           </span>
         </div>
       </Link>

@@ -6,9 +6,10 @@ import { Button } from "antd";
 import { Product } from "@/types";
 import { useCartContext } from "@/hooks";
 import classNames from "classnames";
+import { WooProduct } from "@/types/woocommerce";
 
 interface Props {
-  product: Product;
+  product: WooProduct;
   quantity: number;
   setQuantity: React.Dispatch<React.SetStateAction<number>>;
 }

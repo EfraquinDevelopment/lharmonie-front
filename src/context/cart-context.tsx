@@ -1,18 +1,19 @@
 "use client";
 
 import { Product } from "@/types";
+import { WooProduct } from "@/types/woocommerce";
 import React, { createContext, useState, useEffect, ReactNode } from "react";
 
-export type CartItem = Product & { quantity: number };
+export type CartItem = WooProduct & { quantity: number };
 
 interface CartContextState {
   cartItems: CartItem[];
-  addToCart: (item: Product, qty?: number) => void;
+  addToCart: (item: WooProduct, qty?: number) => void;
   removeFromCart: (itemId: number) => void;
   updateCartQuantity: (itemId: number, amount: number) => void;
   getTotal: () => number;
   getTotalItemsQty: () => number;
-  checkCartItemQuantity: (item: Product, qty: number) => boolean;
+  checkCartItemQuantity: (item: WooProduct, qty: number) => boolean;
 }
 
 const CartContext = createContext<CartContextState | undefined>(undefined);
@@ -35,16 +36,17 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const addToCart = (item: Product, qty = 1) => {
+  const addToCart = (item: WooProduct, qty = 1) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find(
         (cartItem) => cartItem.id === item.id
       );
 
       if (existingItem) {
-        const isMoreThanStock = existingItem.quantity + qty > item.stock;
+        const isMoreThanStock =
+          existingItem.quantity + qty > item.stock_quantity;
         const quantity = isMoreThanStock
-          ? item.stock
+          ? item.stock_quantity
           : qty + existingItem.quantity;
         return prevItems.map((cartItem) =>
           cartItem.id === item.id ? { ...cartItem, quantity } : cartItem
@@ -70,16 +72,16 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     );
   };
 
-  const checkCartItemQuantity = (item: Product, qty: number) => {
+  const checkCartItemQuantity = (item: WooProduct, qty: number) => {
     const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
     if (existingItem) {
-      return existingItem.quantity + qty >= item.stock;
+      return existingItem.quantity + qty >= item.stock_quantity;
     }
-    return item.stock <= qty;
+    return item.stock_quantity <= qty;
   };
 
   const getTotal = () =>
-    cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    cartItems.reduce((acc, item) => acc + +item.price * item.quantity, 0);
 
   const getTotalItemsQty = () =>
     cartItems.reduce((acc, item) => acc + item.quantity, 0);

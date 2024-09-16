@@ -7,12 +7,14 @@ import React, { useState } from "react";
 import AddToCartButton from "@/app/tienda/[id]/components/add-to-cart-button";
 import AttributesSection from "@/app/tienda/[id]/components/attributes-section";
 import ProductImage from "@/app/tienda/[id]/components/product-image";
+import { WooProduct } from "@/types/woocommerce";
 
-type Props = Product;
+type Props = WooProduct;
 
 const ProductContent = (product: Props) => {
   const { checkCartItemQuantity } = useCartContext();
   const [quantity, setQuantity] = useState(1);
+  console.log(product);
 
   const incrementQuantity = () => setQuantity((prev) => prev + 1);
   const decrementQuantity = () =>
@@ -22,7 +24,7 @@ const ProductContent = (product: Props) => {
     <div className="lg:flex lg:items-start lg:space-x-8">
       <div className="lg:w-1/2 flex justify-center">
         <div className="aspect-w-1 aspect-h-1 rounded-lg bg-white overflow-hidden shadow-xl">
-          <ProductImage src={product.imageSrc} alt={product.name} />
+          <ProductImage src={product.images[0].src} alt={product.name} />
         </div>
       </div>
 
@@ -34,7 +36,7 @@ const ProductContent = (product: Props) => {
           {new Intl.NumberFormat("es-AR", {
             style: "currency",
             currency: "ARS",
-          }).format(product.price)}
+          }).format(+product.price)}
         </p>
         <p className="text-xl text-gray-700 mb-8 italic">
           {product.description}
