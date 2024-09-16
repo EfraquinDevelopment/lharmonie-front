@@ -2,46 +2,111 @@ import { Logo } from "@/components/logo";
 import Link from "next/link";
 import React from "react";
 import content from "@/data/footer.json";
+import {
+  SiFacebook,
+  SiInstagram,
+  SiSpotify,
+  SiX,
+} from "@icons-pack/react-simple-icons";
 
-const Footer = () => {
+type SocialMedia = {
+  label: string;
+  href: string;
+};
+
+interface SocialMediaLinksProps {
+  socialMedia: SocialMedia[];
+}
+
+const socialMediaIcons: Record<string, React.ElementType> = {
+  facebook: SiFacebook,
+  instagram: SiInstagram,
+  twitter: SiX,
+  spotify: SiSpotify,
+};
+
+const SocialMediaLinks: React.FC<SocialMediaLinksProps> = ({ socialMedia }) => (
+  <div className="flex space-x-4">
+    {socialMedia.map((social) => {
+      const Icon = socialMediaIcons[social.label.toLowerCase()];
+      return (
+        <a
+          key={social.label}
+          href={social.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#8B7355] hover:text-[#5D4D3A] transition-colors duration-300"
+          aria-label={social.label}
+        >
+          <Icon size={20} />
+        </a>
+      );
+    })}
+  </div>
+);
+
+const Footer: React.FC = () => {
   const {
     contactDetails,
-    contactTitle,
     logoTagline,
     quickLinks,
     quickLinksTitle,
+    socialMedia,
   } = content;
 
   return (
-    <footer className="bg-lharmonie-secondary text-lharmonie-primary py-10">
-      <div className="container px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
-          <Logo invert clickable={false} />
-          <p className="text-sm text-gray-300">{logoTagline}</p>
+    <footer className="bg-[#f8f8f5] text-[#8B7355] py-12 font-['EB_Garamond',serif] border-t border-[#e0d8c9]">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div className="col-span-1 md:col-span-2">
+            <Logo color="#8B7355" clickable={false} />
+            <p className="text-sm leading-relaxed text-[#5D4D3A] max-w-md mb-4">
+              {logoTagline}
+            </p>
+            <SocialMediaLinks socialMedia={socialMedia} />
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold mb-4">{quickLinksTitle}</h3>
+            <ul className="space-y-2">
+              {quickLinks.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="text-sm hover:text-[#5D4D3A] transition-colors duration-300"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Contacto</h3>
+            <ul className="space-y-2 text-sm">
+              <li>Email: {contactDetails.email}</li>
+              <li>Teléfono: {contactDetails.phone}</li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <h3 className="font-semibold mb-4">{quickLinksTitle}</h3>
-          <nav className="flex flex-col space-y-2">
-            {quickLinks.map((link, index) => (
-              <Link
-                key={index}
-                href={link.href}
-                className="text-sm text-lharmonie-primary hover:text-lharmonie-primary/80"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-        <div>
-          <h3 className="font-semibold mb-4">{contactTitle}</h3>
-          <address className="text-sm text-lharmonie-primary not-italic">
-            <p>Email: {contactDetails.email}</p>
-            <p>Teléfono: {contactDetails.phone}</p>
-            <div className="mt-4 flex space-x-4">
-              {/* Add social media icons/links here */}
-            </div>
-          </address>
+        <div className="border-t border-[#e0d8c9] pt-6 mt-6 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-xs text-[#5D4D3A]">
+            &copy; {new Date().getFullYear()} Lharmonie. Todos los derechos
+            reservados.
+          </p>
+          <div className="mt-4 md:mt-0 space-x-4">
+            <Link
+              href="/terminos"
+              className="text-xs hover:text-[#5D4D3A] transition-colors duration-300"
+            >
+              Términos de Servicio
+            </Link>
+            <Link
+              href="/privacidad"
+              className="text-xs hover:text-[#5D4D3A] transition-colors duration-300"
+            >
+              Política de Privacidad
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

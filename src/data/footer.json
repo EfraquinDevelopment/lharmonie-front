@@ -12,5 +12,19 @@
   "contactDetails": {
     "email": "info@lharmonie.com",
     "phone": "+1 234 567 890"
-  }
+  },
+  "socialMedia": [
+    {
+      "label": "Facebook",
+      "href": "https://www.facebook.com"
+    },
+    {
+      "label": "Instagram",
+      "href": "https://www.instagram.com"
+    },
+    {
+      "label": "Twitter",
+      "href": "https://www.twitter.com"
+    }
+  ]
 }

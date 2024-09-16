@@ -7,14 +7,18 @@ interface Props {
   clickable?: boolean;
   invert?: boolean;
   size?: "default" | "large";
+  color?: string;
 }
 
 export const Logo = ({
   clickable = true,
   invert = false,
   size = "default",
+  color,
 }: Props) => {
-  const textColor = invert
+  const textColor = color
+    ? `text-[${color}]`
+    : invert
     ? "text-lharmonie-primary"
     : "text-lharmonie-secondary";
 
