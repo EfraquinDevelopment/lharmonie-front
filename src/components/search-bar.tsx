@@ -6,7 +6,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Search, X } from "lucide-react";
 import { CATEGORY_PARAM, ORDER_PARAM, SEARCH_PARAM } from "@/lib/constants";
 
-export default function SearchBar() {
+interface Props {
+  onChange?: () => void;
+}
+
+export default function SearchBar({ onChange }: Props) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
@@ -30,6 +34,7 @@ export default function SearchBar() {
         params.delete(SEARCH_PARAM);
       }
       router.push(`?${params.toString()}`);
+      onChange && onChange();
     },
     [router, searchParams]
   );
@@ -49,14 +54,11 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto mb-8 px-4">
-      <motion.div
+    <div className="w-full max-w-3xl mx-auto px-4">
+      <div
         className={`relative flex items-center bg-white rounded-full shadow-md transition-all ${
           isFocused ? "ring-2 ring-[#8B7355]" : ""
         }`}
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
       >
         <Search className="absolute left-4 text-gray-400" size={20} />
         <input
@@ -83,7 +85,7 @@ export default function SearchBar() {
             </motion.button>
           )}
         </AnimatePresence>
-      </motion.div>
+      </div>
     </div>
   );
 }

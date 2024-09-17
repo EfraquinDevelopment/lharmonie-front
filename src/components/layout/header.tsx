@@ -6,7 +6,6 @@ import { Logo } from "@/components/logo";
 import AppMenu from "./menu/app-menu";
 import Cart from "@/components/cart/cart";
 import { useDrawer } from "@/hooks";
-import useBreakpoint from "@/hooks/useBreakpoint";
 import { X } from "lucide-react";
 import SearchBar from "@/components/layout/search-bar";
 import { Suspense } from "react";
@@ -30,9 +29,7 @@ const Header = () => {
               onClick={openDrawer}
             />
             <div className="hidden lg:block ">
-              <AppMenu
-              // hidden lg:block className="text-sm border-none !p-0 bg-[#F0F0EB]"
-              />
+              <AppMenu />
             </div>
           </div>
           <div className="flex justify-center">
@@ -46,11 +43,6 @@ const Header = () => {
             </div>
             <Cart className="bg-[#F0F0EB] hover:!bg-inherit border-none shadow-none" />
           </div>
-        </div>
-        <div className="block md:hidden mt-4 w-full">
-          <Suspense>
-            <SearchBar />
-          </Suspense>
         </div>
 
         <Drawer

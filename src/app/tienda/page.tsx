@@ -8,6 +8,7 @@ import { getWooCategories } from "@/data/woocommerce/getWooCategories";
 import OrderBy from "@/app/tienda/components/order-by";
 import { orderOptions } from "@/config/store";
 import { WooCategory } from "@/types/woocommerce";
+import classNames from "classnames";
 
 interface Props {
   searchParams: { [key: string]: string | undefined };
@@ -37,7 +38,13 @@ const Productos = async ({ searchParams }: Props) => {
             </Suspense>
           </aside>
           <div className="col-span-9">
-            <div className="mb-2 flex justify-end">
+            <div
+              className={classNames("mb-2 flex -md:flex-col items-center", {
+                "justify-between": search,
+                "justify-end": !search,
+              })}
+            >
+              {search ? <p>Resultados para: {search}</p> : <></>}
               <OrderBy />
             </div>
             <div className="shadow-2xl py-10 rounded-xl px-4">

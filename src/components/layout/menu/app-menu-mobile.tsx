@@ -1,13 +1,10 @@
-import { useCategories } from "@/context/categories-context";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useMemo, useState } from "react";
-import { getItems } from "@/config/menu-items";
-import { Drawer } from "antd";
+import { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import classNames from "classnames";
 import ChildrenDrawerMobile from "@/components/layout/menu/children-drawer-mobile";
 import { MenuHeaderItem } from "@/types";
+import SearchBar from "@/components/search-bar";
 
 type Props = {
   menuItems: MenuHeaderItem[];
@@ -29,6 +26,9 @@ const AppMenuMobile = ({ currentKey, menuItems, onClick }: Props) => {
   return (
     <>
       <nav className="flex flex-col gap-6">
+        <div className="mt-4">
+          <SearchBar onChange={onClick} />
+        </div>
         {menuItems.map((item) => (
           <div key={item.link} className="relative">
             {item.children ? (
