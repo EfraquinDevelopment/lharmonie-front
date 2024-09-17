@@ -45,7 +45,9 @@ const Productos = async ({ searchParams }: Props) => {
               })}
             >
               {search ? <p>Resultados para: {search}</p> : <></>}
-              <OrderBy />
+              <Suspense fallback={<div>Cargando Ordenes...</div>}>
+                <OrderBy />
+              </Suspense>
             </div>
             <div className="shadow-2xl py-10 rounded-xl px-4">
               <Suspense fallback={<div>Cargando productos...</div>}>

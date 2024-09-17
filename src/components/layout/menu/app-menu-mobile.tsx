@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { ChevronRight } from "lucide-react";
 import classNames from "classnames";
 import ChildrenDrawerMobile from "@/components/layout/menu/children-drawer-mobile";
@@ -28,7 +28,9 @@ const AppMenuMobile = ({ currentKey, menuItems, onClick }: Props) => {
     <>
       <nav className="flex flex-col">
         <div className="my-4">
-          <SearchBar onChange={onClick} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <SearchBar />
+          </Suspense>
         </div>
         {menuItems.map((item) => (
           <div key={item.link} className="relative">

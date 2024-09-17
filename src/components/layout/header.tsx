@@ -7,8 +7,8 @@ import AppMenu from "./menu/app-menu";
 import Cart from "@/components/cart/cart";
 import { useDrawer } from "@/hooks";
 import { X } from "lucide-react";
-import SearchBar from "@/components/layout/search-bar";
 import { Suspense } from "react";
+import SearchBar from "@/components/search-bar";
 
 const Header = () => {
   const { isOpen, openDrawer, closeDrawer } = useDrawer();
