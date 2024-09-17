@@ -23,7 +23,12 @@ const ChildrenDrawerMobile = ({
     return null;
   }
 
-  const formatedChildren = [{ title: "Todos", link: parent.link }, ...children];
+  const formatedChildren = [
+    ...(parent.title !== "Tienda"
+      ? [{ title: "Ver todo en" + parent.title, link: parent.link }]
+      : []),
+    ...children,
+  ];
   return (
     <Drawer
       placement="right"
