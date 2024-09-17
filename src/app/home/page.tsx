@@ -1,62 +1,40 @@
-import ProductsGrid from "@/app/tienda/components/products-grid";
-import Filters from "@/app/tienda/components/filters";
-import Heading from "@/components/layout/heading";
-import content from "@/data/store.json";
+import OurHistory from "@/app/home/components/our-history";
+import RecommendedProducts from "@/app/home/components/recommended-products";
+import Stores from "@/app/home/components/stores";
 import { Suspense } from "react";
+import SpotifyPlaylist from "@/app/home/components/spotify-playlist";
+import ImageMarquee from "@/app/home/components/image-marquee";
+import dynamic from "next/dynamic";
+import { getHomePageData } from "@/data/pages/getPageData";
 import { getWooProducts } from "@/data/woocommerce/getWooProducts";
-import { getWooCategories } from "@/data/woocommerce/getWooCategories";
-import OrderBy from "@/app/tienda/components/order-by";
-import { orderOptions } from "@/config/store";
-import { WooCategory } from "@/types/woocommerce";
-import classNames from "classnames";
 
-interface Props {
-  searchParams: { [key: string]: string | undefined };
-}
+const VideoSection = dynamic(
+  () => import("@/app/home/components/video-section"),
+  {
+    ssr: false,
+  }
+);
 
-const getCategoryIdBySlug = (categories: WooCategory[], slug?: string) =>
-  categories.find((cat) => cat.slug === slug)?.id;
+const HomePage = async () => {
+  const acfData = await getHomePageData();
+  const products = await getWooProducts();
 
-const Productos = async ({ searchParams }: Props) => {
-  const { order = orderOptions[0].value, category, search } = searchParams;
-
-  const categories = await getWooCategories();
-  const categoryId = getCategoryIdBySlug(categories, category);
-
-  const products = await getWooProducts(order, categoryId, search);
+  if (!acfData) {
+    return null;
+  }
 
   return (
-    <main>
-      <div className="py-10 px-8 sm:max-w-full mx-auto sm:mx-0">
-        <Heading level={1} className="text-center">
-          {content.title}
-        </Heading>
-        <div className="space-y-5 lg:space-y-0 lg:grid grid-cols-12 gap-5">
-          <aside className="col-span-3">
-            <Suspense fallback={<div>Cargando filtros...</div>}>
-              <Filters categories={categories} />
-            </Suspense>
-          </aside>
-          <div className="col-span-9">
-            <div
-              className={classNames("mb-2 flex -md:flex-col items-center", {
-                "justify-between": search,
-                "justify-end": !search,
-              })}
-            >
-              {search ? <p>Resultados para: {search}</p> : <></>}
-              <OrderBy />
-            </div>
-            <div className="shadow-2xl py-10 rounded-xl px-4">
-              <Suspense fallback={<div>Cargando productos...</div>}>
-                <ProductsGrid products={products} />
-              </Suspense>
-            </div>
-          </div>
-        </div>
-      </div>
+    <main className="space-y-24 lg:space-y-36 pb-24 lg:pb-32">
+      <VideoSection {...acfData.banner} />
+      <Stores />
+      <Suspense fallback={<div>Cargando productos...</div>}>
+        <RecommendedProducts products={products} />
+      </Suspense>
+      <ImageMarquee />
+      <OurHistory />
+      <SpotifyPlaylist />
     </main>
   );
 };
 
-export default Productos;
+export default HomePage;

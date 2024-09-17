@@ -2,7 +2,7 @@ import { orderOptions } from "@/config/store";
 import { WooProduct } from "@/types/woocommerce";
 
 export async function getWooProducts(
-  order: string,
+  order?: string,
   category?: number,
   search?: string
 ): Promise<WooProduct[]> {
