@@ -5,6 +5,7 @@ import classNames from "classnames";
 import ChildrenDrawerMobile from "@/components/layout/menu/children-drawer-mobile";
 import { MenuHeaderItem } from "@/types";
 import SearchBar from "@/components/search-bar";
+import { Divider } from "antd";
 
 type Props = {
   menuItems: MenuHeaderItem[];
@@ -25,8 +26,8 @@ const AppMenuMobile = ({ currentKey, menuItems, onClick }: Props) => {
 
   return (
     <>
-      <nav className="flex flex-col gap-6">
-        <div className="mt-4">
+      <nav className="flex flex-col">
+        <div className="my-4">
           <SearchBar onChange={onClick} />
         </div>
         {menuItems.map((item) => (
@@ -35,11 +36,10 @@ const AppMenuMobile = ({ currentKey, menuItems, onClick }: Props) => {
               <button
                 onClick={() => openChildDrawer(item.link)}
                 className={classNames(
-                  "flex justify-between w-full items-center text-lharmonie-secondary px-4 py-2 transition-all duration-100 ease-in-out",
+                  "border-lharmonie-hover flex justify-between w-full items-center text-lharmonie-secondary px-4 transition-all duration-100 ease-in-out",
 
                   {
                     "font-semibold": currentKey === item.link,
-                    "hover:font-semibold": currentKey !== item.link,
                   }
                 )}
               >
@@ -51,16 +51,16 @@ const AppMenuMobile = ({ currentKey, menuItems, onClick }: Props) => {
                 onClick={onClick}
                 href={item.link}
                 className={classNames(
-                  "block text-lharmonie-secondary px-4 py-2 transition-all duration-100 ease-in-out",
+                  "hover:text-inherit border-lharmonie-hover block text-lharmonie-secondary px-4 transition-all duration-100 ease-in-out",
                   {
                     "font-semibold": currentKey === item.link,
-                    "hover:font-semibold": currentKey !== item.link,
                   }
                 )}
               >
                 {item.title}
               </Link>
             )}
+            <Divider className="my-6 py-0 w-[95%] mx-auto !min-w-0 bg-lharmonie-hover" />
           </div>
         ))}
       </nav>

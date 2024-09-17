@@ -19,14 +19,13 @@ const AppMenuDesktop = ({ menuItems, currentKey }: Props) => {
               "text-lharmonie-secondary transition-all duration-200 ease-in-out",
               {
                 "font-semibold": currentKey === item.link,
-                "hover:underline": currentKey !== item.link,
               }
             )}
             style={{ transitionProperty: "color, font-weight" }}
           >
             {item.title}
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-lharmonie-hover transform scale-x-0 transition-transform duration-300 lg:group-hover:scale-x-100"></span>
           </Link>
-
           {item.children && (
             <div
               className={classNames(

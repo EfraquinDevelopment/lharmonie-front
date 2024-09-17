@@ -1,5 +1,6 @@
 import { MenuHeaderItem } from "@/types";
-import { Drawer } from "antd";
+import { Divider, Drawer } from "antd";
+import { ChevronLeft, X } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -25,10 +26,21 @@ const ChildrenDrawerMobile = ({
 
   const formatedChildren = [
     ...(parent.title !== "Tienda"
-      ? [{ title: "Ver todo en " + parent.title, link: parent.link }]
+      ? [
+          {
+            title: "Ver todo en " + parent.title.toUpperCase(),
+            link: parent.link,
+          },
+        ]
       : []),
     ...children,
   ];
+
+  const handleCloseAll = () => {
+    closeChildDrawer();
+    onClick();
+  };
+
   return (
     <Drawer
       placement="right"
@@ -36,18 +48,32 @@ const ChildrenDrawerMobile = ({
       onClose={closeChildDrawer}
       open={!!childDrawer}
       destroyOnClose
+      styles={{ body: { padding: 0 } }}
+      closeIcon={null}
+      style={{ padding: 0, background: "#f8f8f5" }}
     >
-      <nav className="flex flex-col gap-6 p-4">
+      <div className="flex justify-between items-center p-4 border-b border-[#8B7355]">
+        <button onClick={closeChildDrawer} aria-label="Close menu">
+          <ChevronLeft className="text-[#8B7355] text-2xl" />
+        </button>
+        <h2 className="text-2xl font-light text-[#8B7355]">{parent.title}</h2>
+        <button onClick={handleCloseAll} aria-label="Close menu">
+          <X className="text-[#8B7355] text-2xl" />
+        </button>
+      </div>
+      <nav className="flex flex-col gap-6 mt-5">
         {formatedChildren.map((child) => {
           return (
-            <Link
-              key={child.link}
-              href={child.link}
-              onClick={onClick}
-              className="block text-lharmonie-secondary px-4 py-2 text-sm hover:bg-gray-100"
-            >
-              {child.title}
-            </Link>
+            <React.Fragment key={child.link}>
+              <Link
+                onClick={onClick}
+                href={child.link}
+                className="hover:text-inherit border-lharmonie-hover block text-lharmonie-secondary px-4 transition-all duration-100 ease-in-out"
+              >
+                {child.title}
+              </Link>
+              <Divider className="my-0 py-0 w-[95%] mx-auto !min-w-0 bg-lharmonie-hover" />
+            </React.Fragment>
           );
         })}
       </nav>
