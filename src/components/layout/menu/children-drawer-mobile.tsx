@@ -25,7 +25,7 @@ const ChildrenDrawerMobile = ({
 
   const formatedChildren = [
     ...(parent.title !== "Tienda"
-      ? [{ title: "Ver todo en" + parent.title, link: parent.link }]
+      ? [{ title: "Ver todo en " + parent.title, link: parent.link }]
       : []),
     ...children,
   ];
