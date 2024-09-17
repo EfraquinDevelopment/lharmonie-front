@@ -3,31 +3,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 import Heading from "@/components/layout/heading";
-
-const locations = [
-  {
-    title: "LH1",
-    position: { lat: -34.578674498644325, lng: -58.40952986441803 },
-    address: "Juan Francisco Seguí 3611, C1425ACC",
-  },
-  {
-    title: "LH2",
-    position: { lat: -34.57797363272871, lng: -58.43847183558195 },
-    address: "Nicaragua 6068, C1414BWN",
-  },
-  {
-    title: "Casa Lharmonie",
-    position: { lat: -34.56524973002479, lng: -58.434563264418024 },
-    address: "Maure 1516, C1426",
-  },
-  {
-    title: "Lh4",
-    position: { lat: -34.564818229933095, lng: -58.44490107790985 },
-    address: "Zabala 1925, C1426DQI",
-  },
-];
+import content from "@/data/stores.json";
 
 const Map = () => {
+  const { locations, title } = content.mapSection;
+
   const mapRef = useRef<HTMLDivElement>(null);
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const [markers, setMarkers] = useState<
@@ -108,12 +88,12 @@ const Map = () => {
   };
 
   return (
-    <div className="flex h-[700px] container mx-auto py-16">
-      <div className="w-1/3 bg-gray-100 p-4 overflow-y-auto">
-        <Heading level={3} className="font-bold mb-4">
-          Direcciones
+    <div className="md:flex md:h-[600px] xl:h-[700px] container mx-auto mb-16 md:shadow-xl rounded-xl">
+      <div className="md:w-1/3 md:bg-gray-100 md:p-4 overflow-y-auto">
+        <Heading level={3} className="font-bold mx-4 md:mx-0 mb-4">
+          {title}
         </Heading>
-        <ul className="space-y-4">
+        <ul className="hidden md:block space-y-4">
           {locations.map((location, index) => (
             <li
               key={index}
@@ -126,9 +106,10 @@ const Map = () => {
           ))}
         </ul>
       </div>
-
-      {/* Mapa a la derecha */}
-      <div ref={mapRef} className="w-2/3 h-full" />
+      <div
+        ref={mapRef}
+        className="md:w-2/3 h-[300px] mx-4 md:mx-0 md:h-full md:rounded-r-xl -md:shadow-xl -md:rounded-xl"
+      />
     </div>
   );
 };

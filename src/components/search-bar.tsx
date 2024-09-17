@@ -33,7 +33,7 @@ export default function SearchBar({ onChange }: Props) {
       } else {
         params.delete(SEARCH_PARAM);
       }
-      router.push(`?${params.toString()}`);
+      router.push(`/tienda?${params.toString()}`);
       onChange && onChange();
     },
     [router, searchParams]

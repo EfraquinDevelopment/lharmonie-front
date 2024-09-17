@@ -82,5 +82,30 @@
         ]
       }
     ]
+  },
+  "mapSection": {
+    "title": "Direcciones",
+    "locations": [
+      {
+        "title": "LH1",
+        "position": { "lat": -34.578674498644325, "lng": -58.40952986441803 },
+        "address": "Juan Francisco Seguí 3611, C1425ACC"
+      },
+      {
+        "title": "LH2",
+        "position": { "lat": -34.57797363272871, "lng": -58.43847183558195 },
+        "address": "Nicaragua 6068, C1414BWN"
+      },
+      {
+        "title": "Casa Lharmonie",
+        "position": { "lat": -34.56524973002479, "lng": -58.434563264418024 },
+        "address": "Maure 1516, C1426"
+      },
+      {
+        "title": "Lh4",
+        "position": { "lat": -34.564818229933095, "lng": -58.44490107790985 },
+        "address": "Zabala 1925, C1426DQI"
+      }
+    ]
   }
 }
