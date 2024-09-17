@@ -26,7 +26,7 @@ const ChildrenDrawerMobile = ({
   const formatedChildren = [{ title: "Todos", link: parent.link }, ...children];
   return (
     <Drawer
-      placement="left"
+      placement="right"
       width="100%"
       onClose={closeChildDrawer}
       open={!!childDrawer}
