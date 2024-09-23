@@ -26,9 +26,9 @@ export async function createMercadoPagoPreference(
       email: customerEmail,
     },
     back_urls: {
-      success: `${NEXT_PUBLIC_BASE_URL}/checkout/success`,
-      failure: `${NEXT_PUBLIC_BASE_URL}/checkout/failure`,
-      pending: `${NEXT_PUBLIC_BASE_URL}/checkout/pending`,
+      success: `${NEXT_PUBLIC_BASE_URL}/api/mercadopago/callback?status=success`,
+      failure: `${NEXT_PUBLIC_BASE_URL}/api/mercadopago/callback?status=failure`,
+      pending: `${NEXT_PUBLIC_BASE_URL}/api/mercadopago/callback?status=pending`,
     },
     auto_return: "approved",
     external_reference: orderId.toString(),

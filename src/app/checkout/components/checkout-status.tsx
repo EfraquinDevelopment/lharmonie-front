@@ -28,33 +28,14 @@ const statusMessages = {
 
 const CheckoutStatus: React.FC<CheckoutStatusProps> = ({ status }) => {
   const searchParams = useSearchParams();
-  const orderId = searchParams.get("external_reference");
+  const orderId = searchParams.get("orderId");
   const router = useRouter();
 
   useEffect(() => {
     if (!orderId) {
       router.push("/");
     }
-    const updateOrderStatus = async () => {
-      try {
-        await fetch("/api/update-order", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            orderId,
-            paymentStatus: statusMessages[status].paymentStatus,
-          }),
-        });
-      } catch (error) {
-        console.error("Error updating WooCommerce order:", error);
-      }
-    };
-
-    if (orderId) {
-      updateOrderStatus();
-    }
-    router.push("/checkout/" + status + `?external_reference=${orderId}`);
-  }, [orderId, status]);
+  }, [orderId]);
 
   return (
     <div>
