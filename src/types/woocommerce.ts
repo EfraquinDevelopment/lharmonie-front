@@ -86,3 +86,9 @@ export interface WooOrder {
     quantity: number;
   }[];
 }
+
+export enum OrderStatus {
+  Approved = "approved",
+  Pending = "pending",
+  Failed = "failure",
+}

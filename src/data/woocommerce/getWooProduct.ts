@@ -1,14 +1,17 @@
+import {
+  API_URL,
+  WOO_CONSUMER_KEY,
+  WOO_CONSUMER_SECRET,
+} from "@/lib/constants";
 import { WooProduct } from "@/types/woocommerce";
 
 export async function getWooProduct(
   productId: string | number
 ): Promise<WooProduct> {
   const timestamp = new Date().getTime();
-  const consumerKey = process.env.WOO_CONSUMER_KEY ?? "";
-  const consumerSecret = process.env.WOO_CONSUMER_SECRET ?? "";
 
   const res = await fetch(
-    `${process.env.API_URL}/wp-json/wc/v3/products/${productId}?consumer_key=${consumerKey}&consumer_secret=${consumerSecret}&t=${timestamp}`
+    `${API_URL}/wp-json/wc/v3/products/${productId}?consumer_key=${WOO_CONSUMER_KEY}&consumer_secret=${WOO_CONSUMER_SECRET}&t=${timestamp}`
   );
 
   if (!res.ok) {

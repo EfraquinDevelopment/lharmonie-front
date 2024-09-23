@@ -37,3 +37,9 @@ export interface MenuHeaderItem {
   link: string;
   children?: { title: string; link: string }[];
 }
+
+export enum MPaymentStatus {
+  Pending = "pending",
+  Success = "success",
+  Failure = "failure",
+}

@@ -1,44 +1,48 @@
 "use client";
 import { useCartContext } from "@/hooks";
 import { useState } from "react";
-import { createWooOrder } from "@/data/woocommerce/createWooOrder";
 
-const Checkout = () => {
-  const { cartItems } = useCartContext();
+const CheckoutPage = () => {
   const [loading, setLoading] = useState(false);
-
-  if (cartItems.length === 0) {
-    return <div>Your cart is empty</div>;
-  }
+  const { cartItems } = useCartContext();
+  const customerEmail = "test@test.com";
 
   const handleCheckout = async () => {
     setLoading(true);
     try {
       // Step 1: Create WooCommerce order
-      const orderData = {
-        payment_method: "mercadopago",
-        payment_method_title: "Mercado Pago",
-        set_paid: false,
-        billing: {
-          first_name: "John",
-          last_name: "Doe",
-          address_1: "123 Main St",
-          city: "Springfield",
-          state: "IL",
-          postcode: "62701",
-          country: "US",
-          email: "m@m.com",
-          phone: "555-555-5555",
-        },
-        line_items: cartItems.map((item) => ({
-          product_id: item.id,
-          quantity: item.quantity,
-        })),
-      };
+      const orderResponse = await fetch("/api/create-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ cartItems, customerEmail }),
+      });
 
-      await createWooOrder(orderData);
+      if (!orderResponse.ok) {
+        console.error("Failed to create order");
+        setLoading(false);
+        return;
+      }
+
+      const { orderId, orderTotal } = await orderResponse.json();
+
+      // Step 2: Create MercadoPago payment
+      const paymentResponse = await fetch("/api/pay-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ orderId, orderTotal, customerEmail }),
+      });
+
+      if (!paymentResponse.ok) {
+        console.error("Failed to process payment");
+        setLoading(false);
+        return;
+      }
+
+      const { init_point } = await paymentResponse.json();
+      // Redirect the user to MercadoPago payment page
+      window.location.href = init_point;
     } catch (error) {
-      console.error("Checkout failed:", error);
+      console.error("Error during checkout process:", error);
     } finally {
       setLoading(false);
     }
@@ -46,12 +50,16 @@ const Checkout = () => {
 
   return (
     <div>
-      <h1>Checkout</h1>
-      <button onClick={handleCheckout} disabled={loading}>
-        {loading ? "Processing..." : "Proceed to Checkout"}
+      <h1>Checkout Page</h1>
+      <button
+        className="p-2 bg-gray-400 rounded-lg"
+        onClick={handleCheckout}
+        disabled={loading}
+      >
+        {loading ? "Processing..." : "Proceed to Payment"}
       </button>
     </div>
   );
 };
 
-export default Checkout;
+export default CheckoutPage;
