@@ -1,15 +1,12 @@
 import { OrderStatus } from "@/types/woocommerce";
-import {
-  WOO_CONSUMER_KEY,
-  WOO_CONSUMER_SECRET,
-  API_URL,
-} from "@/lib/constants";
+import { wooCommerceApi } from "@/lib/api";
 
 export async function updateWooOrder(
   orderId: number,
   paymentStatus: OrderStatus
 ) {
   let orderStatus = "on-hold";
+
   if (paymentStatus === OrderStatus.Approved) {
     orderStatus = "completed";
   } else if (paymentStatus === OrderStatus.Pending) {
@@ -18,21 +15,18 @@ export async function updateWooOrder(
     orderStatus = "failed";
   }
 
-  const apiUrl = `${API_URL}/wp-json/wc/v3/orders/${orderId}?consumer_key=${WOO_CONSUMER_KEY}&consumer_secret=${WOO_CONSUMER_SECRET}`;
+  try {
+    const response = await wooCommerceApi.put(`orders/${orderId}`, {
+      status: orderStatus,
+    });
 
-  const response = await fetch(apiUrl, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ status: orderStatus }),
-  });
+    if (response.status !== 200) {
+      throw new Error(`Failed to update WooCommerce order: ${response.data}`);
+    }
 
-  if (!response.ok) {
-    throw new Error(
-      `Failed to update WooCommerce order: ${await response.text()}`
-    );
+    return true;
+  } catch (error) {
+    console.error("Error updating WooCommerce order:", error);
+    throw error;
   }
-
-  return true;
 }

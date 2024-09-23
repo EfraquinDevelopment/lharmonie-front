@@ -1,8 +1,4 @@
-import {
-  API_URL,
-  WOO_CONSUMER_KEY,
-  WOO_CONSUMER_SECRET,
-} from "@/lib/constants";
+import { wooCommerceApi } from "@/lib/api";
 import { WooProduct } from "@/types/woocommerce";
 
 export async function getWooProduct(
@@ -10,16 +6,14 @@ export async function getWooProduct(
 ): Promise<WooProduct> {
   const timestamp = new Date().getTime();
 
-  const res = await fetch(
-    `${API_URL}/wp-json/wc/v3/products/${productId}?consumer_key=${WOO_CONSUMER_KEY}&consumer_secret=${WOO_CONSUMER_SECRET}&t=${timestamp}`
-  );
+  const res = await wooCommerceApi.get(`products/${productId}?t=${timestamp}`);
 
-  if (!res.ok) {
+  if (res.status !== 200) {
     throw new Error(
       `Failed to fetch WooCommerce product with ID: ${productId}`
     );
   }
 
-  const product: WooProduct = await res.json();
+  const product: WooProduct = res.data;
   return product;
 }
