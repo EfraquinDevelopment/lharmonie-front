@@ -1,16 +1,28 @@
 "use client";
 import { useCartContext } from "@/hooks";
-import { useState } from "react";
+import { redirect, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const CheckoutPage = () => {
+  const [pageLoading, setPageLoading] = useState(true);
   const [loading, setLoading] = useState(false);
   const { cartItems } = useCartContext();
+  const router = useRouter();
   const customerEmail = "test@test.com";
+
+  useEffect(() => {
+    cartItems && setPageLoading(false);
+  }, [cartItems]);
+
+  useEffect(() => {
+    if (cartItems.length === 0) {
+      router.back();
+    }
+  }, []);
 
   const handleCheckout = async () => {
     setLoading(true);
     try {
-      // Step 1: Create WooCommerce order
       const orderResponse = await fetch("/api/create-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -25,7 +37,6 @@ const CheckoutPage = () => {
 
       const { orderId, orderTotal } = await orderResponse.json();
 
-      // Step 2: Create MercadoPago payment
       const paymentResponse = await fetch("/api/pay-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -39,7 +50,6 @@ const CheckoutPage = () => {
       }
 
       const { init_point } = await paymentResponse.json();
-      // Redirect the user to MercadoPago payment page
       window.location.href = init_point;
     } catch (error) {
       console.error("Error during checkout process:", error);
@@ -48,16 +58,26 @@ const CheckoutPage = () => {
     }
   };
 
+  if (cartItems.length === 0) {
+    router.back();
+  }
+
   return (
     <div>
-      <h1>Checkout Page</h1>
-      <button
-        className="p-2 bg-gray-400 rounded-lg"
-        onClick={handleCheckout}
-        disabled={loading}
-      >
-        {loading ? "Processing..." : "Proceed to Payment"}
-      </button>
+      {pageLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <div>
+          <h1>Checkout Page</h1>
+          <button
+            className="p-2 bg-gray-400 rounded-lg"
+            onClick={handleCheckout}
+            disabled={loading}
+          >
+            {loading ? "Processing..." : "Proceed to Payment"}
+          </button>
+        </div>
+      )}
     </div>
   );
 };

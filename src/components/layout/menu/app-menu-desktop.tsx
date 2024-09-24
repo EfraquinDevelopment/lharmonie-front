@@ -26,7 +26,8 @@ const AppMenuDesktop = ({ menuItems, currentKey }: Props) => {
             {menuItem.children ? (
               <>
                 <NavigationMenuTrigger className="bg-inherit">
-                  <span
+                  <Link
+                    href={menuItem.link}
                     className={classNames(
                       "transition-all",
                       currentKey === menuItem.link
@@ -35,41 +36,38 @@ const AppMenuDesktop = ({ menuItems, currentKey }: Props) => {
                     )}
                   >
                     {menuItem.title}
-                  </span>
+                  </Link>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] md:grid-cols-1 lg:w-[400px]">
                     {menuItem.children.map((child) => (
                       <li key={child.title}>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href={child.link}
-                            className="block hover:bg-gray-100 select-none rounded-md p-2 leading-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
-                            {child.title}
-                          </Link>
-                        </NavigationMenuLink>
+                        <Link
+                          href={child.link}
+                          className="block hover:bg-gray-100 select-none rounded-md p-2 leading-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          {child.title}
+                        </Link>
                       </li>
                     ))}
                   </ul>
                 </NavigationMenuContent>
               </>
             ) : (
-              <Link href={menuItem.link}>
-                <NavigationMenuLink
-                  className={navigationMenuTriggerStyle() + " !bg-inherit"}
+              <Link
+                href={menuItem.link}
+                className={navigationMenuTriggerStyle() + " !bg-inherit"}
+              >
+                <span
+                  className={classNames(
+                    "transition-all",
+                    currentKey === menuItem.link
+                      ? "font-semibold"
+                      : "font-normal"
+                  )}
                 >
-                  <span
-                    className={classNames(
-                      "transition-all",
-                      currentKey === menuItem.link
-                        ? "font-semibold"
-                        : "font-normal"
-                    )}
-                  >
-                    {menuItem.title}
-                  </span>
-                </NavigationMenuLink>
+                  {menuItem.title}
+                </span>
               </Link>
             )}
           </NavigationMenuItem>

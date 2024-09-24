@@ -34,15 +34,17 @@ const CartDrawerContent = ({ closeDrawer }: Props) => {
             ${total.toFixed(2)}
           </Text>
         </div>
-        <LharmonieButton
-          onClick={closeDrawer}
-          disabled={cartItems.length === 0}
-          size="large"
-          block
-          className="bg-gray-800 hover:bg-gray-700 border-none h-14 text-lg font-light tracking-wide transition-all duration-300 ease-in-out transform hover:scale-[1.01]"
-        >
-          <Link href="/checkout">Finalizar Compra</Link>
-        </LharmonieButton>
+        <Link href="/checkout">
+          <LharmonieButton
+            onClick={closeDrawer}
+            disabled={cartItems.length === 0}
+            size="large"
+            block
+            className="bg-gray-800 hover:bg-gray-700 border-none h-14 text-lg font-light tracking-wide transition-all duration-300 ease-in-out transform hover:scale-[1.01]"
+          >
+            Finalizar Compra
+          </LharmonieButton>
+        </Link>
       </div>
     </div>
   );
