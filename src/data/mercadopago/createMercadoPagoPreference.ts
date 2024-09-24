@@ -16,7 +16,7 @@ export async function createMercadoPagoPreference(
     items: [
       {
         id: `${orderId}`,
-        title: `Order #${orderId}`,
+        title: `Pedido #${orderId}`,
         quantity: 1,
         currency_id: "ARS",
         unit_price: parseFloat(orderTotal),
