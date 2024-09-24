@@ -27,7 +27,6 @@ html {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
   @apply bg-lharmonie-primary;
 }
 
@@ -150,4 +149,9 @@ body {
 }
 .group:focus-within .group-focus-within\:block {
   display: block;
+}
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
 }
