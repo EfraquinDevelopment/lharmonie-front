@@ -4,9 +4,9 @@ import { createWooOrder } from "@/data/woocommerce/createWooOrder";
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { cartItems, customerEmail } = body;
+    const { cartItems, personalInfo } = body;
 
-    const order = await createWooOrder(cartItems, customerEmail);
+    const order = await createWooOrder(cartItems, personalInfo);
     return NextResponse.json(
       { orderId: order.id, orderTotal: order.total },
       { status: 200 }

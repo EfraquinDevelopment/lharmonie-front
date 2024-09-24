@@ -1,17 +1,23 @@
 import { CartItem } from "@/context/cart-context";
 import { wooCommerceApi } from "@/lib/api";
 
-export async function createWooOrder(
-  cartItems: CartItem[],
-  customerEmail: string
-) {
+export async function createWooOrder(cartItems: CartItem[], personalInfo: any) {
   const orderData = {
     payment_method: "mercadopago",
     payment_method_title: "MercadoPago",
     set_paid: false,
     billing: {
-      email: customerEmail,
+      email: personalInfo.email,
+      first_name: personalInfo.firstName,
+      last_name: personalInfo.lastName,
+      phone: personalInfo.phone,
     },
+    meta_data: [
+      {
+        key: "DNI",
+        value: personalInfo.dni,
+      },
+    ],
     line_items: cartItems.map((item: CartItem) => ({
       product_id: item.id,
       quantity: item.quantity,
