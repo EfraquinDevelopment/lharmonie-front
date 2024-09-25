@@ -39,7 +39,8 @@ export interface MenuHeaderItem {
 }
 
 export enum MPaymentStatus {
-  Pending = "pending",
   Success = "success",
-  Failure = "failure",
+  Failed = "failed",
 }
+
+export type MPaymentStatusType = "success" | "failed";

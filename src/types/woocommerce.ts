@@ -92,3 +92,13 @@ export enum OrderStatus {
   Pending = "pending",
   Failed = "failure",
 }
+
+export enum WooOrderStatus {
+  Pending = "pending",
+  Processing = "processing",
+  OnHold = "on-hold",
+  Completed = "completed",
+  Cancelled = "cancelled",
+  Refunded = "refunded",
+  Failed = "failed",
+}

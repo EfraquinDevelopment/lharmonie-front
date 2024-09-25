@@ -9,7 +9,7 @@ export async function GET(req: NextRequest) {
 
   if (!orderId) {
     return NextResponse.redirect(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/failure`
+      `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/failed`
     );
   }
 
@@ -19,8 +19,6 @@ export async function GET(req: NextRequest) {
 
     if (status === "success") {
       paymentStatus = OrderStatus.Approved;
-    } else if (status === "pending") {
-      paymentStatus = OrderStatus.Pending;
     }
 
     // Update the WooCommerce order status
@@ -30,9 +28,7 @@ export async function GET(req: NextRequest) {
     let redirectUrl =
       paymentStatus === OrderStatus.Approved
         ? `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/success`
-        : paymentStatus === OrderStatus.Pending
-        ? `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/pending`
-        : `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/failure`;
+        : `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/failed`;
 
     redirectUrl += `?orderId=${orderId}`;
 
@@ -40,7 +36,7 @@ export async function GET(req: NextRequest) {
   } catch (error) {
     console.error("Error updating WooCommerce order:", error);
     return NextResponse.redirect(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/failure`
+      `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/failed`
     );
   }
 }

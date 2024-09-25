@@ -16,3 +16,5 @@ export const MP_ACCESS_TOKEN = process.env.MP_ACCESS_TOKEN ?? "";
 export const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "";
 export const NEXT_PUBLIC_GOOGLE_API_KEY =
   process.env.NEXT_PUBLIC_GOOGLE_API_KEY ?? "";
+
+export const checkoutPageStatuses = ["success", "failed"];
