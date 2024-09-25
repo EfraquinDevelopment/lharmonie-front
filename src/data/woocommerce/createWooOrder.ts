@@ -8,8 +8,8 @@ export async function createWooOrder(cartItems: CartItem[], personalInfo: any) {
     set_paid: false,
     billing: {
       email: personalInfo.email,
-      first_name: personalInfo.firstName,
-      last_name: personalInfo.lastName,
+      first_name: personalInfo.first_name,
+      last_name: personalInfo.last_name,
       phone: personalInfo.phone,
     },
     meta_data: [

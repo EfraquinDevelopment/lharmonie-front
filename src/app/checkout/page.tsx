@@ -109,7 +109,7 @@ const CheckoutPage = () => {
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <Form.Item
-                    name="firstname"
+                    name="first_name"
                     label="Nombre"
                     rules={[
                       {
@@ -121,7 +121,7 @@ const CheckoutPage = () => {
                     <Input className="border-[#8B7355] focus:border-[#A08B6C] focus:ring-[#A08B6C] rounded-md shadow-sm" />
                   </Form.Item>
                   <Form.Item
-                    name="lastname"
+                    name="last_name"
                     label="Apellido"
                     rules={[
                       {
