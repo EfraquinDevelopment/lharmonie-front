@@ -22,10 +22,13 @@ const AppMenuDesktop = ({ menuItems, currentKey }: Props) => {
     <NavigationMenu>
       <NavigationMenuList>
         {menuItems.map((menuItem) => (
-          <NavigationMenuItem className="bg-inherit" key={menuItem.title}>
+          <NavigationMenuItem
+            className="bg-inherit hover:!bg-inherit hover:underline"
+            key={menuItem.title}
+          >
             {menuItem.children ? (
               <>
-                <NavigationMenuTrigger className="bg-inherit">
+                <NavigationMenuTrigger className="bg-inherit hover:!bg-inherit hover:underline">
                   <Link
                     href={menuItem.link}
                     className={classNames(
