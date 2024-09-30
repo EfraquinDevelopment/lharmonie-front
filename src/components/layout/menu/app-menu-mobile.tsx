@@ -6,6 +6,7 @@ import ChildrenDrawerMobile from "@/components/layout/menu/children-drawer-mobil
 import { MenuHeaderItem } from "@/types";
 import SearchBar from "@/components/search-bar";
 import { Divider } from "antd";
+import SpinnerLoader from "@/components/layout/spinner-loader";
 
 type Props = {
   menuItems: MenuHeaderItem[];
@@ -25,12 +26,10 @@ const AppMenuMobile = ({ currentKey, menuItems, onClick }: Props) => {
   };
 
   return (
-    <>
+    <Suspense fallback={<SpinnerLoader />}>
       <nav className="flex flex-col">
         <div className="my-4">
-          <Suspense fallback={<div>Loading...</div>}>
-            <SearchBar />
-          </Suspense>
+          <SearchBar />
         </div>
         {menuItems.map((item) => (
           <div key={item.link} className="relative">
@@ -72,7 +71,7 @@ const AppMenuMobile = ({ currentKey, menuItems, onClick }: Props) => {
         menuItems={menuItems}
         onClick={onClick}
       />
-    </>
+    </Suspense>
   );
 };
 

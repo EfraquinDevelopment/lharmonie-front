@@ -7,6 +7,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { WooProduct } from "@/types/woocommerce";
 import DOMPurify from "dompurify";
+import { Badge } from "antd";
 
 type Props = WooProduct & {
   index: number;
@@ -28,13 +29,20 @@ const ProductCard = ({ index, reccomended = false, ...product }: Props) => {
       className="group cursor-pointer"
     >
       <Link href={`/tienda/${product.id}`}>
-        <Image
-          src={product.images[0].src}
-          alt={product.name}
-          width={300}
-          height={300}
-          className="w-full h-[150px] md:h-[300px] bg-gray-200 object-cover rounded-xl"
-        />
+        <Badge
+          title="Sin Stock"
+          color="gray"
+          count={product.stock_quantity === 0 ? "Sin Stock" : null}
+        >
+          <Image
+            src={product.images[0].src}
+            alt={product.name}
+            width={300}
+            height={300}
+            className="w-full h-[150px] md:h-[300px] bg-gray-200 object-cover rounded-xl"
+          />
+        </Badge>
+
         <div className="mt-1">
           <Heading
             level={2}
