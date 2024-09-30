@@ -1,32 +1,45 @@
 "use client";
 
+import DOMPurify from "dompurify";
 import { useCartContext } from "@/hooks";
-import { Product } from "@/types";
-import { Button } from "antd";
+import { Button, Divider } from "antd";
 import React, { useState } from "react";
 import AddToCartButton from "@/app/tienda/[id]/components/add-to-cart-button";
 import AttributesSection from "@/app/tienda/[id]/components/attributes-section";
 import ProductImage from "@/app/tienda/[id]/components/product-image";
 import { WooProduct } from "@/types/woocommerce";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import RelatedProducts from "./related-products";
 
 type Props = WooProduct;
 
 const ProductContent = (product: Props) => {
   const { checkCartItemQuantity } = useCartContext();
   const [quantity, setQuantity] = useState(1);
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 
-  const incrementQuantity = () => setQuantity((prev) => prev + 1);
-  const decrementQuantity = () =>
+  const incrementQuantity = () => {
+    setQuantity((prev) => prev + 1);
+  };
+  const decrementQuantity = () => {
     setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+  };
+
+  const sanitizedDescription = DOMPurify.sanitize(product.description, {
+    ALLOWED_TAGS: [],
+  });
+
+  const toggleDescription = () => {
+    setIsDescriptionExpanded(!isDescriptionExpanded);
+  };
 
   return (
     <div className="lg:flex lg:items-start lg:space-x-8">
-      <div className="lg:w-1/2 flex justify-center">
+      <div className="flex justify-center">
         <div className="aspect-w-1 aspect-h-1 rounded-lg bg-white overflow-hidden shadow-xl">
           <ProductImage src={product.images[0].src} alt={product.name} />
         </div>
       </div>
-
       <div className="mt-10 lg:mt-0 lg:w-1/2">
         <h1 className="text-5xl font-light text-gray-900 mb-4">
           {product.name}
@@ -36,9 +49,6 @@ const ProductContent = (product: Props) => {
             style: "currency",
             currency: "ARS",
           }).format(+product.price)}
-        </p>
-        <p className="text-xl text-gray-700 mb-8 italic">
-          {product.description}
         </p>
         <AttributesSection attributes={product.attributes} />
         <div className="flex items-center mb-6">
@@ -65,6 +75,44 @@ const ProductContent = (product: Props) => {
           product={product}
           quantity={quantity}
         />
+        {product.description ? (
+          <>
+            <Divider className="border-[#e0d8c9] mt-16" />
+            <div className="relative">
+              <p
+                className={`text-xl mb-8 italic text-[#5D4D3A] leading-relaxed ${
+                  isDescriptionExpanded ? "" : "line-clamp-3"
+                }`}
+              >
+                {sanitizedDescription}
+              </p>
+              <div
+                className={`absolute -bottom-10 left-0 right-0 text-center ${
+                  isDescriptionExpanded
+                    ? ""
+                    : "bg-gradient-to-t from-[#f8f8f5] to-transparent"
+                }`}
+              >
+                <button
+                  onClick={toggleDescription}
+                  className="text-[#8B7355] hover:text-[#5D4D3A] transition-colors flex items-center mx-auto"
+                >
+                  {isDescriptionExpanded ? (
+                    <>
+                      Ver menos
+                      <ChevronUp className="ml-1 w-5 h-5" />
+                    </>
+                  ) : (
+                    <>
+                      Ver más
+                      <ChevronDown className="ml-1 w-5 h-5" />
+                    </>
+                  )}
+                </button>
+              </div>
+            </div>
+          </>
+        ) : null}
       </div>
     </div>
   );

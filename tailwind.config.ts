@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: ["class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,12 +11,24 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        "-xs": { max: "374px" },
-        "-sm": { max: "639px" },
-        "-md": { max: "767px" },
-        "-lg": { max: "1023px" },
-        "-xl": { max: "1279px" },
-        xs: { min: "375px" },
+        "-xs": {
+          max: "374px",
+        },
+        "-sm": {
+          max: "639px",
+        },
+        "-md": {
+          max: "767px",
+        },
+        "-lg": {
+          max: "1023px",
+        },
+        "-xl": {
+          max: "1279px",
+        },
+        xs: {
+          min: "375px",
+        },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -42,16 +55,29 @@ const config: Config = {
       },
       keyframes: {
         marquee: {
-          "0%": { transform: "translateX(0%)" },
-          "100%": { transform: "translateX(-100%)" },
+          "0%": {
+            transform: "translateX(0%)",
+          },
+          "100%": {
+            transform: "translateX(-100%)",
+          },
         },
         marquee2: {
-          "0%": { transform: "translateX(100%)" },
-          "100%": { transform: "translateX(0%)" },
+          "0%": {
+            transform: "translateX(100%)",
+          },
+          "100%": {
+            transform: "translateX(0%)",
+          },
         },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate"), require("tailwind-scrollbar")],
 };
 export default config;

@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 import Heading from "@/components/layout/heading";
 import content from "@/data/stores.json";
+import { NEXT_PUBLIC_GOOGLE_API_KEY } from "@/lib/constants";
 
 const Map = () => {
   const { locations, title } = content.mapSection;
@@ -17,7 +18,7 @@ const Map = () => {
   useEffect(() => {
     const initMap = async () => {
       const loader = new Loader({
-        apiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY!,
+        apiKey: NEXT_PUBLIC_GOOGLE_API_KEY!,
         version: "weekly",
       });
 

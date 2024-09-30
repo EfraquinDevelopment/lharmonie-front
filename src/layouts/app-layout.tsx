@@ -1,12 +1,13 @@
 "use client";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
-import { ReactNode, useState } from "react";
+import { ReactNode, Suspense, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Loader from "@/components/layout/loader";
 import { usePathname } from "next/navigation";
 import ScrollTopButton from "@/components/layout/scroll-top-button";
 import PageTransition from "@/components/layout/page-transition";
+import SpinnerLoader from "@/components/layout/spinner-loader";
 
 type AppLayoutProps = {
   children: ReactNode;
@@ -14,12 +15,14 @@ type AppLayoutProps = {
 
 const MainLayoutContent = ({ children }: AppLayoutProps) => {
   return (
-    <PageTransition>
-      <Header />
-      <main className="flex-grow w-full mx-auto">{children}</main>
-      <Footer />
-      <ScrollTopButton />
-    </PageTransition>
+    <Suspense fallback={<SpinnerLoader />}>
+      <PageTransition>
+        <Header />
+        <main className="flex-grow w-full mx-auto">{children}</main>
+        <Footer />
+        <ScrollTopButton />
+      </PageTransition>
+    </Suspense>
   );
 };
 

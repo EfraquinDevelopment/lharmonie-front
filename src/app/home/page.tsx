@@ -5,8 +5,8 @@ import { Suspense } from "react";
 import SpotifyPlaylist from "@/app/home/components/spotify-playlist";
 import ImageMarquee from "@/app/home/components/image-marquee";
 import dynamic from "next/dynamic";
-import { getHomePageData } from "@/data/pages/getPageData";
 import { getWooProducts } from "@/data/woocommerce/getWooProducts";
+import SpinnerLoader from "@/components/layout/spinner-loader";
 
 const VideoSection = dynamic(
   () => import("@/app/home/components/video-section"),
@@ -16,24 +16,19 @@ const VideoSection = dynamic(
 );
 
 const HomePage = async () => {
-  const acfData = await getHomePageData();
   const products = await getWooProducts();
 
-  if (!acfData) {
-    return null;
-  }
-
   return (
-    <main className="space-y-24 lg:space-y-36 pb-24 lg:pb-32">
-      <VideoSection {...acfData.banner} />
-      <Stores />
-      <Suspense fallback={<div>Cargando productos...</div>}>
+    <Suspense fallback={<SpinnerLoader />}>
+      <main className="space-y-24 lg:space-y-36 pb-24 lg:pb-32">
+        <VideoSection />
+        <Stores />
         <RecommendedProducts products={products} />
-      </Suspense>
-      <ImageMarquee />
-      <OurHistory />
-      <SpotifyPlaylist />
-    </main>
+        <ImageMarquee />
+        <OurHistory />
+        <SpotifyPlaylist />
+      </main>
+    </Suspense>
   );
 };
 

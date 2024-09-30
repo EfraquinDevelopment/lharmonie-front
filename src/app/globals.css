@@ -4,6 +4,28 @@
 
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
 
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #f7f4ed;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #e0cbcb;
+    border-radius: 100vh;
+    border: 3px solid #f6f7ed;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #c0a0b9;
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -27,7 +49,6 @@ html {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
   @apply bg-lharmonie-primary;
 }
 
@@ -150,4 +171,9 @@ body {
 }
 .group:focus-within .group-focus-within\:block {
   display: block;
+}
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
 }

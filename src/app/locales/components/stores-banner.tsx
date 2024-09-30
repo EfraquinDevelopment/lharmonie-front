@@ -55,7 +55,7 @@ const StoresBanner = () => {
             <Link
               key={store.id}
               href={`#${store.id}`}
-              className="group block text-center transition-all duration-300 shadow-md hover:shadow-xl p-4 rounded-lg transform hover:-translate-y-2"
+              className="group block text-center transition-all duration-300 shadow-md hover:shadow-xl p-4 rounded-lg"
             >
               <motion.h3
                 className="text-xl font-medium mb-2"

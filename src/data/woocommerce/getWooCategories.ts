@@ -1,18 +1,15 @@
+import { wooCommerceApi } from "@/lib/api";
 import { WooCategory } from "@/types/woocommerce";
 
 export async function getWooCategories(): Promise<WooCategory[]> {
   const timestamp = new Date().getTime();
-  const consumerKey = process.env.WOO_CONSUMER_KEY ?? "";
-  const consumerSecret = process.env.WOO_CONSUMER_SECRET ?? "";
 
-  const res = await fetch(
-    `${process.env.API_URL}/wp-json/wc/v3/products/categories?consumer_key=${consumerKey}&consumer_secret=${consumerSecret}&t=${timestamp}`
-  );
+  const res = await wooCommerceApi.get(`products/categories?t=${timestamp}`);
 
-  if (!res.ok) {
+  if (res.status !== 200) {
     throw new Error("Failed to fetch WooCommerce categories");
   }
 
-  const categories: WooCategory[] = await res.json();
+  const categories: WooCategory[] = res.data;
   return categories;
 }

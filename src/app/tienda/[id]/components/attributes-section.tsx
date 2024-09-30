@@ -11,14 +11,17 @@ const AttributesSection = ({ attributes }: Props) => {
   if (attributes.length === 0) return null;
 
   return (
-    <div className="mb-10 bg-white rounded-xl p-6 shadow-md">
+    <div className="mb-10 rounded-xl mt-10">
       <h2 className="text-2xl font-light mb-6 text-gray-800 flex items-center">
         <Coffee className="w-6 h-6 mr-2 text-[#8B7355]" />
         Características
       </h2>
       <ul className="space-y-4 text-gray-700">
         {attributes.map((attribute) => (
-          <li key={attribute.name} className="flex items-center">
+          <li
+            key={attribute.name}
+            className="flex items-center border-b border-lharmonie-hover"
+          >
             <span className="w-24 font-semibold">{attribute.name}:</span>
             <span>{attribute.options[0]}</span>
           </li>

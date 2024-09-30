@@ -9,6 +9,7 @@ import OrderBy from "@/app/tienda/components/order-by";
 import { orderOptions } from "@/config/store";
 import { WooCategory } from "@/types/woocommerce";
 import classNames from "classnames";
+import SpinnerLoader from "@/components/layout/spinner-loader";
 
 interface Props {
   searchParams: { [key: string]: string | undefined };
@@ -26,38 +27,34 @@ const Productos = async ({ searchParams }: Props) => {
   const products = await getWooProducts(order, categoryId, search);
 
   return (
-    <main>
-      <div className="py-10 px-8 sm:max-w-full mx-auto sm:mx-0">
-        <Heading level={1} className="text-center">
-          {content.title}
-        </Heading>
-        <div className="space-y-5 lg:space-y-0 lg:grid grid-cols-12 gap-5">
-          <aside className="col-span-3">
-            <Suspense fallback={<div>Cargando filtros...</div>}>
+    <Suspense fallback={<SpinnerLoader />}>
+      <main>
+        <div className="py-10 px-8 sm:max-w-full mx-auto sm:mx-0">
+          <Heading level={1} className="text-center">
+            {content.title}
+          </Heading>
+          <div className="space-y-5 lg:space-y-0 lg:grid grid-cols-12 gap-5">
+            <aside className="col-span-3">
               <Filters categories={categories} />
-            </Suspense>
-          </aside>
-          <div className="col-span-9">
-            <div
-              className={classNames("mb-2 flex -md:flex-col items-center", {
-                "justify-between": search,
-                "justify-end": !search,
-              })}
-            >
-              {search ? <p>Resultados para: {search}</p> : <></>}
-              <Suspense fallback={<div>Cargando Ordenes...</div>}>
+            </aside>
+            <div className="col-span-9">
+              <div
+                className={classNames("mb-2 flex -md:flex-col items-center", {
+                  "justify-between": search,
+                  "justify-end": !search,
+                })}
+              >
+                {search ? <p>Resultados para: {search}</p> : <></>}
                 <OrderBy />
-              </Suspense>
-            </div>
-            <div className="shadow-2xl py-10 rounded-xl px-4">
-              <Suspense fallback={<div>Cargando productos...</div>}>
+              </div>
+              <div className="shadow-2xl py-10 rounded-xl px-4">
                 <ProductsGrid products={products} />
-              </Suspense>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </Suspense>
   );
 };
 

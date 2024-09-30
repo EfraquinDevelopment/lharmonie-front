@@ -66,3 +66,39 @@ export interface WooCategory {
   menu_order: number;
   count: number;
 }
+
+export interface WooOrder {
+  payment_method: string;
+  payment_method_title: string;
+  set_paid: boolean;
+  billing: {
+    first_name: string;
+    last_name: string;
+    address_1: string;
+    city: string;
+    postcode: string;
+    country: string;
+    email: string;
+    phone: string;
+  };
+  line_items: {
+    product_id: number;
+    quantity: number;
+  }[];
+}
+
+export enum OrderStatus {
+  Approved = "approved",
+  Pending = "pending",
+  Failed = "failure",
+}
+
+export enum WooOrderStatus {
+  Pending = "pending",
+  Processing = "processing",
+  OnHold = "on-hold",
+  Completed = "completed",
+  Cancelled = "cancelled",
+  Refunded = "refunded",
+  Failed = "failed",
+}

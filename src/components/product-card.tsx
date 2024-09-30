@@ -1,12 +1,13 @@
 "use client";
 
-import { Product } from "@/types";
 import Image from "next/image";
 import React from "react";
 import Heading from "./layout/heading";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { WooProduct } from "@/types/woocommerce";
+import DOMPurify from "dompurify";
+import { Badge } from "antd";
 
 type Props = WooProduct & {
   index: number;
@@ -14,6 +15,10 @@ type Props = WooProduct & {
 };
 
 const ProductCard = ({ index, reccomended = false, ...product }: Props) => {
+  const sanitizedDescription = DOMPurify.sanitize(product.short_description, {
+    ALLOWED_TAGS: [],
+  });
+
   return (
     <motion.article
       key={index}
@@ -24,13 +29,20 @@ const ProductCard = ({ index, reccomended = false, ...product }: Props) => {
       className="group cursor-pointer"
     >
       <Link href={`/tienda/${product.id}`}>
-        <Image
-          src={product.images[0].src}
-          alt={product.name}
-          width={300}
-          height={300}
-          className="w-full h-[150px] md:h-[300px] bg-gray-200 object-cover rounded-xl"
-        />
+        <Badge
+          title="Sin Stock"
+          color="gray"
+          count={product.stock_quantity === 0 ? "Sin Stock" : null}
+        >
+          <Image
+            src={product.images[0].src}
+            alt={product.name}
+            width={300}
+            height={300}
+            className="w-full h-[150px] md:h-[300px] bg-gray-200 object-cover rounded-xl"
+          />
+        </Badge>
+
         <div className="mt-1">
           <Heading
             level={2}
@@ -40,7 +52,8 @@ const ProductCard = ({ index, reccomended = false, ...product }: Props) => {
             <span className="absolute bottom-0 left-0 w-full h-0.5 bg-lharmonie-hover transform scale-x-0 transition-transform duration-300 lg:group-hover:scale-x-100"></span>
           </Heading>
           <p className="text-xs lg:mb-1 text-gray-600 lg:text-sm">
-            {product.description}
+            {sanitizedDescription} {sanitizedDescription} {sanitizedDescription}{" "}
+            {sanitizedDescription} {sanitizedDescription}
           </p>
           <span className="!text-xs sm:!text-sm lg:text-xl font-semibold text-black">
             {new Intl.NumberFormat("es-AR", {

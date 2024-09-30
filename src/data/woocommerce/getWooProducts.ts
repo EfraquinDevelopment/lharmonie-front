@@ -1,4 +1,5 @@
 import { orderOptions } from "@/config/store";
+import { wooCommerceApi } from "@/lib/api";
 import { WooProduct } from "@/types/woocommerce";
 
 export async function getWooProducts(
@@ -7,29 +8,34 @@ export async function getWooProducts(
   search?: string
 ): Promise<WooProduct[]> {
   const timestamp = new Date().getTime();
-  const consumerKey = process.env.WOO_CONSUMER_KEY ?? "";
-  const consumerSecret = process.env.WOO_CONSUMER_SECRET ?? "";
 
   const orderOption = orderOptions.find((option) => option.value === order);
   const orderBy = orderOption?.orderBy ?? "title";
   const orderDirection = orderOption?.orderDirection ?? "asc";
 
-  let apiUrl = `${process.env.API_URL}/wp-json/wc/v3/products?consumer_key=${consumerKey}&consumer_secret=${consumerSecret}&orderby=${orderBy}&order=${orderDirection}&t=${timestamp}`;
+  // Construct the endpoint manually with parameters
+  let endpoint = `products?orderby=${orderBy}&order=${orderDirection}&t=${timestamp}`;
 
   if (category) {
-    apiUrl += `&category=${category}`;
+    endpoint += `&category=${category}`;
   }
 
   if (search) {
-    apiUrl += `&search=${encodeURIComponent(search)}`;
+    endpoint += `&search=${encodeURIComponent(search)}`;
   }
 
-  const res = await fetch(apiUrl);
+  try {
+    // Use the WooCommerceRestApi to make the GET request
+    const res = await wooCommerceApi.get(endpoint);
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch WooCommerce products");
+    if (res.status !== 200) {
+      throw new Error("Failed to fetch WooCommerce products");
+    }
+
+    const products: WooProduct[] = res.data;
+    return products;
+  } catch (error) {
+    console.error("Error fetching WooCommerce products:", error);
+    throw error;
   }
-
-  const products: WooProduct[] = await res.json();
-  return products;
 }

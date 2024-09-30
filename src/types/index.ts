@@ -37,3 +37,10 @@ export interface MenuHeaderItem {
   link: string;
   children?: { title: string; link: string }[];
 }
+
+export enum MPaymentStatus {
+  Success = "success",
+  Failed = "failed",
+}
+
+export type MPaymentStatusType = "success" | "failed";
