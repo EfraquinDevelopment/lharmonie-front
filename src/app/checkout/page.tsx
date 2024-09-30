@@ -17,6 +17,7 @@ const CheckoutPage = () => {
   const [pageLoading, setPageLoading] = useState(true);
   const [loading, setLoading] = useState(false);
   const { cartItems, clearCart } = useCartContext();
+  const [formError, setFormError] = useState<string | null>(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -31,6 +32,8 @@ const CheckoutPage = () => {
 
   const handleCheckout = async (values: any) => {
     setLoading(true);
+    setFormError(null);
+
     try {
       const orderResponse = await fetch("/api/create-order", {
         method: "POST",
@@ -42,7 +45,9 @@ const CheckoutPage = () => {
       });
 
       if (!orderResponse.ok) {
-        console.error("Failed to create order");
+        const data = await orderResponse.json();
+        setFormError(data.error);
+        window.scrollTo({ top: 0, behavior: "smooth" });
         setLoading(false);
         return;
       }
@@ -60,7 +65,9 @@ const CheckoutPage = () => {
       });
 
       if (!paymentResponse.ok) {
-        console.error("Failed to process payment");
+        const data = await paymentResponse.json();
+        setFormError(data.error);
+        window.scrollTo({ top: 0, behavior: "smooth" });
         setLoading(false);
         return;
       }
@@ -68,7 +75,9 @@ const CheckoutPage = () => {
       const { init_point } = await paymentResponse.json();
       clearCart();
       window.location.href = init_point;
-    } catch (error) {
+    } catch (error: any) {
+      setFormError(error.message);
+      window.scrollTo({ top: 0, behavior: "smooth" });
       console.error("Error during checkout process:", error);
     } finally {
       setLoading(false);
@@ -95,7 +104,11 @@ const CheckoutPage = () => {
         <h1 className="text-5xl font-light text-center mb-16 text-[#8B7355]">
           Finalizar Compra
         </h1>
-
+        {formError && (
+          <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-8">
+            {formError}
+          </div>
+        )}
         <div className="flex flex-col lg:flex-row justify-between gap-12">
           <div className="w-full lg:w-2/3">
             <div className="bg-white p-10 rounded-2xl shadow-lg">
@@ -114,8 +127,13 @@ const CheckoutPage = () => {
                     label="Nombre"
                     rules={[
                       {
-                        required: true,
+                        required: false,
                         message: "Por favor ingrese su nombre",
+                        max: 50,
+                      },
+                      {
+                        pattern: /^[a-zA-Z\s]*$/,
+                        message: "Por favor ingrese un nombre válido",
                       },
                     ]}
                   >
@@ -126,8 +144,13 @@ const CheckoutPage = () => {
                     label="Apellido"
                     rules={[
                       {
-                        required: true,
+                        required: false,
                         message: "Por favor ingrese su apellido",
+                        max: 50,
+                      },
+                      {
+                        pattern: /^[a-zA-Z\s]*$/,
+                        message: "Por favor ingrese un apellido válido",
                       },
                     ]}
                   >
@@ -137,7 +160,11 @@ const CheckoutPage = () => {
                     name="dni"
                     label="DNI"
                     rules={[
-                      { required: true, message: "Por favor ingrese su DNI" },
+                      { required: false, message: "Por favor ingrese su DNI" },
+                      {
+                        pattern: /^[0-9]{7,9}$/,
+                        message: "Por favor ingrese un DNI válido",
+                      },
                     ]}
                   >
                     <Input className="border-[#8B7355] focus:border-[#A08B6C] focus:ring-[#A08B6C] rounded-md shadow-sm" />
@@ -146,7 +173,10 @@ const CheckoutPage = () => {
                     name="email"
                     label="Email"
                     rules={[
-                      { required: true, message: "Por favor ingrese su email" },
+                      {
+                        required: false,
+                        message: "Por favor ingrese su email",
+                      },
                       {
                         type: "email",
                         message: "Por favor ingrese un email válido",
@@ -160,8 +190,12 @@ const CheckoutPage = () => {
                     label="Número de Teléfono"
                     rules={[
                       {
-                        required: true,
+                        required: false,
                         message: "Por favor ingrese su número de teléfono",
+                      },
+                      {
+                        pattern: /^[0-9]{8,14}$/,
+                        message: "Por favor ingrese un número válido",
                       },
                     ]}
                   >
@@ -221,6 +255,7 @@ const CheckoutPage = () => {
                 <p className="text-[#5D4D3A]">{localInfo.address}</p>
               </div>
               <Button
+                loading={loading}
                 type="primary"
                 htmlType="submit"
                 className="w-full  hover:bg-[#A08B6C] border-none text-white font-semibold py-4 px-6 rounded-xl text-lg flex items-center justify-center transition-all duration-300 ease-in-out transform shadow-md"

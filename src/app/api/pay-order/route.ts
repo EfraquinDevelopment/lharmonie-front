@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error("Error processing payment:", error);
     return NextResponse.json(
-      { error: "Error processing payment." },
+      { error: "Error procesando el pago. Por favor intenta de nuevo." },
       { status: 500 }
     );
   }
