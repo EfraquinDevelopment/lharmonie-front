@@ -5,6 +5,7 @@ import { useCartContext } from "@/hooks";
 import LharmonieButton from "@/components/ui/lharmonie-button";
 import CartDrawerItem from "@/components/cart/cart-drawer-item";
 import Link from "next/link";
+import CartEmptyState from "@/components/cart/cart-empty-state";
 
 const { Text } = Typography;
 
@@ -16,10 +17,14 @@ const CartDrawerContent = ({ closeDrawer }: Props) => {
   const { cartItems, getTotal } = useCartContext();
   const total = useMemo(() => getTotal(), [cartItems, getTotal]);
 
+  if (cartItems.length === 0) {
+    return <CartEmptyState closeDrawer={closeDrawer} />;
+  }
+
   return (
     <div className="flex flex-col h-full">
       <List
-        className="flex-grow overflow-auto"
+        className="flex-grow  overflow-auto"
         itemLayout="horizontal"
         dataSource={cartItems}
         renderItem={(item) => <CartDrawerItem item={item} />}
