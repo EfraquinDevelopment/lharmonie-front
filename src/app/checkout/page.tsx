@@ -176,7 +176,7 @@ const CheckoutPage = () => {
               <h2 className="text-3xl font-light mb-8 text-[#8B7355] border-b border-[#e0d8c9] pb-4">
                 Resumen de la Orden
               </h2>
-              <ul className="space-y-6 mb-8 max-h-60 overflow-y-scroll scrollbar">
+              <ul className="space-y-6 mb-8 max-h-60 overflow-y-auto scrollbar">
                 {cartItems.map((item, index) => (
                   <li key={index} className="flex items-center space-x-4">
                     <Image
