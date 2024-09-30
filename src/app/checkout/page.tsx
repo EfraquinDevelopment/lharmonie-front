@@ -178,128 +178,26 @@ const CheckoutPage = () => {
               </h2>
               <ul className="space-y-6 mb-8 max-h-60 overflow-y-scroll scrollbar">
                 {cartItems.map((item, index) => (
-                  <>
-                    <li key={index} className="flex items-center space-x-4">
-                      <Image
-                        src={item.images[0].src}
-                        alt={item.name}
-                        className="w-20 h-20 object-cover rounded-md"
-                        width={80}
-                        height={80}
-                      />
-                      <div className="flex-1">
-                        <h3 className="text-[#5D4D3A] font-semibold">
-                          {item.name}
-                        </h3>
-                        <p className="text-[#8B7355]">
-                          Cantidad: {item.quantity}
-                        </p>
-                        <p className="text-[#5D4D3A] font-bold">
-                          $ {(+item.price * item.quantity).toLocaleString()}
-                        </p>
-                      </div>
-                    </li>
-                    <li key={index} className="flex items-center space-x-4">
-                      <Image
-                        src={item.images[0].src}
-                        alt={item.name}
-                        className="w-20 h-20 object-cover rounded-md"
-                        width={80}
-                        height={80}
-                      />
-                      <div className="flex-1">
-                        <h3 className="text-[#5D4D3A] font-semibold">
-                          {item.name}
-                        </h3>
-                        <p className="text-[#8B7355]">
-                          Cantidad: {item.quantity}
-                        </p>
-                        <p className="text-[#5D4D3A] font-bold">
-                          $ {(+item.price * item.quantity).toLocaleString()}
-                        </p>
-                      </div>
-                    </li>{" "}
-                    <li key={index} className="flex items-center space-x-4">
-                      <Image
-                        src={item.images[0].src}
-                        alt={item.name}
-                        className="w-20 h-20 object-cover rounded-md"
-                        width={80}
-                        height={80}
-                      />
-                      <div className="flex-1">
-                        <h3 className="text-[#5D4D3A] font-semibold">
-                          {item.name}
-                        </h3>
-                        <p className="text-[#8B7355]">
-                          Cantidad: {item.quantity}
-                        </p>
-                        <p className="text-[#5D4D3A] font-bold">
-                          $ {(+item.price * item.quantity).toLocaleString()}
-                        </p>
-                      </div>
-                    </li>{" "}
-                    <li key={index} className="flex items-center space-x-4">
-                      <Image
-                        src={item.images[0].src}
-                        alt={item.name}
-                        className="w-20 h-20 object-cover rounded-md"
-                        width={80}
-                        height={80}
-                      />
-                      <div className="flex-1">
-                        <h3 className="text-[#5D4D3A] font-semibold">
-                          {item.name}
-                        </h3>
-                        <p className="text-[#8B7355]">
-                          Cantidad: {item.quantity}
-                        </p>
-                        <p className="text-[#5D4D3A] font-bold">
-                          $ {(+item.price * item.quantity).toLocaleString()}
-                        </p>
-                      </div>
-                    </li>{" "}
-                    <li key={index} className="flex items-center space-x-4">
-                      <Image
-                        src={item.images[0].src}
-                        alt={item.name}
-                        className="w-20 h-20 object-cover rounded-md"
-                        width={80}
-                        height={80}
-                      />
-                      <div className="flex-1">
-                        <h3 className="text-[#5D4D3A] font-semibold">
-                          {item.name}
-                        </h3>
-                        <p className="text-[#8B7355]">
-                          Cantidad: {item.quantity}
-                        </p>
-                        <p className="text-[#5D4D3A] font-bold">
-                          $ {(+item.price * item.quantity).toLocaleString()}
-                        </p>
-                      </div>
-                    </li>{" "}
-                    <li key={index} className="flex items-center space-x-4">
-                      <Image
-                        src={item.images[0].src}
-                        alt={item.name}
-                        className="w-20 h-20 object-cover rounded-md"
-                        width={80}
-                        height={80}
-                      />
-                      <div className="flex-1">
-                        <h3 className="text-[#5D4D3A] font-semibold">
-                          {item.name}
-                        </h3>
-                        <p className="text-[#8B7355]">
-                          Cantidad: {item.quantity}
-                        </p>
-                        <p className="text-[#5D4D3A] font-bold">
-                          $ {(+item.price * item.quantity).toLocaleString()}
-                        </p>
-                      </div>
-                    </li>
-                  </>
+                  <li key={index} className="flex items-center space-x-4">
+                    <Image
+                      src={item.images[0].src}
+                      alt={item.name}
+                      className="w-20 h-20 object-cover rounded-md"
+                      width={80}
+                      height={80}
+                    />
+                    <div className="flex-1">
+                      <h3 className="text-[#5D4D3A] font-semibold">
+                        {item.name}
+                      </h3>
+                      <p className="text-[#8B7355]">
+                        Cantidad: {item.quantity}
+                      </p>
+                      <p className="text-[#5D4D3A] font-bold">
+                        $ {(+item.price * item.quantity).toLocaleString()}
+                      </p>
+                    </div>
+                  </li>
                 ))}
               </ul>
               <Divider className="border-[#e0d8c9]" />
