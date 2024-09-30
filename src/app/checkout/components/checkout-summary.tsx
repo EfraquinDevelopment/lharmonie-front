@@ -1,6 +1,7 @@
 import { useCartContext } from "@/hooks";
-import { Button, Divider, FormInstance, Image } from "antd";
+import { Button, Divider, FormInstance } from "antd";
 import { CreditCard, ShoppingBag } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 
 const localInfo = {
