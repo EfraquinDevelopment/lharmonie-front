@@ -1,6 +1,6 @@
 "use client";
 
-import { Product } from "@/types";
+import SpinnerLoader from "@/components/layout/spinner-loader";
 import { WooProduct } from "@/types/woocommerce";
 import React, { createContext, useState, useEffect, ReactNode } from "react";
 
@@ -23,7 +23,7 @@ interface CartProviderProps {
 }
 
 export const CartProvider = ({ children }: CartProviderProps) => {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [cartItems, setCartItems] = useState<CartItem[] | null>(null);
 
   useEffect(() => {
     const storedCartItems = JSON.parse(
@@ -33,12 +33,15 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    if (cartItems !== null) {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }
   }, [cartItems]);
 
   const addToCart = (item: WooProduct, qty = 1) => {
     setCartItems((prevItems) => {
-      const existingItem = prevItems.find(
+      const currentItems = prevItems ?? [];
+      const existingItem = currentItems.find(
         (cartItem) => cartItem.id === item.id
       );
 
@@ -48,18 +51,19 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         const quantity = isMoreThanStock
           ? item.stock_quantity
           : qty + existingItem.quantity;
-        return prevItems.map((cartItem) =>
+        return currentItems.map((cartItem) =>
           cartItem.id === item.id ? { ...cartItem, quantity } : cartItem
         );
       } else {
-        return [...prevItems, { ...item, quantity: qty }];
+        return [...currentItems, { ...item, quantity: qty }];
       }
     });
   };
 
   const updateCartQuantity = (itemId: number, amount: number) => {
-    setCartItems((prevItems) =>
-      prevItems
+    setCartItems((prevItems) => {
+      const currentItems = prevItems ?? [];
+      return currentItems
         .map((cartItem) =>
           cartItem.id === itemId
             ? {
@@ -68,11 +72,12 @@ export const CartProvider = ({ children }: CartProviderProps) => {
               }
             : cartItem
         )
-        .filter((cartItem) => cartItem.quantity > 0)
-    );
+        .filter((cartItem) => cartItem.quantity > 0);
+    });
   };
 
   const checkCartItemQuantity = (item: WooProduct, qty: number) => {
+    if (!cartItems) return false;
     const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
     if (existingItem) {
       return existingItem.quantity + qty >= item.stock_quantity;
@@ -81,13 +86,19 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   };
 
   const getTotal = () =>
-    cartItems.reduce((acc, item) => acc + +item.price * item.quantity, 0);
+    cartItems?.reduce((acc, item) => acc + +item.price * item.quantity, 0) || 0;
 
   const getTotalItemsQty = () =>
-    cartItems.reduce((acc, item) => acc + item.quantity, 0);
+    cartItems?.reduce((acc, item) => acc + item.quantity, 0) || 0;
 
   const removeFromCart = (itemId: number) =>
-    setCartItems(cartItems.filter((item) => item.id !== itemId));
+    setCartItems((prevItems) =>
+      (prevItems ?? []).filter((item) => item.id !== itemId)
+    );
+
+  if (cartItems === null) {
+    return <SpinnerLoader />;
+  }
 
   return (
     <CartContext.Provider
