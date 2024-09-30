@@ -14,6 +14,7 @@ interface CartContextState {
   getTotal: () => number;
   getTotalItemsQty: () => number;
   checkCartItemQuantity: (item: WooProduct, qty: number) => boolean;
+  clearCart: () => void;
 }
 
 const CartContext = createContext<CartContextState | undefined>(undefined);
@@ -96,6 +97,8 @@ export const CartProvider = ({ children }: CartProviderProps) => {
       (prevItems ?? []).filter((item) => item.id !== itemId)
     );
 
+  const clearCart = () => setCartItems([]);
+
   if (cartItems === null) {
     return <SpinnerLoader />;
   }
@@ -110,6 +113,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         getTotal,
         getTotalItemsQty,
         checkCartItemQuantity,
+        clearCart,
       }}
     >
       {children}

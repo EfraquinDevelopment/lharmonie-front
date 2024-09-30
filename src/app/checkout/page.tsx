@@ -16,7 +16,7 @@ const CheckoutPage = () => {
 
   const [pageLoading, setPageLoading] = useState(true);
   const [loading, setLoading] = useState(false);
-  const { cartItems } = useCartContext();
+  const { cartItems, clearCart } = useCartContext();
   const router = useRouter();
 
   useEffect(() => {
@@ -66,6 +66,7 @@ const CheckoutPage = () => {
       }
 
       const { init_point } = await paymentResponse.json();
+      clearCart();
       window.location.href = init_point;
     } catch (error) {
       console.error("Error during checkout process:", error);
