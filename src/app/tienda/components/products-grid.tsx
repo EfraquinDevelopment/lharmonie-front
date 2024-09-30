@@ -1,5 +1,6 @@
 "use client";
 
+import StoreEmptyState from "@/app/tienda/components/store-empty-state";
 import ProductCard from "@/components/product-card";
 import { WooProduct } from "@/types/woocommerce";
 
@@ -18,6 +19,10 @@ const getFilteredProducts = (products: WooProduct[], reccomended: boolean) => {
 
 const ProductsGrid = ({ products, reccomended = false }: Props) => {
   const filteredProducts = getFilteredProducts(products, reccomended);
+
+  if (filteredProducts.length === 0) {
+    return <StoreEmptyState />;
+  }
 
   return (
     <section className="grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5">
