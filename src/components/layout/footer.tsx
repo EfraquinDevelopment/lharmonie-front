@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
   } = content;
 
   return (
-    <footer className="bg-[#f8f8f5] text-[#8B7355] py-12 font-['EB_Garamond',serif] border-t border-[#e0d8c9]">
+    <footer className="bg-[#f8f8f5] text-[#8B7355] py-12 border-t border-[#e0d8c9]">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-1 md:col-span-2">

@@ -8,7 +8,7 @@ interface CheckoutSuccessProps {
 
 const CheckoutSuccess: React.FC<CheckoutSuccessProps> = ({ orderId }) => {
   return (
-    <div className="bg-gradient-to-b from-[#f8f8f5] to-[#e0d8c9]  font-['EB_Garamond',serif] py-4 px-4">
+    <div className="bg-gradient-to-b from-[#f8f8f5] to-[#e0d8c9] py-4 px-4">
       <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
         <div className="bg-[#8B7355] text-white p-8 text-center">
           <ShoppingBag size={64} className="mx-auto mb-4" />

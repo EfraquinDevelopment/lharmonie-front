@@ -89,7 +89,7 @@ const CheckoutPage = () => {
   const total = subtotal;
 
   return (
-    <div className="bg-gradient-to-b from-[#f8f8f5] to-[#e0d8c9] min-h-screen font-['EB_Garamond',serif] py-16">
+    <div className="bg-gradient-to-b from-[#f8f8f5] to-[#e0d8c9] min-h-screen py-16">
       <div className="container mx-auto px-4 max-w-6xl">
         <h1 className="text-5xl font-light text-center mb-16 text-[#8B7355]">
           Finalizar Compra
