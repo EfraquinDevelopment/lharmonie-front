@@ -69,7 +69,6 @@ const CheckoutPage = () => {
       }
 
       const { init_point } = await paymentResponse.json();
-      clearCart();
       window.location.href = init_point;
     } catch (error: any) {
       setFormError(error.message);
@@ -77,6 +76,7 @@ const CheckoutPage = () => {
       console.error("Error during checkout process:", error);
     } finally {
       setLoading(false);
+      clearCart();
     }
   };
 
