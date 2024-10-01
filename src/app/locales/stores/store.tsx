@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import classNames from "classnames";
 import { Clock, MapPin } from "lucide-react";
 import LharmonieButton from "@/components/ui/lharmonie-button";
+import Heading from "@/components/layout/heading";
 
 type Props = StoreData & {
   index: number;
@@ -56,7 +57,7 @@ const Store = ({
             alt={name}
             width={500}
             height={800}
-            className="object-cover w-full h-[400px] lg:h-[500px] rounded-xl shadow-2xl"
+            className="object-cover w-full h-[400px] rounded-xl shadow-2xl"
           />
         </motion.div>
         <motion.div
@@ -71,9 +72,9 @@ const Store = ({
           transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
         >
           <div className="mt-8 md:mt-0">
-            <h2 className="text-3xl md:text-4xl mb-4 font-light text-[#8B7355]">
+            <h4 className="!text-3xl mb-4 !font-thin !text-[#8B7355]">
               {name}
-            </h2>
+            </h4>
             <div className="flex items-center mb-6">
               <MapPin className="w-5 h-5 mr-2 text-[#8B7355]" />
               <p className="text-lg text-gray-600">{address}</p>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Coffee, ShoppingBag, ShoppingBasket } from "lucide-react";
 import Link from "next/link";
+import LharmonieButton from "@/components/ui/lharmonie-button";
 
 const StoreEmptyState = () => {
   return (
@@ -16,15 +17,14 @@ const StoreEmptyState = () => {
           Lo sentimos, actualmente no hay productos que se ajusten a tu
           búsqueda.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Link
-            href={`/tienda`}
-            className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-[#8B7355] border border-transparent rounded-md hover:bg-[#A08B6C] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#8B7355]"
-          >
-            <ShoppingBasket className="w-5 h-5 mr-2" />
+        <Link
+          href={`/tienda`}
+          className="flex flex-col sm:flex-row justify-center gap-4"
+        >
+          <LharmonieButton icon={<ShoppingBasket />}>
             Ver todos los productos
-          </Link>
-        </div>
+          </LharmonieButton>
+        </Link>
       </div>
     </div>
   );

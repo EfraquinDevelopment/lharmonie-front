@@ -12,7 +12,7 @@ const Stores = () => {
   }
 
   return (
-    <main className="container mx-auto mt-16 md:mt-0 md:py-16 px-4">
+    <main className="container mx-auto max-w-6xl py-24 px-4">
       {stores.map((store, index) => (
         <Store
           key={store.id}

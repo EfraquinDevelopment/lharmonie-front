@@ -4,6 +4,7 @@ import Heading from "@/components/layout/heading";
 import content from "@/data/stores.json";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Body from "@/components/layout/body";
 
 const fadeIn = {
   hidden: { opacity: 0 },
@@ -37,12 +38,10 @@ const StoresBanner = () => {
           variants={textUpward}
           transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
         >
-          <Heading level={1} className="md:!text-5xl !font-bold">
+          <Heading level={2} className="!text-4xl">
             {storesBanner.title}
           </Heading>
-          <p className="text-lg md:text-xl mt-4 mb-8">
-            {storesBanner.description}
-          </p>
+          <Body className="mt-4 mb-8">{storesBanner.description}</Body>
         </motion.div>
         <motion.div
           className="flex md:flex-row flex-col justify-center gap-4 mx-4"
@@ -57,13 +56,15 @@ const StoresBanner = () => {
               href={`#${store.id}`}
               className="group block text-center transition-all duration-300 shadow-md hover:shadow-xl p-4 rounded-lg"
             >
-              <motion.h3
-                className="text-xl font-medium mb-2"
+              <motion.div
+                className="mb-2"
                 variants={textUpward}
                 transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}
               >
-                {store.name}
-              </motion.h3>
+                <Heading level={3} className="!text-2xl">
+                  {store.name}
+                </Heading>
+              </motion.div>
               <motion.p
                 className="text-sm text-gray-600"
                 variants={textUpward}

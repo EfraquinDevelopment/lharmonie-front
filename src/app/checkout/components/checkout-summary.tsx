@@ -26,9 +26,9 @@ const CheckoutSummary = ({ form, loading }: Props) => {
   return (
     <div className="w-full lg:w-1/3">
       <div className="bg-white p-10 rounded-2xl shadow-lg">
-        <h2 className="text-3xl font-light mb-8 text-[#8B7355] border-b border-[#e0d8c9] pb-4">
+        <h3 className="text-2xl font-light mb-8 !text-[#8B7355] border-b border-[#e0d8c9] pb-4">
           Resumen de la Orden
-        </h2>
+        </h3>
         <ul className="space-y-6 mb-8 max-h-60 overflow-y-auto scrollbar">
           {cartItems.map((item, index) => (
             <li key={index} className="flex items-center space-x-4">
@@ -42,7 +42,7 @@ const CheckoutSummary = ({ form, loading }: Props) => {
               <div className="flex-1">
                 <h3 className="text-[#5D4D3A] font-semibold">{item.name}</h3>
                 <p className="text-[#8B7355]">Cantidad: {item.quantity}</p>
-                <p className="text-[#5D4D3A] font-bold">
+                <p className="text-[#2a2724] font-bold">
                   $ {(+item.price * item.quantity).toLocaleString()}
                 </p>
               </div>

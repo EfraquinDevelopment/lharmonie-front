@@ -7,6 +7,7 @@ import content from "@/data/home.json";
 import Heading from "@/components/layout/heading";
 import LharmonieButton from "@/components/ui/lharmonie-button";
 import { motion } from "framer-motion";
+import Body from "@/components/layout/body";
 
 const OurHistory = () => {
   const { ourHistory } = content;
@@ -38,12 +39,9 @@ const OurHistory = () => {
           >
             <div className="flex flex-col justify-center mx-auto">
               {ourHistory.paragraphs.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className="text-lg 2xl:text-2xl mb-4 text-lharmonie-secondary lg:max-w-[60ch]"
-                >
+                <Body key={index} className="mb-4 lg:max-w-[60ch]">
                   {paragraph}
-                </p>
+                </Body>
               ))}
               <LharmonieButton className="lg:!w-[300px]">
                 <Link href="/sobre-nosotros">{ourHistory.buttonText}</Link>
@@ -59,8 +57,8 @@ const OurHistory = () => {
             <Image
               src={ourHistory.imageSrc}
               alt={ourHistory.imageAlt}
-              width={500}
-              height={500}
+              width={400}
+              height={400}
               className="w-full h-auto rounded-lg shadow-lg"
             />
           </motion.div>

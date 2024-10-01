@@ -2,6 +2,7 @@ import React from "react";
 import { ShoppingOutlined, ArrowRightOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import { Button, Typography } from "antd";
+import LharmonieButton from "../ui/lharmonie-button";
 
 interface Props {
   closeDrawer: () => void;
@@ -21,15 +22,13 @@ const CartEmptyState = ({ closeDrawer }: Props) => {
       <Text className="text-[#8B7355] mb-8">
         Explora nuestra tienda y descubre productos excepcionales.
       </Text>
-      <Link href="/tienda" passHref>
-        <Button
-          type="primary"
-          size="large"
-          className="bg-[#8B7355] hover:!bg-[#A08B6C] border-none h-12 px-6 text-base font-light tracking-wide transition-all duration-300 ease-in-out hover:bg-inherit"
-          onClick={closeDrawer}
-        >
-          Explorar Tienda <ArrowRightOutlined />
-        </Button>
+      <Link
+        href={`/tienda`}
+        className="flex flex-col sm:flex-row justify-center gap-4"
+      >
+        <LharmonieButton icon={<ArrowRightOutlined />}>
+          Explorar tienda
+        </LharmonieButton>
       </Link>
     </div>
   );

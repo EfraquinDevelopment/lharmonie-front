@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
-import { motion, useAnimation, useInView } from "framer-motion";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
+import Body from "@/components/layout/body";
+import classNames from "classnames";
 
 interface SectionProps {
   id: string;
@@ -10,7 +11,17 @@ interface SectionProps {
   imageSrc: string;
   reversed?: boolean;
   icon: React.ReactNode;
+  last?: boolean;
 }
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
+const textUpward = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
+};
 
 function AboutUsSection({
   id,
@@ -19,42 +30,34 @@ function AboutUsSection({
   imageSrc,
   icon,
   reversed = false,
+  last = false,
 }: SectionProps) {
   return (
-    <motion.div
-      id={id}
-      className={`flex flex-col scroll-mt-[210px] md:scroll-mt-[160px] ${
-        reversed ? "md:flex-row-reverse" : "md:flex-row"
-      } items-center gap-12`}
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.5 }}
+    <motion.section
+      id={id.toString()}
+      className="md:scroll-mt-[110px] scroll-mt-[160px]"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
     >
-      <div className="md:w-1/2 space-y-6">
-        <div className="flex items-center gap-4 mb-2">
-          {icon}
-          <h2 className="text-3xl md:text-4xl font-light text-[#8B7355]">
-            {title}
-          </h2>
-        </div>
-        <div className="w-16 h-0.5 bg-[#8B7355]"></div>
-        <p className="text-lg text-lharmonie-secondary md:text-xl leading-relaxed">
-          {content}
-        </p>
-      </div>
-      <div className="md:w-1/2">
+      <div
+        className={classNames("flex flex-col md:flex-row items-center", {
+          "md:flex-row-reverse": reversed,
+        })}
+      >
         <motion.div
-          className="relative overflow-hidden rounded-lg shadow-lg"
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.3 }}
+          className="w-full md:w-1/2 overflow-hidden shadow-2xl"
+          whileHover={{ scale: 1.02 }}
+          variants={fadeIn}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.25 }}
         >
           <Image
             src={imageSrc}
             alt={title}
-            width={600}
-            height={400}
-            className="object-cover w-full"
+            width={500}
+            height={800}
+            className="object-cover w-full h-[400px] rounded-xl shadow-2xl"
           />
           <motion.div
             className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center"
@@ -64,8 +67,39 @@ function AboutUsSection({
             <p className="text-white text-2xl font-semibold">{title}</p>
           </motion.div>
         </motion.div>
+        <motion.div
+          className={classNames(
+            "w-full md:w-1/2 flex flex-col justify-center",
+            {
+              "md:pl-16": !reversed,
+              "md:pr-16": reversed,
+            }
+          )}
+        >
+          <motion.div
+            className="relative overflow-hidden"
+            variants={textUpward}
+            transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+          >
+            <div className="flex items-center gap-2 mt-8 md:mt-0">
+              {icon}
+              <h3 className="!text-3xl !font-thin !text-[#8B7355]">{title}</h3>
+            </div>
+            <div className="w-12 h-0.5 bg-[#8B7355]"></div>
+            <Body className="!mt-4 leading-relaxed">{content}</Body>
+          </motion.div>
+        </motion.div>
       </div>
-    </motion.div>
+      {!last ? (
+        <motion.div
+          className="border-b border-gray-300 my-12"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        />
+      ) : null}
+    </motion.section>
   );
 }
 

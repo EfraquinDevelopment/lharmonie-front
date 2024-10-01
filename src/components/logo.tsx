@@ -32,7 +32,7 @@ export const Logo = ({
             "text-5xl md:text-9xl": size === "large",
           })}
         >
-          <p className={textColor}>Lharmonie</p>
+          <h1 className={textColor}>Lharmonie</h1>
         </Link>
       ) : (
         <div
@@ -41,7 +41,7 @@ export const Logo = ({
             "text-5xl md:text-9xl": size === "large",
           })}
         >
-          <p className={textColor}>Lharmonie</p>
+          <h1 className={textColor}>Lharmonie</h1>
         </div>
       )}
     </div>
