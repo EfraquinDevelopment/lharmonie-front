@@ -30,7 +30,7 @@ const Productos = async ({ searchParams }: Props) => {
     <Suspense fallback={<SpinnerLoader />}>
       <main>
         <div className="py-10 px-8 sm:max-w-full mx-auto sm:mx-0">
-          <Heading level={1} className="text-center">
+          <Heading level={2} className="text-center">
             {content.title}
           </Heading>
           <div className="space-y-5 lg:space-y-0 lg:grid grid-cols-12 gap-5">

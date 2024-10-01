@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import content from "@/data/home.json";
 import { Spotify } from "@/components/spotify";
 import Heading from "@/components/layout/heading";
+import Body from "@/components/layout/body";
 
 const SpotifyPlaylist = () => {
   const {
@@ -24,7 +25,7 @@ const SpotifyPlaylist = () => {
             <Heading level={2} className=" !text-4xl">
               {title}
             </Heading>
-            <p className="text-xl mb-12">{body}</p>
+            <Body className="mb-12">{body}</Body>
           </div>
         </div>
         <div className="overflow-hidden container mx-auto">
@@ -33,7 +34,9 @@ const SpotifyPlaylist = () => {
               <h3 className="text-3xl font-light mb-4 text-lharmonie-primary">
                 {boxTitle}
               </h3>
-              <p className="text-lharmonie-primary mb-6">{boxText}</p>
+              <Body className="!text-lharmonie-primary !text-base mb-6">
+                {boxText}
+              </Body>
               <a
                 href={playlistUrl}
                 target="_blank"

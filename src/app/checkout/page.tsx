@@ -1,6 +1,7 @@
 "use client";
 import CheckoutForm from "@/app/checkout/components/checkout-form";
 import CheckoutSummary from "@/app/checkout/components/checkout-summary";
+import Heading from "@/components/layout/heading";
 import { useCartContext } from "@/hooks";
 import { Form } from "antd";
 
@@ -90,9 +91,9 @@ const CheckoutPage = () => {
   return (
     <div className="bg-gradient-to-b from-[#f8f8f5] to-[#e0d8c9] min-h-screen py-16">
       <div className="container mx-auto px-4 max-w-6xl">
-        <h1 className="text-5xl font-light text-center mb-16 text-[#8B7355]">
+        <Heading level={2} className="text-center mb-16 !text-4xl">
           Finalizar Compra
-        </h1>
+        </Heading>
         {formError && (
           <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-8">
             {formError}

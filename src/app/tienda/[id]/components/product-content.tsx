@@ -10,6 +10,7 @@ import ProductImage from "@/app/tienda/[id]/components/product-image";
 import { WooProduct } from "@/types/woocommerce";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import RelatedProducts from "./related-products";
+import Heading from "@/components/layout/heading";
 
 type Props = WooProduct;
 
@@ -41,9 +42,9 @@ const ProductContent = (product: Props) => {
         </div>
       </div>
       <div className="mt-10 lg:mt-0 lg:w-1/2">
-        <h1 className="text-5xl font-light text-gray-900 mb-4">
+        <Heading level={2} className="text-5xl font-light text-gray-900 mb-4">
           {product.name}
-        </h1>
+        </Heading>
         <p className="text-3xl text-[#8B7355] mb-6 font-semibold">
           {new Intl.NumberFormat("es-AR", {
             style: "currency",

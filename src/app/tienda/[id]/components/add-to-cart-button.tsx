@@ -1,5 +1,5 @@
 "use client";
-import { CheckCircle, ShoppingCart } from "lucide-react";
+import { Ban, CheckCircle, ShoppingCart } from "lucide-react";
 import React, { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "antd";
@@ -39,11 +39,11 @@ const AddToCartButton = ({ product, quantity, setQuantity }: Props) => {
       disabled={isAdded || isDisabled}
       onClick={handleCartClick}
       className={classNames(
-        "w-full h-fit  text-white hover:!text-white py-3 px-6 rounded-full transition-colors",
+        "w-80 h-fit  text-white hover:!text-white py-3 px-6 rounded-full transition-colors",
         {
           "!bg-[#38a169] hover:!bg-[#38a169] hover:!border-[#38a169]": isAdded,
           "bg-lharmonie-hover/80 hover:!bg-lharmonie-hover/70 hover:!border-[#9c8164]":
-            !isAdded,
+            !isAdded && !isDisabled,
           "hover:!bg-[#0000000B] hover:!border-[#0000000B]": isDisabled,
         }
       )}
@@ -68,10 +68,19 @@ const AddToCartButton = ({ product, quantity, setQuantity }: Props) => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
             transition={{ duration: 0.2 }}
-            className="flex items-center justify-center text-lharmonie-primary"
+            className={classNames(
+              "flex items-center justify-center text-lharmonie-primary",
+              {
+                "text-lharmonie-secondary": isDisabled,
+              }
+            )}
           >
-            <ShoppingCart className="w-5 h-5 mr-2" />
-            Añadir al carrito
+            {isDisabled ? (
+              <Ban className="w-5 h-5 mr-2" />
+            ) : (
+              <ShoppingCart className="w-5 h-5 mr-2" />
+            )}
+            {isDisabled ? "Sin stock" : "Añadir al carrito"}
           </motion.div>
         )}
       </AnimatePresence>

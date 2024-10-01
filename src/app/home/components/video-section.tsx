@@ -21,7 +21,7 @@ const VideoSection = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           <Heading
-            level={1}
+            level={2}
             className="!text-5xl md:!text-9xl !font-bold md:max-w-[12ch] !mb-3"
             reversed
           >

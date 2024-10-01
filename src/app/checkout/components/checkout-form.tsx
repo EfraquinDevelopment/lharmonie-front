@@ -1,3 +1,4 @@
+import Heading from "@/components/layout/heading";
 import { Form, FormInstance, Input } from "antd";
 import React from "react";
 interface Props {
@@ -9,9 +10,9 @@ const CheckoutForm = ({ form, onFinish }: Props) => {
   return (
     <div className="w-full lg:w-2/3">
       <div className="bg-white p-10 rounded-2xl shadow-lg">
-        <h2 className="text-3xl font-light mb-8 text-[#8B7355] border-b border-[#e0d8c9] pb-4">
+        <h3 className="text-2xl font-light mb-8 !text-[#8B7355] border-b border-[#e0d8c9] pb-4">
           Información Personal
-        </h2>
+        </h3>
         <Form
           form={form}
           layout="vertical"

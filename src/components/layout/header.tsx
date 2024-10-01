@@ -57,9 +57,9 @@ const Header = () => {
           >
             <div className="h-full flex flex-col">
               <div className="flex justify-between items-center p-4 border-b border-[#8B7355]">
-                <h2 className="text-2xl font-light text-[#8B7355]">
+                <h1 className="text-2xl font-light text-[#8B7355]">
                   Lharmonie
-                </h2>
+                </h1>
                 <button onClick={closeDrawer} aria-label="Close menu">
                   <X className="text-[#8B7355] text-2xl" />
                 </button>
