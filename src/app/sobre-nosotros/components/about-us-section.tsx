@@ -46,12 +46,7 @@ function AboutUsSection({
           "md:flex-row-reverse": reversed,
         })}
       >
-        <motion.div
-          className="w-full md:w-1/2 overflow-hidden shadow-2xl"
-          whileHover={{ scale: 1.02 }}
-          variants={fadeIn}
-          transition={{ duration: 0.5, ease: "easeOut", delay: 0.25 }}
-        >
+        <div className="w-full md:w-1/2 overflow-hidden shadow-2xl relative group">
           <Image
             src={imageSrc}
             alt={title}
@@ -59,14 +54,10 @@ function AboutUsSection({
             height={800}
             className="object-cover w-full h-[400px] rounded-xl shadow-2xl"
           />
-          <motion.div
-            className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center"
-            initial={{ opacity: 0 }}
-            whileHover={{ opacity: 1 }}
-          >
+          <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out">
             <p className="text-white text-2xl font-semibold">{title}</p>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
         <motion.div
           className={classNames(
             "w-full md:w-1/2 flex flex-col justify-center",
@@ -77,7 +68,6 @@ function AboutUsSection({
           )}
         >
           <motion.div
-            className="relative overflow-hidden"
             variants={textUpward}
             transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
           >
