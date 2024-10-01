@@ -1,12 +1,20 @@
+"use client";
+
+import { useCartContext } from "@/hooks";
 import { Button } from "antd";
 import { ShoppingBag, Mail, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { useEffect } from "react";
 
 interface CheckoutSuccessProps {
   orderId: string;
 }
 
 const CheckoutSuccess: React.FC<CheckoutSuccessProps> = ({ orderId }) => {
+  const { clearCart } = useCartContext();
+  useEffect(() => {
+    clearCart();
+  }, []);
   return (
     <div className="bg-gradient-to-b from-[#f8f8f5] to-[#e0d8c9] py-4 px-4">
       <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">

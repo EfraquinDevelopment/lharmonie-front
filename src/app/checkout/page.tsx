@@ -12,7 +12,7 @@ const CheckoutPage = () => {
   const [form] = Form.useForm();
   const [pageLoading, setPageLoading] = useState(true);
   const [loading, setLoading] = useState(false);
-  const { cartItems, clearCart } = useCartContext();
+  const { cartItems } = useCartContext();
   const [formError, setFormError] = useState<string | null>(null);
   const router = useRouter();
 
@@ -76,7 +76,6 @@ const CheckoutPage = () => {
       console.error("Error during checkout process:", error);
     } finally {
       setLoading(false);
-      clearCart();
     }
   };
 

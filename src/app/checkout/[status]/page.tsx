@@ -1,6 +1,6 @@
 import { checkoutPageStatuses } from "@/lib/constants";
 import { checkOrderStatus } from "@/data/woocommerce/checkOrderStatus";
-import { RedirectType, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 import { WooOrderStatus } from "@/types/woocommerce";
 import { MPaymentStatus } from "@/types";
 import CheckoutSuccess from "@/app/checkout/[status]/components/checkout-success";
@@ -16,7 +16,7 @@ const renderCheckoutStatus = (status: MPaymentStatus, orderId: string) => {
     case MPaymentStatus.Success:
       return <CheckoutSuccess orderId={orderId} />;
     case MPaymentStatus.Failed:
-      return <CheckoutFailed orderId={orderId} />;
+      return <CheckoutFailed />;
     default:
       return null;
   }

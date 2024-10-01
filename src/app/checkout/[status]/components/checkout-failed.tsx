@@ -1,13 +1,17 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import { Button } from "antd";
 import { AlertCircle, RefreshCw, CreditCard, Wifi, Server } from "lucide-react";
 import Link from "next/link";
+import { useCartContext } from "@/hooks";
 
-interface CheckoutFailedProps {
-  orderId: string;
-}
+const CheckoutFailed = () => {
+  const { clearCart } = useCartContext();
+  useEffect(() => {
+    clearCart();
+  }, []);
 
-const CheckoutFailed: React.FC<CheckoutFailedProps> = ({ orderId }) => {
   return (
     <div className="bg-gradient-to-b from-[#f8f8f5] to-[#e0d8c9] min-h-screen py-16 px-4">
       <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
