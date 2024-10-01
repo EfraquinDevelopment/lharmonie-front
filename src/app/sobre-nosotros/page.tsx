@@ -16,7 +16,6 @@ const SobreNosotros = () => {
           content={ourHistory.description}
           imageSrc={ourHistory.imageSrc}
           icon={<Feather className="w-6 text-[#8B7355]" />}
-          reversed
         />
         <AboutUsSection
           id="2"
@@ -24,6 +23,7 @@ const SobreNosotros = () => {
           content={ourCoffee.description}
           imageSrc={ourCoffee.imageSrc}
           icon={<Coffee className="w-6 text-[#8B7355]" />}
+          reversed
         />
         <AboutUsSection
           id="3"
@@ -31,7 +31,6 @@ const SobreNosotros = () => {
           content={ourLaminates.description}
           imageSrc={ourLaminates.imageSrc}
           icon={<Layers className="w-6 text-[#8B7355]" />}
-          reversed
           last
         />
       </main>
