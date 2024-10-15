@@ -9,7 +9,7 @@ import { HomeBannerContent } from "@/data/pages/homeInterfaces";
 const VideoSection = () => {
   const { homeBanner } = content;
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative md:h-[calc(100vh-80px)] h-[calc(100vh-64px)] overflow-hidden">
       <Video
         src={homeBanner.videoSrc}
         className="absolute inset-0 w-full h-full object-cover"

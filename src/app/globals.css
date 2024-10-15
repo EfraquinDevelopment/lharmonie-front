@@ -4,6 +4,24 @@
 
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
 
+@font-face {
+  font-family: "HeadingFont";
+  src: url("/fonts/Recoleta-RegularDEMO.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TextFont";
+  src: url("/fonts/SFPRODISPLAYREGULAR.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "TextFont", sans-serif !important;
+}
+
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
     width: 20px;
@@ -44,9 +62,9 @@ html {
   }
 }
 
-* {
-  font-family: "EB Garamond", serif !important;
-}
+/* * {
+  font-family: "HeadingFont", sans-serif !important;
+} */
 
 body {
   @apply bg-lharmonie-primary;

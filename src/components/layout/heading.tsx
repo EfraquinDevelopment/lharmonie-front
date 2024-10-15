@@ -5,15 +5,26 @@ type Props = TitleProps & {
   reversed?: boolean;
 };
 
+const replaceAccents = (text: string) => {
+  return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+};
+
 const Heading = ({ children, className, reversed }: Props) => {
+  const formattedChildren =
+    typeof children === "string" ? replaceAccents(children) : children;
+
   return (
     <Title
-      className={classNames(className, "!text-3xl !font-medium", {
-        "!text-lharmonie-primary": reversed,
-        "!text-lharmonie-hover": !reversed,
-      })}
+      className={classNames(
+        className,
+        "!text-3xl !font-medium !font-[HeadingFont]",
+        {
+          "!text-lharmonie-primary": reversed,
+          "!text-lharmonie-hover": !reversed,
+        }
+      )}
     >
-      {children}
+      {formattedChildren}
     </Title>
   );
 };

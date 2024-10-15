@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -23,7 +22,7 @@ export const Logo = ({
     : "text-lharmonie-secondary";
 
   return (
-    <div>
+    <div className="">
       {clickable ? (
         <Link
           href="/"
@@ -32,7 +31,7 @@ export const Logo = ({
             "text-5xl md:text-9xl": size === "large",
           })}
         >
-          <h1 className={textColor}>Lharmonie</h1>
+          <h1 className={textColor + " !font-[HeadingFont]"}>Lharmonie</h1>
         </Link>
       ) : (
         <div
@@ -41,7 +40,7 @@ export const Logo = ({
             "text-5xl md:text-9xl": size === "large",
           })}
         >
-          <h1 className={textColor}>Lharmonie</h1>
+          <h1 className={textColor + " !font-[HeadingFont]"}>Lharmonie</h1>
         </div>
       )}
     </div>
