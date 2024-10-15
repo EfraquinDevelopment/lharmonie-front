@@ -1,5 +1,5 @@
 import content from "@/data/menu.json";
-import MenuContent from "@/app/menu/components/menu";
+import MenuContent from "@/app/(main)/menu/components/menu";
 
 const MenuPage = () => {
   const { description, imageSrc, title } = content;

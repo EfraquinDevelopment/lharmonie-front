@@ -1,15 +1,15 @@
-import OurHistory from "@/app/home/components/our-history";
-import RecommendedProducts from "@/app/home/components/recommended-products";
-import Stores from "@/app/home/components/stores";
+import OurHistory from "@/app/(main)/home/components/our-history";
+import RecommendedProducts from "@/app/(main)/home/components/recommended-products";
+import Stores from "@/app/(main)/home/components/stores";
 import { Suspense } from "react";
-import SpotifyPlaylist from "@/app/home/components/spotify-playlist";
-import ImageMarquee from "@/app/home/components/image-marquee";
+import ImageMarquee from "@/app/(main)/home/components/image-marquee";
 import dynamic from "next/dynamic";
 import { getWooProducts } from "@/data/woocommerce/getWooProducts";
 import SpinnerLoader from "@/components/layout/spinner-loader";
+import SpotifyPlaylist from "@/app/(main)/home/components/spotify-playlist";
 
 const VideoSection = dynamic(
-  () => import("@/app/home/components/video-section"),
+  () => import("@/app/(main)/home/components/video-section"),
   {
     ssr: false,
   }

@@ -1,6 +1,6 @@
 "use client";
-import CheckoutForm from "@/app/checkout/components/checkout-form";
-import CheckoutSummary from "@/app/checkout/components/checkout-summary";
+import CheckoutForm from "@/app/(main)/checkout/components/checkout-form";
+import CheckoutSummary from "@/app/(main)/checkout/components/checkout-summary";
 import Heading from "@/components/layout/heading";
 import { useCartContext } from "@/hooks";
 import { Form } from "antd";

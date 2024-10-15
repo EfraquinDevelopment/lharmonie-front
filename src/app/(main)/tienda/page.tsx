@@ -1,11 +1,11 @@
-import ProductsGrid from "@/app/tienda/components/products-grid";
-import Filters from "@/app/tienda/components/filters";
+import ProductsGrid from "@/app/(main)/tienda/components/products-grid";
+import Filters from "@/app/(main)/tienda/components/filters";
 import Heading from "@/components/layout/heading";
 import content from "@/data/store.json";
 import { Suspense } from "react";
 import { getWooProducts } from "@/data/woocommerce/getWooProducts";
 import { getWooCategories } from "@/data/woocommerce/getWooCategories";
-import OrderBy from "@/app/tienda/components/order-by";
+import OrderBy from "@/app/(main)/tienda/components/order-by";
 import { orderOptions } from "@/config/store";
 import { WooCategory } from "@/types/woocommerce";
 import classNames from "classnames";

@@ -3,8 +3,8 @@ import { checkOrderStatus } from "@/data/woocommerce/checkOrderStatus";
 import { redirect } from "next/navigation";
 import { WooOrderStatus } from "@/types/woocommerce";
 import { MPaymentStatus } from "@/types";
-import CheckoutSuccess from "@/app/checkout/[status]/components/checkout-success";
-import CheckoutFailed from "@/app/checkout/[status]/components/checkout-failed";
+import CheckoutSuccess from "@/app/(main)/checkout/[status]/components/checkout-success";
+import CheckoutFailed from "@/app/(main)/checkout/[status]/components/checkout-failed";
 
 interface Props {
   params: { status?: string };

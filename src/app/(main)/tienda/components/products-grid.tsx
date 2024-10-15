@@ -1,6 +1,6 @@
 "use client";
 
-import StoreEmptyState from "@/app/tienda/components/store-empty-state";
+import StoreEmptyState from "@/app/(main)/tienda/components/store-empty-state";
 import ProductCard from "@/components/product-card";
 import { WooProduct } from "@/types/woocommerce";
 

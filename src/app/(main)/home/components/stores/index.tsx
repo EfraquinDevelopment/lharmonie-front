@@ -1,6 +1,6 @@
 "use client";
 
-import StoreItem from "@/app/home/components/stores/store";
+import StoreItem from "@/app/(main)/home/components/stores/store";
 import content from "@/data/home.json";
 
 const Stores = () => {

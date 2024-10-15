@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
-import ProductDetailBreadcrumb from "@/app/tienda/[id]/components/product-detail-breadcrumb";
-import ProductContent from "@/app/tienda/[id]/components/product-content";
+import ProductDetailBreadcrumb from "@/app/(main)/tienda/[id]/components/product-detail-breadcrumb";
+import ProductContent from "@/app/(main)/tienda/[id]/components/product-content";
 import { getWooProduct } from "@/data/woocommerce/getWooProduct";
 import { getWooProducts } from "@/data/woocommerce/getWooProducts";
 import RelatedProducts from "./components/related-products";
