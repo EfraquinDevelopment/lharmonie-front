@@ -1,5 +1,5 @@
 "use client";
-import Store from "@/app/locales/stores/store";
+import Store from "@/app/(main)/locales/stores/store";
 import content from "@/data/stores.json";
 
 const Stores = () => {

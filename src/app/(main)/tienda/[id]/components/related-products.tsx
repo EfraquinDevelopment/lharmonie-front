@@ -1,5 +1,4 @@
-import ProductCarousel from "@/app/home/components/product-carousel";
-import RecommendedProducts from "@/app/home/components/recommended-products";
+import ProductCarousel from "@/app/(main)/home/components/product-carousel";
 import Heading from "@/components/layout/heading";
 import { WooProduct } from "@/types/woocommerce";
 import React from "react";

@@ -1,8 +1,7 @@
-import AboutUsBanner from "@/app/sobre-nosotros/components/about-us-banner";
-import AboutUsSection from "@/app/sobre-nosotros/components/about-us-section";
 import content from "@/data/about.json";
 import { Coffee, Feather, Layers } from "lucide-react";
-import { motion } from "framer-motion";
+import AboutUsSection from "@/app/(main)/sobre-nosotros/components/about-us-section";
+import AboutUsBanner from "@/app/(main)/sobre-nosotros/components/about-us-banner";
 
 const SobreNosotros = () => {
   const { ourHistory, ourCoffee, ourLaminates } = content;
