@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Body from "@/components/layout/body";
 import classNames from "classnames";
+import Heading from "@/components/layout/heading";
 
 interface SectionProps {
   id: string;
@@ -71,11 +72,15 @@ function AboutUsSection({
             variants={textUpward}
             transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
           >
-            <div className="flex items-center gap-2 mt-8 md:mt-0">
-              {icon}
-              <h3 className="!text-3xl !font-thin !text-[#8B7355]">{title}</h3>
+            <div className="flex items-center mt-8 md:mt-0">
+              <div className="flex flex-col gap-1">
+                {icon}
+                <div className="w-12 h-0.5 bg-black"></div>
+              </div>
+              <Heading level={3} className="mt-2 -ml-3">
+                {title}
+              </Heading>
             </div>
-            <div className="w-12 h-0.5 bg-[#8B7355]"></div>
             <Body className="!mt-4 leading-relaxed">{content}</Body>
           </motion.div>
         </motion.div>

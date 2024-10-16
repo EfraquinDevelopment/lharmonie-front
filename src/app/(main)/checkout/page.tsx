@@ -90,7 +90,7 @@ const CheckoutPage = () => {
   return (
     <div className="bg-gradient-to-b from-[#f8f8f5] to-[#e0d8c9] min-h-screen py-16">
       <div className="container mx-auto px-4 max-w-6xl">
-        <Heading level={2} className="text-center mb-16 !text-4xl">
+        <Heading level={2} className="!mb-5 !text-3xl">
           Finalizar Compra
         </Heading>
         {formError && (

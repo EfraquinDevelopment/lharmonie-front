@@ -49,7 +49,7 @@ const ProductCard = ({ index, reccomended = false, ...product }: Props) => {
             className="!text-xs sm:!text-sm !my-0 sm:!mb-1 lg:!text-xl font-medium lg:mb-2 relative inline-block"
           >
             {product.name}
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-lharmonie-hover transform scale-x-0 transition-transform duration-300 lg:group-hover:scale-x-100"></span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-lharmonie-secondary transform scale-x-0 transition-transform duration-300 lg:group-hover:scale-x-100"></span>
           </Heading>
           <p className="text-xs lg:mb-1 text-gray-600 lg:text-sm">
             {sanitizedDescription} {sanitizedDescription} {sanitizedDescription}{" "}

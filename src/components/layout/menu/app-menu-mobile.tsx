@@ -28,7 +28,7 @@ const AppMenuMobile = ({ currentKey, menuItems, onClick }: Props) => {
   return (
     <Suspense fallback={<SpinnerLoader />}>
       <nav className="flex flex-col">
-        <div className="my-4">
+        <div className="my-4 mb-6">
           <SearchBar />
         </div>
         {menuItems.map((item) => (
@@ -37,7 +37,7 @@ const AppMenuMobile = ({ currentKey, menuItems, onClick }: Props) => {
               <button
                 onClick={() => openChildDrawer(item.link)}
                 className={classNames(
-                  "border-lharmonie-hover flex justify-between w-full items-center text-lharmonie-secondary px-4 transition-all duration-100 ease-in-out",
+                  "border-lharmonie-secondary flex justify-between w-full items-center text-lharmonie-secondary px-4 transition-all duration-100 ease-in-out",
 
                   {
                     "font-semibold": currentKey === item.link,
@@ -52,7 +52,7 @@ const AppMenuMobile = ({ currentKey, menuItems, onClick }: Props) => {
                 onClick={onClick}
                 href={item.link}
                 className={classNames(
-                  "hover:text-inherit border-lharmonie-hover block text-lharmonie-secondary px-4 transition-all duration-100 ease-in-out",
+                  "hover:text-inherit border-lharmonie-secondary block text-lharmonie-secondary px-4 transition-all duration-100 ease-in-out",
                   {
                     "font-semibold": currentKey === item.link,
                   }
@@ -61,7 +61,7 @@ const AppMenuMobile = ({ currentKey, menuItems, onClick }: Props) => {
                 {item.title}
               </Link>
             )}
-            <Divider className="my-6 py-0 w-[95%] mx-auto !min-w-0 bg-lharmonie-hover" />
+            <Divider className="my-6 py-0 w-[95%] mx-auto !min-w-0 bg-lharmonie-secondary" />
           </div>
         ))}
       </nav>

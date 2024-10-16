@@ -7,6 +7,7 @@ import { Product } from "@/types";
 import { useCartContext } from "@/hooks";
 import classNames from "classnames";
 import { WooProduct } from "@/types/woocommerce";
+import LharmonieButton from "@/components/ui/lharmonie-button";
 
 interface Props {
   product: WooProduct;
@@ -35,18 +36,12 @@ const AddToCartButton = ({ product, quantity, setQuantity }: Props) => {
   );
 
   return (
-    <Button
+    <LharmonieButton
+      className={classNames("!w-[400px]", {
+        "hover:!bg-lharmonie-secondary": isDisabled || isAdded,
+      })}
       disabled={isAdded || isDisabled}
       onClick={handleCartClick}
-      className={classNames(
-        "w-80 h-fit  text-white hover:!text-white py-3 px-6 rounded-full transition-colors",
-        {
-          "!bg-[#38a169] hover:!bg-[#38a169] hover:!border-[#38a169]": isAdded,
-          "bg-lharmonie-hover/80 hover:!bg-lharmonie-hover/70 hover:!border-[#9c8164]":
-            !isAdded && !isDisabled,
-          "hover:!bg-[#0000000B] hover:!border-[#0000000B]": isDisabled,
-        }
-      )}
     >
       <AnimatePresence mode="wait">
         {isAdded ? (
@@ -68,12 +63,10 @@ const AddToCartButton = ({ product, quantity, setQuantity }: Props) => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
             transition={{ duration: 0.2 }}
-            className={classNames(
-              "flex items-center justify-center text-lharmonie-primary",
-              {
-                "text-lharmonie-secondary": isDisabled,
-              }
-            )}
+            className={classNames("flex items-center justify-center", {
+              "text-gray-400": isDisabled,
+              "text-lharmonie-primary": !isDisabled,
+            })}
           >
             {isDisabled ? (
               <Ban className="w-5 h-5 mr-2" />
@@ -84,7 +77,7 @@ const AddToCartButton = ({ product, quantity, setQuantity }: Props) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </Button>
+    </LharmonieButton>
   );
 };
 

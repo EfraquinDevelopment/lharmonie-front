@@ -10,6 +10,7 @@ import { X } from "lucide-react";
 import { Suspense } from "react";
 import SearchBar from "@/components/search-bar";
 import SpinnerLoader from "@/components/layout/spinner-loader";
+import Heading from "./heading";
 
 const Header = () => {
   const { isOpen, openDrawer, closeDrawer } = useDrawer();
@@ -56,12 +57,12 @@ const Header = () => {
             style={{ padding: 0, background: "#f8f8f5" }}
           >
             <div className="h-full flex flex-col">
-              <div className="flex justify-between items-center p-4 border-b border-[#8B7355]">
-                <h1 className="text-2xl font-light text-[#8B7355]">
+              <div className="flex justify-between items-center p-4 border-b border-lharmonie-secondary">
+                <Heading level={1} className="!mb-0">
                   Lharmonie
-                </h1>
+                </Heading>
                 <button onClick={closeDrawer} aria-label="Close menu">
-                  <X className="text-[#8B7355] text-2xl" />
+                  <X className="text-lharmonie-secondary text-2xl" />
                 </button>
               </div>
               <AppMenu onClick={closeDrawer} />

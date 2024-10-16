@@ -71,9 +71,9 @@ const Store = ({
           transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
         >
           <div className="mt-8 md:mt-0">
-            <h4 className="!text-3xl mb-4 !font-thin !text-[#8B7355]">
+            <Heading level={4} className="!text-3xl mb-4 !font-thin">
               {name}
-            </h4>
+            </Heading>
             <div className="flex items-center mb-6">
               <MapPin className="w-5 h-5 mr-2 text-[#8B7355]" />
               <p className="text-lg text-gray-600">{address}</p>

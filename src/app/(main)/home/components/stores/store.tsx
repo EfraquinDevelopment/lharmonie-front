@@ -59,7 +59,7 @@ const StoreItem = ({
             </Heading>
             <p className="mb-5 text-lg text-lharmonie-primary">{address}</p>
             <LharmonieButton
-              className=" group-hover:!bg-lharmonie-hover group-hover:!text-lharmonie-primary"
+              className=" group-hover:!bg-lharmonie-secondary group-hover:!text-lharmonie-primary"
               reversed
             >
               {ctoDescription}

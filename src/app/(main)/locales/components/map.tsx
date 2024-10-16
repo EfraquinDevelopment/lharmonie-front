@@ -91,9 +91,6 @@ const Map = () => {
   return (
     <div className="md:flex md:h-[600px] xl:h-[700px] container mx-auto mb-16 md:shadow-xl rounded-xl">
       <div className="md:w-1/3 md:bg-gray-100 md:p-4 overflow-y-auto">
-        <Heading level={3} className="font-bold mx-4 md:mx-0 mb-4">
-          {title}
-        </Heading>
         <ul className="hidden md:block space-y-4">
           {locations.map((location, index) => (
             <li

@@ -1,7 +1,7 @@
 import React from "react";
 import { ShoppingOutlined, ArrowRightOutlined } from "@ant-design/icons";
 import Link from "next/link";
-import { Button, Typography } from "antd";
+import { Typography } from "antd";
 import LharmonieButton from "../ui/lharmonie-button";
 
 interface Props {
@@ -19,7 +19,7 @@ const CartEmptyState = ({ closeDrawer }: Props) => {
       <Title level={3} className="text-[#5D4D3A] mb-2">
         Tu carrito está vacío
       </Title>
-      <Text className="text-[#8B7355] mb-8">
+      <Text type="secondary" className=" mb-8">
         Explora nuestra tienda y descubre productos excepcionales.
       </Text>
       <Link

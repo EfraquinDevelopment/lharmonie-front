@@ -2,17 +2,18 @@
 
 import DOMPurify from "dompurify";
 import { useCartContext } from "@/hooks";
-import { Button, Divider } from "antd";
+import { Button, Divider, Typography } from "antd";
 import React, { useState } from "react";
 import AddToCartButton from "@/app/(main)/tienda/[id]/components/add-to-cart-button";
 import AttributesSection from "@/app/(main)/tienda/[id]/components/attributes-section";
 import ProductImage from "@/app/(main)/tienda/[id]/components/product-image";
 import { WooProduct } from "@/types/woocommerce";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import RelatedProducts from "./related-products";
 import Heading from "@/components/layout/heading";
 
 type Props = WooProduct;
+
+const { Text } = Typography;
 
 const ProductContent = (product: Props) => {
   const { checkCartItemQuantity } = useCartContext();
@@ -80,13 +81,13 @@ const ProductContent = (product: Props) => {
           <>
             <Divider className="border-[#e0d8c9] mt-16" />
             <div className="relative">
-              <p
-                className={`text-xl mb-8 italic text-[#5D4D3A] leading-relaxed ${
+              <Text
+                className={`text-xl mb-8 italic leading-relaxed text-gray-600 font-light ${
                   isDescriptionExpanded ? "" : "line-clamp-3"
                 }`}
               >
                 {sanitizedDescription}
-              </p>
+              </Text>
               <div
                 className={`absolute -bottom-10 left-0 right-0 text-center ${
                   isDescriptionExpanded
@@ -96,7 +97,7 @@ const ProductContent = (product: Props) => {
               >
                 <button
                   onClick={toggleDescription}
-                  className="text-[#8B7355] hover:text-[#5D4D3A] transition-colors flex items-center mx-auto"
+                  className="transition-colors flex items-center mx-auto"
                 >
                   {isDescriptionExpanded ? (
                     <>

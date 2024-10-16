@@ -57,7 +57,7 @@ export default function SearchBar({ onChange }: Props) {
     <div className="w-full max-w-3xl mx-auto px-4">
       <div
         className={`relative flex items-center bg-white rounded-full shadow-md transition-all ${
-          isFocused ? "ring-2 ring-[#8B7355]" : ""
+          isFocused ? "ring-1 ring-lharmonie-secondary" : ""
         }`}
       >
         <Search className="absolute left-4 text-gray-400" size={20} />

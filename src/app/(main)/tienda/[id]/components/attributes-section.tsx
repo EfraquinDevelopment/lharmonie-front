@@ -20,7 +20,7 @@ const AttributesSection = ({ attributes }: Props) => {
         {attributes.map((attribute) => (
           <li
             key={attribute.name}
-            className="flex items-center border-b border-lharmonie-hover"
+            className="flex items-center border-b border-lharmonie-secondary"
           >
             <span className="w-24 font-semibold">{attribute.name}:</span>
             <span>{attribute.options[0]}</span>

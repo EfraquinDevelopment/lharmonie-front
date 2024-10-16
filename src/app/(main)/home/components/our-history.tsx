@@ -15,9 +15,9 @@ const OurHistory = () => {
   return (
     <section
       id="3"
-      className="bg-lharmonie-primary md:scroll-mt-[110px] scroll-mt-[160px]  mx-4 text-lharmonie-secondary"
+      className="bg-lharmonie-primary md:scroll-mt-[110px] scroll-mt-[160px] mx-4 text-lharmonie-secondary"
     >
-      <div className="mx-auto">
+      <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -29,7 +29,7 @@ const OurHistory = () => {
             {ourHistory.title}
           </Heading>
         </motion.div>
-        <div className="space-y-10 gap-10 lg:flex flex-row justify-evenly items-center">
+        <div className="space-y-10 gap-10 lg:flex flex-row justify-between items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
