@@ -89,16 +89,18 @@ const Map = () => {
   };
 
   return (
-    <div className="md:flex md:h-[600px] xl:h-[700px] container mx-auto mb-16 md:shadow-xl rounded-xl">
-      <div className="md:w-1/3 md:bg-gray-100 md:p-4 overflow-y-auto">
+    <div className="md:flex md:h-[600px] xl:h-[700px] container mx-auto max-w-6xl mb-16 md:shadow-xl rounded-xl">
+      <div className="md:w-1/3 md:bg-lharmonie-primary md:p-4 overflow-y-auto">
         <ul className="hidden md:block space-y-4">
           {locations.map((location, index) => (
             <li
               key={index}
-              className="cursor-pointer border p-4 rounded hover:bg-gray-200"
+              className="cursor-pointer border p-4 rounded hover:bg-gray-100"
               onClick={() => handleLocationClick(index)}
             >
-              <h3 className="text-lg font-semibold">{location.title}</h3>
+              <Heading level={5} className="!text-lg">
+                {location.title}
+              </Heading>
               <p>{location.address}</p>
             </li>
           ))}

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import classNames from "classnames";
 import { Clock, MapPin } from "lucide-react";
 import LharmonieButton from "@/components/ui/lharmonie-button";
+import Heading from "@/components/layout/heading";
 
 type Props = StoreData & {
   index: number;

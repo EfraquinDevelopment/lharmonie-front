@@ -142,7 +142,7 @@ body {
 }
 
 .slick-dots li button {
-  @apply !bg-lharmonie-hover;
+  @apply !bg-lharmonie-secondary;
 }
 
 .slick-dots li.slick-active button {
@@ -177,7 +177,7 @@ body {
   @apply !text-lharmonie-secondary;
 }
 .slick-dots li button {
-  @apply !bg-lharmonie-hover;
+  @apply !bg-lharmonie-secondary;
 }
 
 .slick-dots li.slick-active button {

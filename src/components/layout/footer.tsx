@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="text-sm transition-colors duration-300"
+                    className="text-sm hover:underline transition-colors duration-300"
                   >
                     {item.label}
                   </Link>
