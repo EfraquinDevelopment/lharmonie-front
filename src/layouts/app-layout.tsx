@@ -15,7 +15,14 @@ type AppLayoutProps = {
 
 const MainLayoutContent = ({ children }: AppLayoutProps) => {
   return (
-    <Suspense fallback={<SpinnerLoader />}>
+    <Suspense
+      fallback={
+        <>
+          <Header />
+          <SpinnerLoader />
+        </>
+      }
+    >
       <PageTransition>
         <Header />
         <main className="flex-grow w-full mx-auto">{children}</main>

@@ -52,13 +52,15 @@ const ChildrenDrawerMobile = ({
       closeIcon={null}
       style={{ padding: 0, background: "#f8f8f5" }}
     >
-      <div className="flex justify-between items-center p-4 border-b border-[#8B7355]">
+      <div className="flex justify-between items-center p-4 border-b border-lharmonie-secondary">
         <button onClick={closeChildDrawer} aria-label="Close menu">
-          <ChevronLeft className="text-[#8B7355] text-2xl" />
+          <ChevronLeft className="text-lharmonie-secondary text-2xl" />
         </button>
-        <h2 className="text-2xl font-light text-[#8B7355]">{parent.title}</h2>
+        <h2 className="text-2xl font-light text-lharmonie-secondary">
+          {parent.title}
+        </h2>
         <button onClick={handleCloseAll} aria-label="Close menu">
-          <X className="text-[#8B7355] text-2xl" />
+          <X className="text-lharmonie-secondary text-2xl" />
         </button>
       </div>
       <nav className="flex flex-col gap-6 mt-5">
@@ -68,11 +70,11 @@ const ChildrenDrawerMobile = ({
               <Link
                 onClick={onClick}
                 href={child.link}
-                className="hover:text-inherit border-lharmonie-hover block text-lharmonie-secondary px-4 transition-all duration-100 ease-in-out"
+                className="hover:text-inherit border-lharmonie-secondary block text-lharmonie-secondary px-4 transition-all duration-100 ease-in-out"
               >
                 {child.title}
               </Link>
-              <Divider className="my-0 py-0 w-[95%] mx-auto !min-w-0 bg-lharmonie-hover" />
+              <Divider className="my-0 py-0 w-[95%] mx-auto !min-w-0 bg-lharmonie-secondary" />
             </React.Fragment>
           );
         })}

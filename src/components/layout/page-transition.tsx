@@ -27,7 +27,7 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
         {isVisible && (
           <motion.div
             key={pathname}
-            className="bg-lharmonie-hover"
+            className="bg-lharmonie-secondary"
             initial={{ translateX: "0%" }}
             animate={{ translateX: "100%" }}
             exit={{ translateX: "100%" }}

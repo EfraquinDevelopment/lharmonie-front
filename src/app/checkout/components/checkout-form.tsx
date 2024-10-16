@@ -10,9 +10,12 @@ const CheckoutForm = ({ form, onFinish }: Props) => {
   return (
     <div className="w-full lg:w-2/3">
       <div className="bg-white p-10 rounded-2xl shadow-lg">
-        <h3 className="text-2xl font-light mb-8 !text-[#8B7355] border-b border-[#e0d8c9] pb-4">
+        <Heading
+          level={3}
+          className="text-2xl font-light mb-8 !text-lharmonie-secondary border-b border-[#e0d8c9] pb-4"
+        >
           Información Personal
-        </h3>
+        </Heading>
         <Form
           form={form}
           layout="vertical"
@@ -35,7 +38,7 @@ const CheckoutForm = ({ form, onFinish }: Props) => {
                 },
               ]}
             >
-              <Input className="border-[#8B7355] focus:border-[#A08B6C] focus:ring-[#A08B6C] rounded-md shadow-sm" />
+              <Input className="border-lharmonie-secondary focus:border-lharmonie-secondary focus:ring-lharmonie-secondary rounded-md shadow-sm" />
             </Form.Item>
             <Form.Item
               name="last_name"
@@ -52,7 +55,7 @@ const CheckoutForm = ({ form, onFinish }: Props) => {
                 },
               ]}
             >
-              <Input className="border-[#8B7355] focus:border-[#A08B6C] focus:ring-[#A08B6C] rounded-md shadow-sm" />
+              <Input className="border-lharmonie-secondary focus:border-lharmonie-secondary focus:ring-lharmonie-secondary rounded-md shadow-sm" />
             </Form.Item>
             <Form.Item
               name="dni"
@@ -65,7 +68,7 @@ const CheckoutForm = ({ form, onFinish }: Props) => {
                 },
               ]}
             >
-              <Input className="border-[#8B7355] focus:border-[#A08B6C] focus:ring-[#A08B6C] rounded-md shadow-sm" />
+              <Input className="border-lharmonie-secondary focus:border-lharmonie-secondary focus:ring-lharmonie-secondary rounded-md shadow-sm" />
             </Form.Item>
             <Form.Item
               name="email"
@@ -81,7 +84,7 @@ const CheckoutForm = ({ form, onFinish }: Props) => {
                 },
               ]}
             >
-              <Input className="border-[#8B7355] focus:border-[#A08B6C] focus:ring-[#A08B6C] rounded-md shadow-sm" />
+              <Input className="border-lharmonie-secondary focus:border-lharmonie-secondary focus:ring-lharmonie-secondary rounded-md shadow-sm" />
             </Form.Item>
             <Form.Item
               name="phone"
@@ -97,7 +100,7 @@ const CheckoutForm = ({ form, onFinish }: Props) => {
                 },
               ]}
             >
-              <Input className="border-[#8B7355] focus:border-[#A08B6C] focus:ring-[#A08B6C] rounded-md shadow-sm" />
+              <Input className="border-lharmonie-secondary focus:border-lharmonie-secondary focus:ring-lharmonie-secondary rounded-md shadow-sm" />
             </Form.Item>
           </div>
         </Form>
