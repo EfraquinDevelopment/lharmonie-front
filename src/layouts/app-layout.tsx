@@ -17,12 +17,12 @@ const MainLayoutContent = ({ children }: AppLayoutProps) => {
   return (
     <>
       <NextTopLoader color="#8B4513" />
-      <PageTransition>
-        <Header />
-        <main className="flex-grow w-full mx-auto">{children}</main>
-        <Footer />
-        <ScrollTopButton />
-      </PageTransition>
+      {/* <PageTransition> */}
+      <Header />
+      <main className="flex-grow w-full mx-auto">{children}</main>
+      <Footer />
+      <ScrollTopButton />
+      {/* </PageTransition> */}
     </>
   );
 };
