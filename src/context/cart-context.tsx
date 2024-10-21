@@ -83,7 +83,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     if (existingItem) {
       return existingItem.quantity + qty >= item.stock_quantity;
     }
-    return item.stock_quantity <= qty;
+    return item.stock_quantity < qty;
   };
 
   const getTotal = () =>

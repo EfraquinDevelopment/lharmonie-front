@@ -65,7 +65,7 @@ const ProductContent = (product: Props) => {
             {quantity}
           </span>
           <Button
-            disabled={checkCartItemQuantity(product, quantity)}
+            disabled={checkCartItemQuantity(product, quantity + 1)}
             onClick={incrementQuantity}
             className="bg-gray-200 h-fit rounded-s-none text-gray-700 py-2 px-4 rounded-r-md hover:bg-gray-300 transition-colors"
           >
