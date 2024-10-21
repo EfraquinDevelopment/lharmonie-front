@@ -2,8 +2,6 @@
 import { Ban, CheckCircle, ShoppingCart } from "lucide-react";
 import React, { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Button } from "antd";
-import { Product } from "@/types";
 import { useCartContext } from "@/hooks";
 import classNames from "classnames";
 import { WooProduct } from "@/types/woocommerce";
@@ -37,7 +35,7 @@ const AddToCartButton = ({ product, quantity, setQuantity }: Props) => {
 
   return (
     <LharmonieButton
-      className={classNames("!w-[400px]", {
+      className={classNames("md:!w-[400px] w-full", {
         "hover:!bg-lharmonie-secondary": isDisabled || isAdded,
       })}
       disabled={isAdded || isDisabled}

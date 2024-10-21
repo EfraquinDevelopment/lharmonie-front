@@ -35,6 +35,7 @@ const ProductCard = ({ index, reccomended = false, ...product }: Props) => {
           count={product.stock_quantity === 0 ? "Sin Stock" : null}
         >
           <Image
+            priority
             src={product.images[0].src}
             alt={product.name}
             width={300}
@@ -52,8 +53,7 @@ const ProductCard = ({ index, reccomended = false, ...product }: Props) => {
             <span className="absolute bottom-0 left-0 w-full h-0.5 bg-lharmonie-secondary transform scale-x-0 transition-transform duration-300 lg:group-hover:scale-x-100"></span>
           </Heading>
           <p className="text-xs lg:mb-1 text-gray-600 lg:text-sm">
-            {sanitizedDescription} {sanitizedDescription} {sanitizedDescription}{" "}
-            {sanitizedDescription} {sanitizedDescription}
+            {sanitizedDescription}
           </p>
           <span className="!text-xs sm:!text-sm lg:text-xl font-semibold text-black">
             {new Intl.NumberFormat("es-AR", {

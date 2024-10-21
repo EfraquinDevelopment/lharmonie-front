@@ -19,7 +19,7 @@ const HomePage = async () => {
   const products = await getWooProducts();
 
   return (
-    <Suspense fallback={<SpinnerLoader />}>
+    <Suspense>
       <main className="space-y-24 lg:space-y-36 pb-24 lg:pb-32">
         <VideoSection />
         <Stores />

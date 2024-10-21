@@ -31,9 +31,9 @@ const SpotifyPlaylist = () => {
         <div className="overflow-hidden container mx-auto">
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/2 p-8 -md:rounded-t-lg md:rounded-s-lg bg-[#8B7355]">
-              <h3 className="text-3xl font-light mb-4 text-lharmonie-primary">
+              <p className="text-3xl font-light mb-4 text-lharmonie-primary">
                 {boxTitle}
-              </h3>
+              </p>
               <Body className="!text-lharmonie-primary !text-base mb-6">
                 {boxText}
               </Body>

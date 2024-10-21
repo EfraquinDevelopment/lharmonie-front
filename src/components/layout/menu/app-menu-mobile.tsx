@@ -6,7 +6,6 @@ import ChildrenDrawerMobile from "@/components/layout/menu/children-drawer-mobil
 import { MenuHeaderItem } from "@/types";
 import SearchBar from "@/components/search-bar";
 import { Divider } from "antd";
-import SpinnerLoader from "@/components/layout/spinner-loader";
 
 type Props = {
   menuItems: MenuHeaderItem[];
@@ -26,7 +25,7 @@ const AppMenuMobile = ({ currentKey, menuItems, onClick }: Props) => {
   };
 
   return (
-    <Suspense fallback={<SpinnerLoader />}>
+    <Suspense>
       <nav className="flex flex-col">
         <div className="my-4 mb-6">
           <SearchBar />

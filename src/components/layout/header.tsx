@@ -9,14 +9,13 @@ import { useDrawer } from "@/hooks";
 import { X } from "lucide-react";
 import { Suspense } from "react";
 import SearchBar from "@/components/search-bar";
-import SpinnerLoader from "@/components/layout/spinner-loader";
 import Heading from "./heading";
 
 const Header = () => {
   const { isOpen, openDrawer, closeDrawer } = useDrawer();
 
   return (
-    <Suspense fallback={<SpinnerLoader />}>
+    <Suspense>
       <header className="sticky top-0 z-50 shadow-md w-full border-b-[1px] border-gray-400">
         <nav
           className="flex flex-col items-center bg-[#F0F0EB]

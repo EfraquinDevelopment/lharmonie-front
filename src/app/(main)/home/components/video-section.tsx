@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import content from "@/data/home.json";
 import Heading from "@/components/layout/heading";
-import Video from "@/components/ui/video";
-import { HomeBannerContent } from "@/data/pages/homeInterfaces";
+import dynamic from "next/dynamic";
+const Video = dynamic(() => import("@/components/ui/video"), {
+  ssr: false,
+});
 
 const VideoSection = () => {
   const { homeBanner } = content;
@@ -13,6 +15,7 @@ const VideoSection = () => {
       <Video
         src={homeBanner.videoSrc}
         className="absolute inset-0 w-full h-full object-cover"
+        poster="banner-poster.jpg"
       />
       <div className="absolute inset-0 text-center bg-lharmonie-secondary bg-opacity-60 flex flex-col gap-10 items-center justify-center">
         <motion.div
@@ -22,7 +25,7 @@ const VideoSection = () => {
         >
           <Heading
             level={2}
-            className="!text-5xl md:!text-9xl !font-bold md:max-w-[12ch] !mb-3"
+            className="!text-5xl md:!text-9xl !font-bold md:max-w-[12ch] !mb-3 -md:px-1.5"
             reversed
           >
             {homeBanner.title}
@@ -32,7 +35,7 @@ const VideoSection = () => {
           initial={{ y: "100%", opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.9, delay: 0.3 }}
-          className="text-lg md:text-xl max-w-[70ch] text-lharmonie-primary"
+          className="text-lg md:text-xl max-w-[70ch] -md:px-1.5 text-lharmonie-primary"
         >
           {homeBanner.description}
         </motion.p>
