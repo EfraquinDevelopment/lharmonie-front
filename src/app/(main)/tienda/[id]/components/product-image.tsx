@@ -1,5 +1,4 @@
 import React from "react";
-import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
 
 interface Props {
   src: string;
