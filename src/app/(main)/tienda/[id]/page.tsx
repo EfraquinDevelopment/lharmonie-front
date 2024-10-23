@@ -6,6 +6,7 @@ import { getWooProducts } from "@/data/woocommerce/getWooProducts";
 import RelatedProducts from "./components/related-products";
 import { Divider } from "antd";
 import SpinnerLoader from "@/components/layout/spinner-loader";
+import { notFound } from "next/navigation";
 
 const ProductDetail = async ({
   params: { id },
@@ -13,6 +14,11 @@ const ProductDetail = async ({
   params: { id: string };
 }) => {
   const product = await getWooProduct(id);
+
+  if (!product) {
+    return notFound();
+  }
+
   const relatedProductsResponse = await getWooProducts(
     undefined,
     product.categories[0].id
@@ -21,10 +27,6 @@ const ProductDetail = async ({
   const relatedProducts = relatedProductsResponse.filter(
     (product) => product.id !== +id
   );
-
-  if (!product) {
-    return <div>Producto no encontrado</div>;
-  }
 
   return (
     <Suspense fallback={<SpinnerLoader />}>

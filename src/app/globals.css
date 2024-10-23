@@ -195,3 +195,8 @@ body {
     --radius: 0.5rem;
   }
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  @apply !text-lharmonie-hover;
+}

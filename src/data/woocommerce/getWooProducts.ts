@@ -13,8 +13,7 @@ export async function getWooProducts(
   const orderBy = orderOption?.orderBy ?? "title";
   const orderDirection = orderOption?.orderDirection ?? "asc";
 
-  // Construct the endpoint manually with parameters
-  let endpoint = `products?orderby=${orderBy}&order=${orderDirection}&t=${timestamp}`;
+  let endpoint = `products?status=publish&orderby=${orderBy}&order=${orderDirection}&t=${timestamp}`;
 
   if (category) {
     endpoint += `&category=${category}`;
@@ -25,7 +24,6 @@ export async function getWooProducts(
   }
 
   try {
-    // Use the WooCommerceRestApi to make the GET request
     const res = await wooCommerceApi.get(endpoint);
 
     if (res.status !== 200) {
@@ -36,6 +34,6 @@ export async function getWooProducts(
     return products;
   } catch (error) {
     console.error("Error fetching WooCommerce products:", error);
-    throw error;
+    return [];
   }
 }

@@ -10,6 +10,7 @@ import ProductImage from "@/app/(main)/tienda/[id]/components/product-image";
 import { WooProduct } from "@/types/woocommerce";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import Heading from "@/components/layout/heading";
+import ProductImagesCarousel from "@/app/(main)/tienda/[id]/components/product-images-carousel";
 
 type Props = WooProduct;
 
@@ -37,10 +38,8 @@ const ProductContent = (product: Props) => {
 
   return (
     <div className="lg:flex lg:items-start lg:space-x-8">
-      <div className="flex justify-center">
-        <div className="aspect-w-1 aspect-h-1 rounded-lg bg-white overflow-hidden shadow-xl">
-          <ProductImage src={product.images[0].src} alt={product.name} />
-        </div>
+      <div className="flex justify-center  lg:w-[40%]">
+        <ProductImagesCarousel name={product.name} images={product.images} />
       </div>
       <div className="mt-10 lg:mt-0 lg:w-1/2">
         <Heading level={2} className="text-5xl font-light text-gray-900 mb-4">

@@ -19,6 +19,9 @@ const ProductCard = ({ index, reccomended = false, ...product }: Props) => {
     ALLOWED_TAGS: [],
   });
 
+  const imageSrc =
+    product.images.length > 0 ? product.images[0].src : "/placeholder.png";
+
   return (
     <motion.article
       key={index}
@@ -36,7 +39,7 @@ const ProductCard = ({ index, reccomended = false, ...product }: Props) => {
         >
           <Image
             priority
-            src={product.images[0].src}
+            src={imageSrc}
             alt={product.name}
             width={300}
             height={300}

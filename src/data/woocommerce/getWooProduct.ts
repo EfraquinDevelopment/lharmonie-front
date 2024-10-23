@@ -3,17 +3,26 @@ import { WooProduct } from "@/types/woocommerce";
 
 export async function getWooProduct(
   productId: string | number
-): Promise<WooProduct> {
-  const timestamp = new Date().getTime();
+): Promise<WooProduct | null> {
+  try {
+    const timestamp = new Date().getTime();
 
-  const res = await wooCommerceApi.get(`products/${productId}?t=${timestamp}`);
-
-  if (res.status !== 200) {
-    throw new Error(
-      `Failed to fetch WooCommerce product with ID: ${productId}`
+    const res = await wooCommerceApi.get(
+      `products/${productId}?t=${timestamp}`
     );
-  }
 
-  const product: WooProduct = res.data;
-  return product;
+    if (res.status !== 200) {
+      return null;
+    }
+
+    const product: WooProduct = res.data;
+
+    if (product.status !== "publish") {
+      return null;
+    }
+
+    return product;
+  } catch (error) {
+    return null;
+  }
 }
