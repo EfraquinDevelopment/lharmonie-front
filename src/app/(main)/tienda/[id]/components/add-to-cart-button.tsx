@@ -28,10 +28,7 @@ const AddToCartButton = ({ product, quantity, setQuantity }: Props) => {
     }, 1500);
   };
 
-  const isDisabled = useMemo(
-    () => checkCartItemQuantity(product, quantity),
-    [product, quantity, checkCartItemQuantity]
-  );
+  const isDisabled = checkCartItemQuantity(product, quantity);
 
   return (
     <LharmonieButton

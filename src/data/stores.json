@@ -8,76 +8,96 @@
       {
         "id": 1,
         "codeName": "LH1",
-        "name": "Lharmonie Centro",
+        "name": "LH1",
         "callToAction": "/locales",
         "imageSrc": "/local.png",
         "mediaType": "image",
-        "address": "Las Heras 1234, CABA",
+        "address": "Seguí 3611",
+        "address2": "Comuna 14, Buenos Aires, Argentina",
         "openTimes": [
           {
-            "days": "Lunes a viernes",
-            "hours": "11:00hs a 18:00hs"
+            "days": "Lunes a Jueves",
+            "hours": "09:00hs a 20:00hs"
           },
           {
-            "days": "Sabados y Domingos",
-            "hours": "9:00hs a 20:00hs"
+            "days": "Viernes",
+            "hours": "09:00hs a 18:00hs"
+          },
+          {
+            "days": "Domingo y feriados",
+            "hours": "10:00hs a 20:00hs"
           }
         ]
       },
       {
         "id": 2,
         "codeName": "LH2",
-        "name": "Lharmonie Palermo",
+        "name": "LH2",
         "callToAction": "/locales",
         "imageSrc": "/local.png",
         "mediaType": "image",
-        "address": "Las Heras 1234, CABA",
+        "address": "Nicaragua 6068",
+        "address2": "Comuna 14, Buenos Aires, Argentina",
         "openTimes": [
           {
-            "days": "Lunes a viernes",
-            "hours": "11:00hs a 18:00hs"
+            "days": "Lunes a Jueves",
+            "hours": "09:00hs a 20:00hs"
           },
           {
-            "days": "Sabados y Domingos",
-            "hours": "9:00hs a 20:00hs"
+            "days": "Viernes",
+            "hours": "09:00hs a 18:00hs"
+          },
+          {
+            "days": "Domingo y feriados",
+            "hours": "10:00hs a 20:00hs"
           }
         ]
       },
       {
         "id": 3,
         "codeName": "LH3",
-        "name": "Lharmonie Belgrano",
+        "name": "Casa Lharmonie",
         "callToAction": "/locales",
         "imageSrc": "/local.png",
         "mediaType": "image",
-        "address": "Las Heras 1234, CABA",
+        "address": "Maure 1516",
+        "address2": "Comuna 14, Buenos Aires, Argentina",
         "openTimes": [
           {
-            "days": "Lunes a viernes",
-            "hours": "11:00hs a 18:00hs"
+            "days": "Lunes a Jueves",
+            "hours": "09:00hs a 20:00hs"
           },
           {
-            "days": "Sabados y Domingos",
-            "hours": "9:00hs a 20:00hs"
+            "days": "Viernes",
+            "hours": "09:00hs a 18:00hs"
+          },
+          {
+            "days": "Domingo y feriados",
+            "hours": "10:00hs a 20:00hs"
           }
         ]
       },
       {
         "id": 4,
         "codeName": "LH4",
-        "name": "Lharmonie Once",
+        "name": "Lh4",
         "callToAction": "/locales",
         "imageSrc": "/local.png",
         "mediaType": "image",
-        "address": "Las Heras 1234, CABA",
+        "address": " Zabala 1925",
+        "address2": "Comuna 14, Buenos Aires, Argentina",
         "openTimes": [
           {
-            "days": "Lunes a viernes",
-            "hours": "11:00hs a 18:00hs"
+            "days": "Lunes a Jueves",
+            "hours": "09:00hs a 20:00hs"
           },
           {
-            "days": "Sabados y Domingos",
-            "hours": "9:00hs a 20:00hs"
+            "days": "Viernes",
+            "hours": "09:00hs a 18:00hs"
+          },
+          {
+            "days": "Domingo y feriados",
+            "hours": "10:00hs a 20:00hs"
           }
         ]
       }

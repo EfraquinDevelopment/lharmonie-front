@@ -2,11 +2,17 @@ import { orderOptions } from "@/config/store";
 import { wooCommerceApi } from "@/lib/api";
 import { WooProduct } from "@/types/woocommerce";
 
-export async function getWooProducts(
-  order?: string,
-  category?: number,
-  search?: string
-): Promise<WooProduct[]> {
+export async function getWooProducts({
+  order,
+  categories,
+  search,
+  featured,
+}: {
+  order?: string;
+  categories?: number[];
+  search?: string;
+  featured?: boolean;
+} = {}): Promise<WooProduct[]> {
   const timestamp = new Date().getTime();
 
   const orderOption = orderOptions.find((option) => option.value === order);
@@ -15,12 +21,17 @@ export async function getWooProducts(
 
   let endpoint = `products?status=publish&orderby=${orderBy}&order=${orderDirection}&t=${timestamp}`;
 
-  if (category) {
-    endpoint += `&category=${category}`;
+  if (categories && categories.length > 0) {
+    const categoryIds = categories.join(",");
+    endpoint += `&category=${categoryIds}`;
   }
 
   if (search) {
     endpoint += `&search=${encodeURIComponent(search)}`;
+  }
+
+  if (featured) {
+    endpoint += `&featured=true`;
   }
 
   try {

@@ -5,7 +5,6 @@ import { Suspense } from "react";
 import ImageMarquee from "@/app/(main)/home/components/image-marquee";
 import dynamic from "next/dynamic";
 import { getWooProducts } from "@/data/woocommerce/getWooProducts";
-import SpinnerLoader from "@/components/layout/spinner-loader";
 import SpotifyPlaylist from "@/app/(main)/home/components/spotify-playlist";
 
 const VideoSection = dynamic(
@@ -16,7 +15,7 @@ const VideoSection = dynamic(
 );
 
 const HomePage = async () => {
-  const products = await getWooProducts();
+  const products = await getWooProducts({ featured: true });
 
   return (
     <Suspense>

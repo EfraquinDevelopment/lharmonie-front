@@ -19,10 +19,9 @@ const ProductDetail = async ({
     return notFound();
   }
 
-  const relatedProductsResponse = await getWooProducts(
-    undefined,
-    product.categories[0].id
-  );
+  const relatedProductsResponse = await getWooProducts({
+    categories: product.categories.map((cat) => cat.id),
+  });
 
   const relatedProducts = relatedProductsResponse.filter(
     (product) => product.id !== +id
@@ -37,8 +36,12 @@ const ProductDetail = async ({
             productCategory={product.categories[0]}
           />
           <ProductContent {...product} />
-          <Divider className="border-[#e0d8c9] mt-16" />
-          <RelatedProducts products={relatedProducts} />
+          {relatedProducts.length > 0 && (
+            <>
+              <Divider className="border-[#e0d8c9] mt-16" />
+              <RelatedProducts products={relatedProducts} />
+            </>
+          )}
         </div>
       </main>
     </Suspense>

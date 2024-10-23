@@ -28,7 +28,11 @@ const VideoSection = () => {
             className="!text-5xl md:!text-9xl !font-bold md:max-w-[12ch] !mb-3 -md:px-1.5"
             reversed
           >
-            {homeBanner.title}
+            {homeBanner.title.split(" ").map((word, index) => (
+              <span key={index} className="block">
+                {word}
+              </span>
+            ))}
           </Heading>
         </motion.div>
         <motion.p

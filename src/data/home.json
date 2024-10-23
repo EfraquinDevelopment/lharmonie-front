@@ -1,8 +1,8 @@
 {
   "homeBanner": {
-    "title": "Descubre la armonía en cada taza",
-    "description": "Bienvenido a Lharmonie, donde el café se convierte en una experiencia única. Cafeterías acogedoras y singulares. Elegantes y minimalistas.",
-    "videoSrc": "/video-home-2.webm"
+    "title": "BAKERY COFFEE BOOKS",
+    "description": "Buenos Aires, Argentina",
+    "videoSrc": "/video-home.webm"
   },
   "storesSection": {
     "title": "Descubre nuestros locales",
@@ -11,78 +11,38 @@
       {
         "id": 1,
         "codeName": "LH1",
-        "name": "Lharmonie Centro",
+        "name": "LH1",
         "callToAction": "/locales",
         "imageSrc": "/lh2-compressed.mp4",
         "mediaType": "video",
-        "address": "Las Heras 1234, CABA",
-        "openTimes": [
-          {
-            "days": "Lunes a viernes",
-            "hours": "11:00hs a 18:00hs"
-          },
-          {
-            "days": "Sabados y Domingos",
-            "hours": "9:00hs a 20:00hs"
-          }
-        ]
+        "address": "Seguí 3611, CABA"
       },
       {
         "id": 2,
         "codeName": "LH2",
-        "name": "Lharmonie Palermo",
+        "name": "LH2",
         "callToAction": "/locales",
         "imageSrc": "/lh3-compressed.mp4",
         "mediaType": "video",
-        "address": "Las Heras 1234, CABA",
-        "openTimes": [
-          {
-            "days": "Lunes a viernes",
-            "hours": "11:00hs a 18:00hs"
-          },
-          {
-            "days": "Sabados y Domingos",
-            "hours": "9:00hs a 20:00hs"
-          }
-        ]
+        "address": "Nicaragua 6068, CABA"
       },
       {
         "id": 3,
         "codeName": "LH3",
-        "name": "Lharmonie Belgrano",
+        "name": "Casa Lharmonie",
         "callToAction": "/locales",
         "imageSrc": "/lh4-compressed.mp4",
         "mediaType": "video",
-        "address": "Las Heras 1234, CABA",
-        "openTimes": [
-          {
-            "days": "Lunes a viernes",
-            "hours": "11:00hs a 18:00hs"
-          },
-          {
-            "days": "Sabados y Domingos",
-            "hours": "9:00hs a 20:00hs"
-          }
-        ]
+        "address": "Maure 1516, CABA"
       },
       {
         "id": 4,
         "codeName": "LH4",
-        "name": "Lharmonie Once",
+        "name": "LH4",
         "callToAction": "/locales",
         "imageSrc": "/lh5-compressed.mp4",
         "mediaType": "video",
-        "address": "Las Heras 1234, CABA",
-        "openTimes": [
-          {
-            "days": "Lunes a viernes",
-            "hours": "11:00hs a 18:00hs"
-          },
-          {
-            "days": "Sabados y Domingos",
-            "hours": "9:00hs a 20:00hs"
-          }
-        ]
+        "address": "Zabala 1925, CABA"
       }
     ]
   },

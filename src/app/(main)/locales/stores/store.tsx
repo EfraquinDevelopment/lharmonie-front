@@ -24,6 +24,7 @@ const textUpward = {
 const Store = ({
   imageSrc,
   address,
+  address2,
   openTimes,
   name,
   index,
@@ -75,9 +76,12 @@ const Store = ({
             <Heading level={4} className="!text-3xl mb-4 !font-thin">
               {name}
             </Heading>
-            <div className="flex items-center mb-6">
+            <div className="flex items-start mb-6">
               <MapPin className="w-5 h-5 mr-2 text-[#8B7355]" />
-              <p className="text-lg text-gray-600">{address}</p>
+              <div className="flex flex-col">
+                <p className="text-lg text-gray-600">{address}</p>
+                <p className="text-lg text-gray-600">{address2}</p>
+              </div>
             </div>
             <div className="flex items-start mb-6">
               <Clock className="w-5 h-5 mr-2 text-[#8B7355] mt-1" />

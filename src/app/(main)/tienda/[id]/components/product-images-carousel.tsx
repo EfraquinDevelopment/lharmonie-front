@@ -27,6 +27,9 @@ const ProductImagesCarousel = ({ images, name }: Props) => {
         thumbs={{ swiper: thumbsSwiper }}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
       >
+        {!images.length && (
+          <ProductImage src="/placeholder.png" alt={`${name} image`} />
+        )}
         {images.map((image, index) => (
           <SwiperSlide className="md:!h-[550px] !h-[335px]" key={index}>
             <ProductImage src={image.src} alt={`${name} image ${index + 1}`} />

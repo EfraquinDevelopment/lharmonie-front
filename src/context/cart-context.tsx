@@ -81,7 +81,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     if (!cartItems) return false;
     const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
     if (existingItem) {
-      return existingItem.quantity + qty >= item.stock_quantity;
+      return existingItem.quantity + qty > item.stock_quantity;
     }
     return item.stock_quantity < qty;
   };

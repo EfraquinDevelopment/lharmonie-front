@@ -22,7 +22,11 @@ const Productos = async ({ searchParams }: Props) => {
   const categories = await getWooCategories();
   const categoryId = getCategoryIdBySlug(categories, category);
 
-  const products = await getWooProducts(order, categoryId, search);
+  const products = await getWooProducts({
+    order,
+    categories: categoryId ? [Number(categoryId)] : [],
+    search,
+  });
 
   return (
     <Suspense fallback={<SpinnerLoader />}>

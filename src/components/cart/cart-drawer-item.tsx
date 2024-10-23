@@ -23,7 +23,7 @@ const CartDrawerItem = ({ item }: Props) => {
     <List.Item key={item.id} className="border-b border-gray-200 py-6">
       <div className="flex w-full">
         <Image
-          src={item.images[0].src}
+          src={item.images[0]?.src || "/placeholder.png"}
           alt={item.name}
           width={100}
           height={100}
