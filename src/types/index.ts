@@ -14,12 +14,12 @@ export interface Store {
   id: number;
   name: string;
   address: string;
-  address2: string;
+  address2?: string;
   codeName: string;
   callToAction: string;
   imageSrc: string;
   mediaType: string;
-  openTimes: { days: string; hours: string }[];
+  openTimes?: { days: string; hours: string }[];
 }
 
 export interface Category {
