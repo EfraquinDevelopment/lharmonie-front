@@ -21,7 +21,7 @@ const ProductImagesCarousel = ({ images, name }: Props) => {
     <div className="w-full">
       <Swiper
         spaceBetween={10}
-        className="shadow-xl aspect-w-1 aspect-h-1 rounded-lg max-h-[550px] overflow-hidden"
+        className="aspect-w-1 aspect-h-1  max-h-[550px] overflow-hidden"
         modules={[Navigation, Thumbs]}
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
@@ -31,7 +31,7 @@ const ProductImagesCarousel = ({ images, name }: Props) => {
           <ProductImage src="/placeholder.png" alt={`${name} image`} />
         )}
         {images.map((image, index) => (
-          <SwiperSlide className="md:!h-[550px] !h-[335px]" key={index}>
+          <SwiperSlide key={index}>
             <ProductImage src={image.src} alt={`${name} image ${index + 1}`} />
           </SwiperSlide>
         ))}

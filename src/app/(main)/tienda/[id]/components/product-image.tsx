@@ -6,7 +6,15 @@ interface Props {
 }
 
 const ProductImage = ({ alt, src }: Props) => {
-  return <img src={src} alt={alt} className="w-full h-full object-cover" />;
+  return (
+    <div className=" w-full flex justify-center items-center  ">
+      <img
+        src={src}
+        alt={alt}
+        className="object-contain md:!max-h-[550px] !max-h-[335px]"
+      />
+    </div>
+  );
 };
 
 export default ProductImage;
