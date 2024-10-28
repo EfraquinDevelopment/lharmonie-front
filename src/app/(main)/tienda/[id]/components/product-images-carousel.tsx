@@ -32,7 +32,7 @@ const ProductImagesCarousel = ({ images, name }: Props) => {
         )}
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <ProductImage src={image.src} alt={`${name} image ${index + 1}`} />
+            <ProductImage src={image?.src} alt={`${name} image ${index + 1}`} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -52,7 +52,7 @@ const ProductImagesCarousel = ({ images, name }: Props) => {
               <Image
                 width={200}
                 height={100}
-                src={image.src}
+                src={image?.src}
                 alt={`${name} thumbnail ${index + 1}`}
                 className={classNames("w-full h-full object-cover rounded-lg", {
                   "opacity-30": index !== activeIndex,

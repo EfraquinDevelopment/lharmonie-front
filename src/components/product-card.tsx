@@ -20,7 +20,7 @@ const ProductCard = ({ index, reccomended = false, ...product }: Props) => {
   });
 
   const imageSrc =
-    product.images.length > 0 ? product.images[0].src : "/placeholder.png";
+    product.images?.length > 0 ? product.images[0]?.src : "/placeholder.png";
 
   return (
     <motion.article
