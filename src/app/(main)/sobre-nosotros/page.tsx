@@ -1,7 +1,9 @@
 import content from "@/data/about.json";
-import { Coffee, Feather, Layers } from "lucide-react";
 import AboutUsSection from "@/app/(main)/sobre-nosotros/components/about-us-section";
 import AboutUsBanner from "@/app/(main)/sobre-nosotros/components/about-us-banner";
+import Coffee from "@/components/icons/custom-coffee";
+import Cookie from "@/components/icons/custom-cookie";
+import Croissant from "@/components/icons/custom-croissant";
 
 const SobreNosotros = () => {
   const { ourHistory, ourCoffee, ourLaminates } = content;
@@ -14,14 +16,14 @@ const SobreNosotros = () => {
           title={ourHistory.title}
           content={ourHistory.description}
           imageSrc={ourHistory.imageSrc}
-          icon={<Feather className="w-6 text-[#8B7355]" />}
+          icon={<Coffee className="w-6 text-[#8B7355]" />}
         />
         <AboutUsSection
           id="2"
           title={ourCoffee.title}
           content={ourCoffee.description}
           imageSrc={ourCoffee.imageSrc}
-          icon={<Coffee className="w-6 text-[#8B7355]" />}
+          icon={<Cookie className="w-6 text-[#8B7355]" />}
           reversed
         />
         <AboutUsSection
@@ -29,7 +31,7 @@ const SobreNosotros = () => {
           title={ourLaminates.title}
           content={ourLaminates.description}
           imageSrc={ourLaminates.imageSrc}
-          icon={<Layers className="w-6 text-[#8B7355]" />}
+          icon={<Croissant className="w-6 text-[#8B7355]" />}
           last
         />
       </main>
