@@ -40,7 +40,7 @@ const CheckoutSummary = ({ form, loading }: Props) => {
           {cartItems.map((item, index) => (
             <li key={index} className="flex items-center space-x-4">
               <Image
-                src={item.images[0].src}
+                src={item.images[0]?.src}
                 alt={item.name}
                 className="w-20 h-20 object-cover rounded-md"
                 width={80}
