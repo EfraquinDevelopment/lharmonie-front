@@ -43,7 +43,7 @@ const ProductCard = ({ index, reccomended = false, ...product }: Props) => {
             alt={product.name}
             width={300}
             height={300}
-            className="w-full h-[150px] md:h-[300px] bg-gray-200 object-cover rounded-xl"
+            className="w-full h-[150px] md:h-[300px] bg-gray-200 object-contain rounded-xl"
           />
         </Badge>
 
