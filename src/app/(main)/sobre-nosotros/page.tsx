@@ -1,9 +1,7 @@
 import content from "@/data/about.json";
 import AboutUsSection from "@/app/(main)/sobre-nosotros/components/about-us-section";
 import AboutUsBanner from "@/app/(main)/sobre-nosotros/components/about-us-banner";
-import Coffee from "@/components/icons/custom-coffee";
-import Cookie from "@/components/icons/custom-cookie";
-import Croissant from "@/components/icons/custom-croissant";
+import Image from "next/image";
 
 const SobreNosotros = () => {
   const { ourHistory, ourCoffee, ourLaminates } = content;
@@ -16,14 +14,30 @@ const SobreNosotros = () => {
           title={ourHistory.title}
           content={ourHistory.description}
           imageSrc={ourHistory.imageSrc}
-          icon={<Coffee className="w-6 text-[#8B7355]" />}
+          icon={
+            <Image
+              className="w-12 mr-2"
+              alt="cookie-icon"
+              src="/cookie-icon.png"
+              width={136}
+              height={176}
+            />
+          }
         />
         <AboutUsSection
           id="2"
           title={ourCoffee.title}
           content={ourCoffee.description}
           imageSrc={ourCoffee.imageSrc}
-          icon={<Cookie className="w-6 text-[#8B7355]" />}
+          icon={
+            <Image
+              className="w-8"
+              alt="coffee-icon"
+              src="/coffee-icon.png"
+              width={136}
+              height={176}
+            />
+          }
           reversed
         />
         <AboutUsSection
@@ -31,7 +45,15 @@ const SobreNosotros = () => {
           title={ourLaminates.title}
           content={ourLaminates.description}
           imageSrc={ourLaminates.imageSrc}
-          icon={<Croissant className="w-6 text-[#8B7355]" />}
+          icon={
+            <Image
+              className="w-10"
+              alt="croissant-icon"
+              src="/croissant-icon.png"
+              width={136}
+              height={176}
+            />
+          }
           last
         />
       </main>
