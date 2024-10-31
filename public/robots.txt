@@ -1,0 +1,11 @@
+# Permitir todos los crawlers a indexar el sitio
+User-agent: *
+
+# Deshabilitar el acceso a las siguientes secciones
+Disallow: /wp-admin/
+Disallow: /private/
+Disallow: /tmp/
+
+# Permitir acceso a directorios específicos
+Allow: /wp-admin/admin-ajax.php
+Allow: /public/

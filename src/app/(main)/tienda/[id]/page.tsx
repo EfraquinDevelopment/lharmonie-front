@@ -70,7 +70,7 @@ export const generateMetadata = async ({
     keywords: `café, ${product.name}, Lharmonie Café, productos de café, accesorios de café`,
     robots: "index, follow",
     openGraph: {
-      type: "product",
+      type: "website",
       url: `https://www.casalharmonie.com/tienda/${id}`,
       title: product.name,
       description: metaDescription,

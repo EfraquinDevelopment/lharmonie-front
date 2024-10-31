@@ -18,17 +18,9 @@ const OurHistory = () => {
       className="bg-lharmonie-primary md:scroll-mt-[110px] scroll-mt-[160px] mx-4 text-lharmonie-secondary"
     >
       <div className="container mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 0.25 }}
-          className="text-4xl font-bold mb-12 text-center"
-        >
-          <Heading level={2} className="!text-4xl">
-            {ourHistory.title}
-          </Heading>
-        </motion.div>
+        <Heading level={2} className="!text-4xl  mb-12 text-center">
+          {ourHistory.title}
+        </Heading>
         <div className="space-y-10 gap-10 lg:flex flex-row justify-between items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}

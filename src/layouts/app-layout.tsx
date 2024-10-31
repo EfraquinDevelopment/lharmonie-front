@@ -6,7 +6,6 @@ import { AnimatePresence } from "framer-motion";
 import Loader from "@/components/layout/loader";
 import { usePathname } from "next/navigation";
 import ScrollTopButton from "@/components/layout/scroll-top-button";
-import PageTransition from "@/components/layout/page-transition";
 import NextTopLoader from "nextjs-toploader";
 
 type AppLayoutProps = {
