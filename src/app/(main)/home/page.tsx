@@ -67,6 +67,9 @@ export const metadata: Metadata = {
     ],
     description: content.ourHistory.paragraphs[0],
   },
+   verification: {
+    google: "v5RWtomlUPjMwNPgJNEU997AV1dkk_X1I1G74_xS8d0",
+  },
 };
 
 export default HomePage;
