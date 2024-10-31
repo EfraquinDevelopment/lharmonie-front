@@ -108,7 +108,7 @@ const CheckoutPage = () => {
   );
 };
 
-export const metadata: Metadata = {
+/* export const metadata: Metadata = {
   title: "Lharmonie Café | Finaliza tu compra de manera segura",
   description:
     "Completa tu compra en Lharmonie Café. Revisa los artículos en tu carrito y finaliza la compra de forma segura y sencilla.",
@@ -126,6 +126,6 @@ export const metadata: Metadata = {
     description:
       "Compra nuestros productos y disfruta de un proceso seguro y fácil en Lharmonie Café.",
   },
-};
+};*/
 
 export default CheckoutPage;
