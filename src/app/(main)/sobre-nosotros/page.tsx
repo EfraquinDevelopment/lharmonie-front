@@ -5,6 +5,7 @@ import Image from "next/image";
 
 const SobreNosotros = () => {
   const { ourHistory, ourCoffee, ourLaminates } = content;
+
   return (
     <div className="bg-[#f8f8f5] min-h-screen text-lharmonie-secondary">
       <AboutUsBanner />
@@ -59,6 +60,33 @@ const SobreNosotros = () => {
       </main>
     </div>
   );
+};
+
+export const metadata = {
+  title: "Lharmonie Café | Sobre Nosotros",
+  description: content.ourHistory.description,
+  keywords:
+    "sobre nosotros, Lharmonie Café, café artesanal, historia, productos de café",
+  robots: "index, follow",
+  openGraph: {
+    type: "website",
+    url: "https://www.casalharmonie.com/sobre-nosotros",
+    title: "Sobre Nosotros | Lharmonie Café",
+    description: content.ourHistory.description,
+    images: [
+      {
+        url: content.ourHistory.imageSrc,
+        alt: "Sobre Nosotros",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    url: "https://www.casalharmonie.com/sobre-nosotros",
+    title: "Sobre Nosotros | Lharmonie Café",
+    description: content.ourHistory.description,
+    image: content.ourHistory.imageSrc,
+  },
 };
 
 export default SobreNosotros;

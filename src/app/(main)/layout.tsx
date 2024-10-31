@@ -9,7 +9,6 @@ import { CategoriesProvider } from "@/context/categories-context";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Lharmonie Café | La Experiencia de Café en Buenos Aires",
   description:
     "Descubre lharmonie, la cafetería en Buenos Aires donde cada taza de café es una experiencia única. Ven a disfrutar de nuestro ambiente acogedor, pastelería artesanal y bebidas especiales.",
   keywords:
@@ -17,15 +16,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Lharmonie Café | La Experiencia de Café en Buenos Aires",
     description:
-      "Explora lharmonie, el lugar ideal para disfrutar café artesanal y pastelería en Buenos Aires. Vive la armonía en cada taza en un ambiente acogedor.",
+      "Visita Lharmonie Café en Buenos Aires y disfruta de una experiencia única de café, pastelería artesanal y un ambiente acogedor.",
     url: "https://casalharmonie.com",
     type: "website",
+    locale: "es_AR",
   },
   twitter: {
     card: "summary_large_image",
     title: "Lharmonie Café | La Experiencia de Café en Buenos Aires",
     description:
       "Un espacio donde cada taza de café es una invitación a la armonía y el sabor. Descubre lharmonie en Buenos Aires.",
+  },
+  alternates: {
+    canonical: "https://casalharmonie.com",
   },
 };
 

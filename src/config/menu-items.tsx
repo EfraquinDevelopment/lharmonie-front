@@ -12,12 +12,6 @@ export const getItems = (categories: WooCategory[]) => {
     {
       title: "Inicio",
       link: "/home",
-      children: [
-        { title: "Locales", link: "/home#1" },
-        { title: "Productos Destacados", link: "/home#2" },
-        { title: "Nuestra Historia", link: "/home#3" },
-        { title: "Nuestra Melodia", link: "/home#4" },
-      ],
     },
     {
       title: "Tienda",
@@ -47,11 +41,6 @@ export const getItems = (categories: WooCategory[]) => {
     {
       title: "Sobre Nosotros",
       link: "/sobre-nosotros",
-      children: [
-        { title: "Nuestra Historia", link: "/sobre-nosotros#1" },
-        { title: "Nuestro Cafe", link: "/sobre-nosotros#2" },
-        { title: "Nuestros Laminados", link: "/sobre-nosotros#3" },
-      ],
     },
   ];
 

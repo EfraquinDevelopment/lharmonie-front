@@ -23,14 +23,7 @@ const ProductCard = ({ index, reccomended = false, ...product }: Props) => {
     product.images?.length > 0 ? product.images[0]?.src : "/placeholder.png";
 
   return (
-    <motion.article
-      key={index}
-      initial={{ opacity: reccomended ? 1 : 0, scale: reccomended ? 1 : 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.25, delay: index * 0.05 }}
-      className="group cursor-pointer"
-    >
+    <article key={index} className="group cursor-pointer">
       <Link href={`/tienda/${product.id}`}>
         <Badge
           title="Sin Stock"
@@ -66,7 +59,7 @@ const ProductCard = ({ index, reccomended = false, ...product }: Props) => {
           </span>
         </div>
       </Link>
-    </motion.article>
+    </article>
   );
 };
 

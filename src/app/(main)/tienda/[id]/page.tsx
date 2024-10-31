@@ -48,4 +48,47 @@ const ProductDetail = async ({
   );
 };
 
+export const generateMetadata = async ({
+  params: { id },
+}: {
+  params: { id: string };
+}) => {
+  const product = await getWooProduct(id);
+
+  if (!product) {
+    return {};
+  }
+
+  const metaDescription = `Compra ${product.name} en Lharmonie Café. ${
+    product.short_description || ""
+  } Precio: ${product.price}.`;
+  const productImage = product.images[0]?.src || "";
+
+  return {
+    title: `Lharmonie Café | ${product.name}`,
+    description: metaDescription,
+    keywords: `café, ${product.name}, Lharmonie Café, productos de café, accesorios de café`,
+    robots: "index, follow",
+    openGraph: {
+      type: "product",
+      url: `https://www.casalharmonie.com/tienda/${id}`,
+      title: product.name,
+      description: metaDescription,
+      images: [
+        {
+          url: productImage,
+          alt: product.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      url: `https://www.casalharmonie.com/tienda/${id}`,
+      title: product.name,
+      description: metaDescription,
+      image: productImage,
+    },
+  };
+};
+
 export default ProductDetail;

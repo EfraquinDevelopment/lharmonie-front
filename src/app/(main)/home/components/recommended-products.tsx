@@ -17,36 +17,28 @@ interface Props {
 const RecommendedProducts = ({ products }: Props) => {
   const { recommendedProducts } = content;
   return (
-    <section
+    <motion.section
       id="2"
       className="bg-lharmonie-primary mx-4 md:scroll-mt-[110px] scroll-mt-[160px] shadow-2xl rounded-xl 2xl:h-[700px] py-5"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.3 }}
     >
       <div className="mx-auto px-4 space-y-10">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3 }}
-          className="mb-8"
-        >
+        <div className="mb-8">
           <Heading level={2} className="text-center !text-4xl">
             {recommendedProducts.title}
           </Heading>
-        </motion.div>
+        </div>
         <ProductCarousel products={products} />
         <div className="text-center">
-          <motion.div
-            initial={{ y: "100%", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 1.5 }}
-          >
-            <LharmonieButton>
-              <Link href="/tienda">{recommendedProducts.buttonText}</Link>
-            </LharmonieButton>
-          </motion.div>
+          <LharmonieButton>
+            <Link href="/tienda">{recommendedProducts.buttonText}</Link>
+          </LharmonieButton>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

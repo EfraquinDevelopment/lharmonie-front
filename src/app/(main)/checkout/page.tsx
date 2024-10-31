@@ -4,6 +4,7 @@ import CheckoutSummary from "@/app/(main)/checkout/components/checkout-summary";
 import Heading from "@/components/layout/heading";
 import { useCartContext } from "@/hooks";
 import { Form } from "antd";
+import { Metadata } from "next";
 
 import { redirect, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -105,6 +106,26 @@ const CheckoutPage = () => {
       </div>
     </div>
   );
+};
+
+export const metadata: Metadata = {
+  title: "Lharmonie Café | Finaliza tu compra de manera segura",
+  description:
+    "Completa tu compra en Lharmonie Café. Revisa los artículos en tu carrito y finaliza la compra de forma segura y sencilla.",
+  robots: "noindex, nofollow",
+  openGraph: {
+    title: "Finaliza tu compra en Lharmonie Café",
+    description:
+      "Disfruta de una experiencia de compra única y segura en Lharmonie Café. Completa tu compra y recibe nuestros productos en tu hogar.",
+    url: "https://casalharmonie.com/checkout",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Finaliza tu compra en Lharmonie Café",
+    description:
+      "Compra nuestros productos y disfruta de un proceso seguro y fácil en Lharmonie Café.",
+  },
 };
 
 export default CheckoutPage;

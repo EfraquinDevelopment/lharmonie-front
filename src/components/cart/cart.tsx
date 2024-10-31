@@ -3,6 +3,7 @@ import { useCartContext, useDrawer } from "@/hooks";
 import { Button, Drawer, Badge } from "antd";
 import { useMemo } from "react";
 import CartDrawerContent from "@/components/cart/cart-drawer-content";
+import Image from "next/image";
 
 type Props = {
   className?: string;
@@ -21,13 +22,15 @@ const Cart = ({ className }: Props) => {
     <>
       <div className="pr-4">
         <Badge color="#232323" count={itemsQuantity}>
-          <Button
-            icon={
-              <ShoppingCartOutlined className="text-xl text-lharmonie-secondary" />
-            }
-            onClick={openDrawer}
-            className={className}
-          />
+          <Button onClick={openDrawer} className={className}>
+            <Image
+              className="w-7"
+              alt="coffee-icon"
+              src="/coffee-icon.png"
+              width={136}
+              height={176}
+            />
+          </Button>
         </Badge>
       </div>
 

@@ -8,8 +8,11 @@ import { orderOptions } from "@/config/store";
 import { WooCategory } from "@/types/woocommerce";
 import classNames from "classnames";
 import SpinnerLoader from "@/components/layout/spinner-loader";
+import { Metadata } from "next";
+import { upperFirst } from "@/lib/utils";
 
 interface Props {
+  params: { id: string };
   searchParams: { [key: string]: string | undefined };
 }
 
@@ -56,5 +59,39 @@ const Productos = async ({ searchParams }: Props) => {
     </Suspense>
   );
 };
+
+export async function generateMetadata({
+  searchParams,
+}: Props): Promise<Metadata> {
+  const { category, search } = searchParams;
+
+  const metaDescription = search
+    ? `Resultados para "${search}" en nuestra tienda de Lharmonie Café. Descubre nuestros productos únicos de café y más.`
+    : category
+    ? `Explora productos en la categoría "${category}" en la tienda de Lharmonie Café. Encuentra el mejor café y accesorios para café.`
+    : "Descubre la tienda de Lharmonie Café. Productos únicos, café artesanal, y accesorios para los amantes del café en Buenos Aires.";
+
+  return {
+    title: `Lharmonie Café | Tienda${
+      category ? " - " + upperFirst(category) : ""
+    }`,
+    description: metaDescription,
+    keywords:
+      "café artesanal, Lharmonie Café, Buenos Aires, tienda de café, productos de café, accesorios de café",
+    robots: "index, follow",
+    openGraph: {
+      type: "website",
+      url: "https://www.casalharmonie.com/tienda",
+      title: "Lharmonie Café | Tienda",
+      description: metaDescription,
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "https://www.casalharmonie.com/tienda",
+      title: "Lharmonie Café | Tienda",
+      description: metaDescription,
+    },
+  };
+}
 
 export default Productos;

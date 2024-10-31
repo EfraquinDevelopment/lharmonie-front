@@ -3,6 +3,7 @@
 import StoreEmptyState from "@/app/(main)/tienda/components/store-empty-state";
 import ProductCard from "@/components/product-card";
 import { WooProduct } from "@/types/woocommerce";
+import { motion } from "framer-motion";
 
 type Props = {
   products: WooProduct[];
@@ -25,11 +26,16 @@ const ProductsGrid = ({ products, reccomended = false }: Props) => {
   }
 
   return (
-    <section className="grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5"
+    >
       {filteredProducts.map((product, index) => (
         <ProductCard key={product.id} index={index} {...product} />
       ))}
-    </section>
+    </motion.section>
   );
 };
 
