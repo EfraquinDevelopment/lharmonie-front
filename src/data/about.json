@@ -4,18 +4,18 @@
     "description": "Descubre la armonía en cada rincón de nuestra historia, donde cada taza cuenta una historia única"
   },
   "ourHistory": {
-    "title": "Nuestra Historia",
+    "title": "Nuestros Panes",
     "description": "Lharmonie nació de la pasión por el café y el deseo de crear un espacio donde cada taza cuente una historia. Desde nuestros humildes comienzos, hemos crecido para convertirnos en un destino querido por los amantes del café en toda la ciudad. Nuestro compromiso con la calidad, la sostenibilidad y la comunidad nos ha permitido expandirnos a múltiples locaciones, pero siempre manteniendo la esencia que nos hace únicos.",
-    "imageSrc": "/test-1.png"
+    "imageSrc": "/nuestros-panes.jpg"
   },
   "ourCoffee": {
     "title": "Nuestro Café",
     "description": "En Lharmonie, el café es nuestra pasión y nuestro arte. Seleccionamos cuidadosamente los mejores granos de regiones cafetaleras de todo el mundo, buscando sabores únicos y perfiles aromáticos excepcionales. Nuestro proceso de tostado, realizado en pequeños lotes, garantiza la frescura y resalta las características distintivas de cada origen. Desde el clásico espresso hasta nuestras creaciones de autor, cada taza es una invitación a explorar el fascinante mundo del café.",
-    "imageSrc": "/test-1.png"
+    "imageSrc": "/nuestro-cafe.jpg"
   },
   "ourLaminates": {
     "title": "Nuestros Laminados",
     "description": "Los laminados de Lharmonie son más que simples decoraciones; son una expresión de nuestra filosofía y estética. Cada diseño es cuidadosamente seleccionado para crear un ambiente acogedor y sofisticado en nuestras cafeterías. Utilizamos materiales sostenibles y técnicas artesanales para producir laminados que no solo son hermosos, sino también respetuosos con el medio ambiente. Estos elementos visuales complementan perfectamente la experiencia del café, creando espacios que invitan a la relajación y la conexión.",
-    "imageSrc": "/test-1.png"
+    "imageSrc": "/nuestros-laminados.jpg"
   }
 }

@@ -13,7 +13,7 @@
         "codeName": "LH1",
         "name": "LH1",
         "callToAction": "/locales",
-        "imageSrc": "/lh2-compressed.mp4",
+        "imageSrc": "/LH1.mp4",
         "mediaType": "video",
         "address": "Seguí 3611, CABA"
       },
@@ -22,7 +22,7 @@
         "codeName": "LH2",
         "name": "LH2",
         "callToAction": "/locales",
-        "imageSrc": "/lh3-compressed.mp4",
+        "imageSrc": "/LH2.mp4",
         "mediaType": "video",
         "address": "Nicaragua 6068, CABA"
       },
@@ -31,7 +31,7 @@
         "codeName": "LH3",
         "name": "Casa Lharmonie",
         "callToAction": "/locales",
-        "imageSrc": "/lh4-compressed.mp4",
+        "imageSrc": "/LH3.mp4",
         "mediaType": "video",
         "address": "Maure 1516, CABA"
       },
@@ -40,7 +40,7 @@
         "codeName": "LH4",
         "name": "LH4",
         "callToAction": "/locales",
-        "imageSrc": "/lh5-compressed.mp4",
+        "imageSrc": "/LH4.mp4",
         "mediaType": "video",
         "address": "Zabala 1925, CABA"
       }
@@ -49,12 +49,11 @@
   "ourHistory": {
     "title": "Nuestra Historia",
     "paragraphs": [
-      "Lharmonie nació de la pasión por el café y el deseo de crear un espacio donde cada taza cuente una historia. Desde nuestros humildes comienzos, hemos crecido para convertirnos en un destino querido por los amantes del café en toda la ciudad.",
-      "Nuestro compromiso con la calidad, la sostenibilidad y la comunidad nos ha permitido expandirnos a múltiples locaciones, cada una con su propio carácter pero todas unidas por nuestra dedicación a ofrecer la mejor experiencia de café posible."
+      "Lharmonie significa \"Armonía\" en francés. Elegimos este nombre porque refleja lo que queremos crear: momentos simples y únicos para compartir. Desde que comenzamos en 2021 como un pequeño emprendimiento, esa idea nos guía en cada detalle. Hoy, queremos seguir siendo un lugar donde se disfruten lindos momentos con amigos y familia."
     ],
     "buttonText": "Conoce Más Sobre Nosotros",
     "imageAlt": "Lharmonie Café",
-    "imageSrc": "/test-1.png"
+    "imageSrc": "/history.jpg"
   },
   "recommendedProducts": {
     "title": "Productos Destacados",
