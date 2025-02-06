@@ -19,7 +19,7 @@ export async function getWooProducts({
   const orderBy = orderOption?.orderBy ?? "title";
   const orderDirection = orderOption?.orderDirection ?? "asc";
 
-  let endpoint = `products?status=publish&orderby=${orderBy}&order=${orderDirection}&t=${timestamp}`;
+  let endpoint = `products?status=publish&orderby=${orderBy}&order=${orderDirection}&t=${timestamp}&per_page=100`;
 
   if (categories && categories.length > 0) {
     const categoryIds = categories.join(",");
