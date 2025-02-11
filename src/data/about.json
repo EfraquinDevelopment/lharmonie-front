@@ -5,17 +5,17 @@
   },
   "ourHistory": {
     "title": "Nuestros Panes",
-    "description": "Lharmonie nació de la pasión por el café y el deseo de crear un espacio donde cada taza cuente una historia. Desde nuestros humildes comienzos, hemos crecido para convertirnos en un destino querido por los amantes del café en toda la ciudad. Nuestro compromiso con la calidad, la sostenibilidad y la comunidad nos ha permitido expandirnos a múltiples locaciones, pero siempre manteniendo la esencia que nos hace únicos.",
+    "description": "En Lharmonie, elaboramos panes de masa madre con fermentación natural, en nvariedades de semillas, brioche y nuez. Horneamos cada dia y desde nuestro obradora proveemos a nuestros locales.",
     "imageSrc": "/nuestros-panes.jpg"
   },
   "ourCoffee": {
     "title": "Nuestro Café",
-    "description": "En Lharmonie, el café es nuestra pasión y nuestro arte. Seleccionamos cuidadosamente los mejores granos de regiones cafetaleras de todo el mundo, buscando sabores únicos y perfiles aromáticos excepcionales. Nuestro proceso de tostado, realizado en pequeños lotes, garantiza la frescura y resalta las características distintivas de cada origen. Desde el clásico espresso hasta nuestras creaciones de autor, cada taza es una invitación a explorar el fascinante mundo del café.",
+    "description": "Nos apasiona el café. Es una experiencia que nos lo tomamos muy en serio.\nNos dedicamos a buscar granos que cuenten historias: de tierras, climas y técnicas de cultivo que les dan un carácter único. Elegimos cada grano con cuidado, ya sea de una finca en las montañas de Colombia o de un rincón olvidado de Brasil. El proceso de tostado, hecho en pequeños lotes por Cuervo, nos permite controlar cada detalle, de modo que la frescura y los sabores se mantengan en su punto perfecto.",
     "imageSrc": "/nuestro-cafe.jpg"
   },
   "ourLaminates": {
     "title": "Nuestros Laminados",
-    "description": "Los laminados de Lharmonie son más que simples decoraciones; son una expresión de nuestra filosofía y estética. Cada diseño es cuidadosamente seleccionado para crear un ambiente acogedor y sofisticado en nuestras cafeterías. Utilizamos materiales sostenibles y técnicas artesanales para producir laminados que no solo son hermosos, sino también respetuosos con el medio ambiente. Estos elementos visuales complementan perfectamente la experiencia del café, creando espacios que invitan a la relajación y la conexión.",
+    "description": "En nuestro centro de producción creamos, formamos y horneamos laminados diariamente. Luego, distribuimos a nuestros cuatro locales.Cuidamos cada detalle del proceso, asegurando frescura, textura y calidad en cada pieza,",
     "imageSrc": "/nuestros-laminados.jpg"
   }
 }

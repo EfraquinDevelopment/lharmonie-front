@@ -9,6 +9,7 @@ import {
   SiX,
 } from "@icons-pack/react-simple-icons";
 import Heading from "./heading";
+import Body from "./body";
 
 type SocialMedia = {
   label: string;
@@ -49,7 +50,8 @@ const SocialMediaLinks: React.FC<SocialMediaLinksProps> = ({ socialMedia }) => (
 const Footer: React.FC = () => {
   const {
     contactDetails,
-    logoTagline,
+    joinText,
+    email,
     quickLinks,
     quickLinksTitle,
     socialMedia,
@@ -61,10 +63,11 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-1 md:col-span-2">
             <Logo color="#8B7355" clickable={false} />
-            <p className="text-sm leading-relaxed  max-w-md mb-4">
-              {logoTagline}
-            </p>
             <SocialMediaLinks socialMedia={socialMedia} />
+            <Body className="!text-base mt-3 font-medium">{joinText}</Body>
+            <Body className="!text-base !text-lharmonie-hover underline">
+              {email}
+            </Body>
           </div>
           <div>
             <Heading level={2} className="!text-lg font-semibold mb-4">
@@ -89,7 +92,6 @@ const Footer: React.FC = () => {
             </Heading>
             <ul className="space-y-2 text-sm">
               <li>Email: {contactDetails.email}</li>
-              <li>Teléfono: {contactDetails.phone}</li>
             </ul>
           </div>
         </div>

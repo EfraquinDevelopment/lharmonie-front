@@ -1,6 +1,8 @@
 {
   "logoTagline": "Descubre la armonía en cada taza",
   "quickLinksTitle": "Enlaces Rápidos",
+  "joinText": "¿Queres formar parte de nuestro equipo? Mandanos tu CV a:",
+  "email": "lharmoniecv@gmail.com",
   "quickLinks": [
     { "href": "/", "label": "Inicio" },
     { "href": "/tienda", "label": "Tienda" },
@@ -10,8 +12,7 @@
   ],
   "contactTitle": "Contacto",
   "contactDetails": {
-    "email": "info@lharmonie.com",
-    "phone": "+1 234 567 890"
+    "email": "info@lharmonie.com"
   },
   "socialMedia": [
     {

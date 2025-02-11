@@ -11,10 +11,9 @@ import Body from "@/components/layout/body";
 type Props = {
   imageSrc: string;
   title: string;
-  description: string;
 };
 
-const MenuContent = ({ imageSrc, description, title }: Props) => {
+const MenuContent = ({ imageSrc, title }: Props) => {
   return (
     <div className="bg-[#f8f8f5] min-h-screen py-12">
       <div className="container mx-auto px-4">
@@ -28,15 +27,6 @@ const MenuContent = ({ imageSrc, description, title }: Props) => {
             {title}
           </Heading>
         </motion.div>
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <Body>{description}</Body>
-        </motion.div>
-
         <motion.div
           className="relative overflow-hidden rounded-lg shadow-lg mb-8"
           initial={{ opacity: 0 }}
