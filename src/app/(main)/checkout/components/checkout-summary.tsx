@@ -7,8 +7,8 @@ import Image from "next/image";
 import React from "react";
 
 const localInfo = {
-  name: "Lharmonie Palermo",
-  address: "Av. Santa Fe 3253, CABA",
+  name: "Casa Lharmonie",
+  address: "Maure 1516, CABA",
 };
 
 interface Props {

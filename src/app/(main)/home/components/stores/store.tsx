@@ -58,12 +58,14 @@ const StoreItem = ({
               {codeName}
             </Heading>
             <p className="mb-5 text-lg text-lharmonie-primary">{address}</p>
+            {/* Button that changes background/text color on hover 
             <LharmonieButton
               className=" group-hover:!bg-lharmonie-secondary group-hover:!text-lharmonie-primary"
               reversed
             >
               {ctoDescription}
             </LharmonieButton>
+            */}
           </div>
         </div>
       </motion.div>
