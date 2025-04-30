@@ -5,7 +5,7 @@ import content from "@/data/home.json";
 
 const Stores = () => {
   const {
-    storesSection: { stores, ctoDescription },
+    storesSection: { stores },
   } = content;
 
   return (
@@ -16,11 +16,7 @@ const Stores = () => {
       <div className=" mx-auto relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {stores.map((store) => (
-            <StoreItem
-              key={store.id}
-              ctoDescription={ctoDescription}
-              {...store}
-            />
+            <StoreItem key={store.id} {...store} />
           ))}
         </div>
       </div>

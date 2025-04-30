@@ -48,14 +48,7 @@ const SocialMediaLinks: React.FC<SocialMediaLinksProps> = ({ socialMedia }) => (
 );
 
 const Footer: React.FC = () => {
-  const {
-    contactDetails,
-    joinText,
-    email,
-    quickLinks,
-    quickLinksTitle,
-    socialMedia,
-  } = content;
+  const { contactDetails, socialMedia } = content;
 
   return (
     <footer className="bg-[#f8f8f5] py-12 border-t border-[#e0d8c9]">
@@ -64,27 +57,6 @@ const Footer: React.FC = () => {
           <div className="col-span-1 md:col-span-2">
             <Logo color="#8B7355" clickable={false} />
             <SocialMediaLinks socialMedia={socialMedia} />
-            <Body className="!text-base mt-3 font-medium">{joinText}</Body>
-            <Body className="!text-base !text-lharmonie-hover underline">
-              {email}
-            </Body>
-          </div>
-          <div>
-            <Heading level={2} className="!text-lg font-semibold mb-4">
-              {quickLinksTitle}
-            </Heading>
-            <ul className="space-y-2">
-              {quickLinks.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="text-sm hover:underline transition-colors duration-300"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
           <div>
             <Heading level={2} className="!text-lg font-semibold mb-4">

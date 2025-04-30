@@ -8,16 +8,13 @@ import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
 
-type Props = Store & {
-  ctoDescription: string;
-};
+type Props = Store;
 
 const StoreItem = ({
   id,
   callToAction,
   name,
   imageSrc,
-  ctoDescription,
   mediaType,
   codeName,
   address,
@@ -54,18 +51,16 @@ const StoreItem = ({
           )}
           <div className="absolute inset-0 bg-lharmonie-secondary opacity-60 transition-opacity duration-300 flex flex-col items-center justify-center p-6"></div>
           <div className="absolute inset-0 transition-opacity duration-300 flex flex-col items-center justify-center p-6">
-            <Heading level={3} className="!text-lxl !mb-0" reversed>
-              {codeName}
-            </Heading>
-            <p className="mb-5 text-lg text-lharmonie-primary">{address}</p>
-            {/* Button that changes background/text color on hover 
-            <LharmonieButton
-              className=" group-hover:!bg-lharmonie-secondary group-hover:!text-lharmonie-primary"
+            <Heading
+              level={3}
+              className="!text-lxl !mb-0 group-hover:underline"
               reversed
             >
-              {ctoDescription}
-            </LharmonieButton>
-            */}
+              {codeName}
+            </Heading>
+            <p className="mb-5 text-lg text-lharmonie-primary group-hover:underline">
+              {address}
+            </p>
           </div>
         </div>
       </motion.div>
