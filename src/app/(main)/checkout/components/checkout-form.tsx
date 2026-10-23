@@ -33,7 +33,7 @@ const CheckoutForm = ({ form, onFinish }: Props) => {
                   max: 50,
                 },
                 {
-                  pattern: /^[a-zA-Z\s]*$/,
+                  pattern: /^[\p{L}\p{M}\s]*$/u,
                   message: "Por favor ingrese un nombre válido",
                 },
               ]}
@@ -50,7 +50,7 @@ const CheckoutForm = ({ form, onFinish }: Props) => {
                   max: 50,
                 },
                 {
-                  pattern: /^[a-zA-Z\s]*$/,
+                  pattern: /^[\p{L}\p{M}\s'-]*$/u,
                   message: "Por favor ingrese un apellido válido",
                 },
               ]}
